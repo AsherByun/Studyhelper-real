@@ -29,7 +29,7 @@ public class StudyHelperEc21Application {
 			APPLICATION_LOCATIONS += LOCAL_LOCATION;
 		}
 		if (deploy.exists()) {
-			APPLICATION_LOCATIONS += ", " + DEPLOY_LOCATION;
+			APPLICATION_LOCATIONS += DEPLOY_LOCATION;
 		}
 	}
 }
