@@ -17,7 +17,7 @@ public class StudyHelperEc21Application {
 
 	public static void main(String[] args) {
 		setProperties();
-		Sy
+		System.out.println(APPLICATION_LOCATIONS);
 		new SpringApplicationBuilder(StudyHelperEc21Application.class).properties(APPLICATION_LOCATIONS).run(args);
 	}
 
