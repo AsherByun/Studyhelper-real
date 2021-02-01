@@ -1,0 +1,52 @@
+language: java
+sudo: true
+dist: trusty
+jdk: oraclejdk8
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+services:
+  -mysql
+before_install:
+  - mysql -e 'CREATE DATABASE studyhelper;'
+  - chmod +x mvnw
+  
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.mvnw
+script: "./mvnw clean package"
+
+before_deploy:
+ - zip -r studyhelper_ec2 *
+ - mkdir -p deploy
+ - mv studyhelper_ec2.zip deploy/studyhelper_ec2.zip
+
+deploy:
+ - provider: s3
+   access_key_id: $AWS_ACCESS_KEY
+   secret_access_key: $AWS_SECRET_KEY
+   
+   bucket: studyhelper-ec2
+   region: ap-northeast-2
+   skip_cleanup: true
+   acl: private
+   local_dir: deploy
+   wait_until_deployed : true
+
+ - provider: codedeploy
+   access_key_id: $AWS_ACCESS_KEY 
+   secret_access_key: $AWS_SECRET_KEY 
+   bucket: studyhelper-ec2 
+   key: studyhelper_ec2.zip 
+   bundle_type: zip
+   application: studyhelper-ec2 
+   deployment_group: studyhelper-ec2-group 
+   region: ap-northeast-2
+   wait-until-deployed: true
+
+notifications:
+ email:
+   recipients:
+     - dfdo333@gmail.com
