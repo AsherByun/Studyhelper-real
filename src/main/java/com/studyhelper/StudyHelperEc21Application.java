@@ -13,11 +13,11 @@ public class StudyHelperEc21Application {
 
 	public static String APPLICATION_LOCATIONS = "spring.config.location=classpath:application.yml";
 	public static String LOCAL_LOCATION = "C:/Users/Owner/eclipse-workspace/config/real-application.yml";
-	public static String DEPLOY_LOCATION = "/home/ubuntu/app/travis/config/real-application.yml";
+	public static String DEPLOY_LOCATION = "file:/home/ubuntu/app/travis/config/real-application.yml";
 
 	public static void main(String[] args) {
 		setProperties();
-		
+		Sy
 		new SpringApplicationBuilder(StudyHelperEc21Application.class).properties(APPLICATION_LOCATIONS).run(args);
 	}
 
@@ -26,7 +26,7 @@ public class StudyHelperEc21Application {
 		File deploy = new File(DEPLOY_LOCATION);
 
 		if (local.exists()) {
-			APPLICATION_LOCATIONS += ", file:/" + LOCAL_LOCATION;
+			APPLICATION_LOCATIONS += ", " + LOCAL_LOCATION;
 		}
 		if (deploy.exists()) {
 			APPLICATION_LOCATIONS += ", " + DEPLOY_LOCATION;
