@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 public class StudyHelperEc21Application {
 
-	public static String APPLICATION_LOCATIONS = "spring.config.location=classpath:application.yml";
+	public static String APPLICATION_LOCATIONS = "spring.config.location=";
 	public static String LOCAL_LOCATION = "C:/Users/Owner/eclipse-workspace/config/real-application.yml";
 	public static String DEPLOY_LOCATION = "/home/ubuntu/app/travis/config/real-application.yml";
 
@@ -26,7 +26,7 @@ public class StudyHelperEc21Application {
 		File deploy = new File(DEPLOY_LOCATION);
 
 		if (local.exists()) {
-			APPLICATION_LOCATIONS += ", " + LOCAL_LOCATION;
+			APPLICATION_LOCATIONS += LOCAL_LOCATION;
 		}
 		if (deploy.exists()) {
 			APPLICATION_LOCATIONS += ", " + DEPLOY_LOCATION;
