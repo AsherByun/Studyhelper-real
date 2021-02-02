@@ -9,7 +9,7 @@ addons:
 services:
   -mysql
 before_install:
-  - mysql -e 'CREATE DATABASE studyhelper;'
+  - mysql -e 'CREATE DATABASE studyhelper CHARACTER SET utf8 COLLATE utf8_general_ci;'
   - chmod +x mvnw
   
 cache:
