@@ -18,8 +18,10 @@ import org.springframework.test.web.servlet.MockMvc;
 public class helloTest {
 	@Autowired
 	private MockMvc mockMvc;
+
 	@Test
 	void helloTest() throws Exception {
 		mockMvc.perform(get("/hello")).andExpect(status().is(HttpStatus.OK.value()));
 	}
+
 }
