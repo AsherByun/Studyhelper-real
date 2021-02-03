@@ -28,10 +28,10 @@ public class SignUpController {
 		member.setRole(Role.ROLE_MEMBER);
 		
 		if (memberService.checkIdAndNickName(member)) {
-			return "/signup";
+			return "signup";
 		}
 		memberService.saveMember(member);
 		
-		return "/login";
+		return "login";
 	}
 }
