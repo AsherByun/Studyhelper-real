@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.studyhelper.dto.Member;
 import com.studyhelper.member.dao.MemberRepository;
-import com.studyhelper.member.dto.Member;
 
 @Service
 public class MemberServiceImpl implements MemberService {

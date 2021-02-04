@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.studyhelper.member.dto.Member;
+import com.studyhelper.dto.Member;
 import com.studyhelper.member.service.MemberService;
 import com.studyhelper.properties.Role;
 

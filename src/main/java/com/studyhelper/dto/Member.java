@@ -1,10 +1,16 @@
-package com.studyhelper.member.dto;
+package com.studyhelper.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.studyhelper.properties.Gender;
 import com.studyhelper.properties.Role;

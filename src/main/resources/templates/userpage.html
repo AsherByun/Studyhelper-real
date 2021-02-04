@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>메인페이지</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/userpage.css}">
+<script type="text/javascript" th:src="@{/js/userpage.js}" defer></script>
+
 </head>
 <body>
 	<div th:align="center">
@@ -12,7 +14,7 @@
 			<span sec:authentication="principal.member.nickName" />님<br>
 		</h3>
 	</div>
-	<div th:align="center"><input type="button" value="쪽지확인"/></div>
+	<div th:align="center"><input type="button" value="쪽지확인" id="goMailBtn"/></div>
 	<div th:align="center"><input type="button" value="메칭하기"/></div>
 	<span sec:authorize="hasAnyRole('ROLE_HAVEGROUP','ROLE_ADMIN')">
 		<div th:align="center"><input type="button" value="그룹페이지"/></div>
