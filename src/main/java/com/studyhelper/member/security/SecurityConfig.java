@@ -22,10 +22,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity security) throws Exception {
 		//모든 사용자 권한 허가
 		security.authorizeRequests().antMatchers("/").permitAll();
-		
+		security.authorizeRequests().antMatchers("/userpage/**").authenticated();
 		security.authorizeRequests().antMatchers("/signup").permitAll();
 		//로그인 페이지 설정
-		security.formLogin().loginPage("/login").defaultSuccessUrl("/",true);
+		security.formLogin().loginPage("/login").defaultSuccessUrl("/userpage",true);
 		//ajax통신시 corps
 		security.csrf().disable();
 		//권한이 없을때 보내주는 동작

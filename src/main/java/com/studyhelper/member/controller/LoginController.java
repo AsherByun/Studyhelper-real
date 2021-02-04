@@ -11,4 +11,8 @@ public class LoginController {
 	//로그아웃 버튼 클릭시 처리 컨트롤러
 	@GetMapping("/logout")
 	public void logout() {}
+	@GetMapping("/userpage")
+	public String userpage() {
+		return "userpage";
+	}
 }
