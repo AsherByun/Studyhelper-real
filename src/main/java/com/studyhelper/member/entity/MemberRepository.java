@@ -1,4 +1,4 @@
-package com.studyhelper.member.dao;
+package com.studyhelper.member.entity;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

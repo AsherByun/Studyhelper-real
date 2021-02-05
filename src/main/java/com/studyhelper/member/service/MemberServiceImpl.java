@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.studyhelper.dto.Member;
-import com.studyhelper.member.dao.MemberRepository;
+import com.studyhelper.member.entity.MemberRepository;
 
 @Service
 public class MemberServiceImpl implements MemberService {

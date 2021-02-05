@@ -1,4 +1,4 @@
-package com.studyhelper.group.dao;
+package com.studyhelper.group.entity;
 
 import org.springframework.data.repository.CrudRepository;
 
