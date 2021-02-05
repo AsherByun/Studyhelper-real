@@ -1,4 +1,4 @@
-package com.studyhelper.member.controller;
+package com.studyhelper.userpage.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

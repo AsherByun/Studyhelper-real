@@ -69,6 +69,17 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-apt -->
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

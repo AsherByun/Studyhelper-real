@@ -7,9 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.studyhelper.dto.Group;
-import com.studyhelper.dto.Member;
-import com.studyhelper.member.entity.MemberRepository;
+import com.studyhelper.entity.Group;
+import com.studyhelper.entity.Member;
+import com.studyhelper.member.dao.MemberRepository;
 import com.studyhelper.properties.Gender;
 import com.studyhelper.properties.Role;
 

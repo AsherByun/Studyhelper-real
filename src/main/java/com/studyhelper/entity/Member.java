@@ -1,4 +1,4 @@
-package com.studyhelper.dto;
+package com.studyhelper.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +35,18 @@ public class Member {
 	private Gender gender;
 	@Column(nullable = false, unique = true)
 	private String nickName;
-
 	private boolean enabled;
+	@Column(columnDefinition = "boolean default false")
+	private boolean isFirstAccess;
+	
+	
+	public boolean isFirstAccess() {
+		return isFirstAccess;
+	}
+
+	public void setFirstAccess(boolean isFirstAccess) {
+		this.isFirstAccess = isFirstAccess;
+	}
 
 	public String getId() {
 		return id;

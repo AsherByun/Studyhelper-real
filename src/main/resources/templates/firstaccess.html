@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>첫방문 공지사항~~~</title>
+<script type="text/javascript">
+	document.getElementById("goUserPage").addEventListener("click", function() {
+		location.href = "/userpage";
+	})
+</script>
+</head>
+<body>
+	<div th:align="center">
+		<input type="button" value="상기내용을 확인했습니다" id="goUserPage" />
+	</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.studyhelper.member.service;
 
-import com.studyhelper.dto.Member;
+import com.studyhelper.entity.Member;
 
 public interface MemberService {
 	boolean checkIdAndNickName(Member member);

@@ -1,4 +1,4 @@
-package com.studyhelper.dto;
+package com.studyhelper.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
