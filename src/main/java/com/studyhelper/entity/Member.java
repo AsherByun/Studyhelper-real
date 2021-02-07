@@ -25,7 +25,9 @@ import lombok.ToString;
 @ToString
 public class Member {
 	@Id
+	@Column(name = "member_id")
 	private String id;
+	private String name;
 	private int age;
 	@Column(nullable = false)
 	private String password;
@@ -38,8 +40,30 @@ public class Member {
 	private boolean enabled;
 	@Column(columnDefinition = "boolean default false")
 	private boolean isFirstAccess;
-	
-	
+
+	@OneToMany( mappedBy = "member", fetch = FetchType.EAGER)
+	private List<MemberTeam> memberTeams = new ArrayList<MemberTeam>();
+
+	public void addMemberTeams(MemberTeam memberTeam) {
+		memberTeams.add(memberTeam);
+	}
+
+	public List<MemberTeam> getMemberTeams() {
+		return memberTeams;
+	}
+
+	public void setMemberTeams(List<MemberTeam> memberTeams) {
+		this.memberTeams = memberTeams;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public boolean isFirstAccess() {
 		return isFirstAccess;
 	}
