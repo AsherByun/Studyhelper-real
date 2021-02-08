@@ -50,10 +50,10 @@ public class MatchTest {
 		match.setMember(member);
 		
 		
-		memberRepository.save(member);
-		matchRepository.save(match);
-		
-		Member gMember = memberRepository.findMemberById("dfdo3").get();
+//		memberRepository.save(member); //왜?
+//		matchRepository.save(match);
+//		
+//		Member gMember = memberRepository.findMemberById("dfdo3").get();
 //		System.out.println(gMember.getMatchs().size());
 	}
 }
