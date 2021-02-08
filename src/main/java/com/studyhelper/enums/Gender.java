@@ -1,4 +1,4 @@
-package com.studyhelper.properties;
+package com.studyhelper.enums;
 
 public enum Gender {
 	MAN, WOMAN

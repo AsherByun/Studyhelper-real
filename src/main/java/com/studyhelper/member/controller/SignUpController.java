@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.studyhelper.entity.Member;
+import com.studyhelper.enums.Role;
 import com.studyhelper.member.service.MemberService;
-import com.studyhelper.properties.Role;
 
 @Controller
 public class SignUpController {

@@ -1,7 +1,9 @@
 package com.studyhelper.entity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,8 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.studyhelper.properties.Gender;
-import com.studyhelper.properties.Role;
+import com.studyhelper.enums.Gender;
+import com.studyhelper.enums.Role;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,37 +24,53 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@ToString
 public class Member {
 	@Id
 	@Column(name = "member_id")
 	private String id;
 	private String name;
 	private int age;
+
 	@Column(nullable = false)
 	private String password;
+
 	@Enumerated(EnumType.STRING)
 	private Role role;
+
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
+
 	@Column(nullable = false, unique = true)
 	private String nickName;
+
 	private boolean enabled;
+
 	@Column(columnDefinition = "boolean default false")
 	private boolean isFirstAccess;
 
-	@OneToMany( mappedBy = "member", fetch = FetchType.EAGER)
-	private List<MemberTeam> memberTeams = new ArrayList<MemberTeam>();
+	@OneToMany(mappedBy = "member")
+	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
+
+	@OneToMany(mappedBy = "member")
+	private Set<Matching> matchs = new HashSet<Matching>();
+
+	public Set<Matching> getMatchs() {
+		return matchs;
+	}
+
+	public void setMatchs(Set<Matching> matchs) {
+		this.matchs = matchs;
+	}
 
 	public void addMemberTeams(MemberTeam memberTeam) {
 		memberTeams.add(memberTeam);
 	}
 
-	public List<MemberTeam> getMemberTeams() {
+	public Set<MemberTeam> getMemberTeams() {
 		return memberTeams;
 	}
 
-	public void setMemberTeams(List<MemberTeam> memberTeams) {
+	public void setMemberTeams(Set<MemberTeam> memberTeams) {
 		this.memberTeams = memberTeams;
 	}
 

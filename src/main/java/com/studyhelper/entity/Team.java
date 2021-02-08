@@ -1,7 +1,9 @@
 package com.studyhelper.entity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,14 +24,13 @@ import lombok.ToString;
 @Table(name = "Team")
 @Getter
 @Setter
-@ToString
 public class Team {
 	@Id
 	@GeneratedValue
 	private Long seq;
 
-	@OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
-	private List<MemberTeam> memberTeams = new ArrayList<MemberTeam>();
+	@OneToMany(mappedBy = "team")
+	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
 	public void addMemberTeams(MemberTeam memberTeam) {
 		memberTeams.add(memberTeam);
@@ -43,11 +44,11 @@ public class Team {
 		this.seq = seq;
 	}
 
-	public List<MemberTeam> getMemberTeams() {
+	public Set<MemberTeam> getMemberTeams() {
 		return memberTeams;
 	}
 
-	public void setMemberTeams(List<MemberTeam> memberTeams) {
+	public void setMemberTeams(Set<MemberTeam> memberTeams) {
 		this.memberTeams = memberTeams;
 	}
 

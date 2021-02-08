@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>매칭신청</title>
+</head>
+<body th:align="center">
+	<h1>매칭신청</h1>
+	<form method="post" th:action="@{/matching}">
+		<table th:align="center" border="1" th:cellpadding="0"
+			th:cellspacing="0">
+			<tr>
+				<td bgcolor="orange" >성별</td>
+				<td>
+					<select th:name="gender">
+						<option value="MAN">남자</option>
+						<option value="WOMAN">여자</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="orange" >성별</td>
+				<td>
+					<select th:name="gender">
+						<option value="MAN">남자</option>
+						<option value="WOMAN">여자</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="orange" >성별</td>
+				<td>
+					<select th:name="gender">
+						<option value="MAN">남자</option>
+						<option value="WOMAN">여자</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="orange" >성별</td>
+				<td>
+					<select th:name="gender">
+						<option value="MAN">남자</option>
+						<option value="WOMAN">여자</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="매칭신청" />
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

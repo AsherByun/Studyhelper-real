@@ -18,7 +18,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @Table(name = "MEMBER_TEAM")
-@ToString
 public class MemberTeam {
 	@Id
 	@GeneratedValue
