@@ -55,11 +55,11 @@ public class MatchTest {
 		match.setSize(4);
 		match.setSubject(Subject.PROGRAMMING_C);
 
-		memberService.saveMatching(member, match);
-		List<Matching> gMatching = memberService.findMatchingsById("dfdo3");
-
-		for (Matching m : gMatching) {
-			System.out.println(m.getMember().getId());
-		}
+//		memberService.saveMatching(member, match);
+//		List<Matching> gMatching = memberService.findMatchingsById("dfdo3");
+//
+//		for (Matching m : gMatching) {
+//			System.out.println(m.getMember().getId());
+//		}
 	}
 }
