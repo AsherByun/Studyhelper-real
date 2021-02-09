@@ -39,21 +39,21 @@ public class MatchTest {
 
 	@Test
 	public void matchTest() {
-		Member member = new Member();
-		member.setAge(26);
-		member.setGender(Gender.MAN);
-		member.setId("dfdo3");
-		member.setName("sungjae");
-		member.setNickName("sdf");
-		member.setPassword(encoder.encode("asd"));
-		member.setRole(Role.ROLE_ADMIN);
-
-		memberRepository.save(member);
-
-		Matching match = new Matching();
-		match.setRegion(Region.SEOUL_GANGNAM);
-		match.setSize(4);
-		match.setSubject(Subject.PROGRAMMING_C);
+//		Member member = new Member();
+//		member.setAge(26);
+//		member.setGender(Gender.MAN);
+//		member.setId("dfdo3");
+//		member.setName("sungjae");
+//		member.setNickName("sdf");
+//		member.setPassword(encoder.encode("asd"));
+//		member.setRole(Role.ROLE_ADMIN);
+//
+//		memberRepository.save(member);
+//
+//		Matching match = new Matching();
+//		match.setRegion(Region.SEOUL_GANGNAM);
+//		match.setSize(4);
+//		match.setSubject(Subject.PROGRAMMING_C);
 
 //		memberService.saveMatching(member, match);
 //		List<Matching> gMatching = memberService.findMatchingsById("dfdo3");
