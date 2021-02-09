@@ -1,5 +1,7 @@
 package com.studyhelper.matchTest;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import com.studyhelper.enums.Region;
 import com.studyhelper.enums.Role;
 import com.studyhelper.enums.Subject;
 import com.studyhelper.member.dao.MemberRepository;
+import com.studyhelper.member.service.MemberService;
 import com.studyhelper.team.dao.MatchRepository;
 import com.studyhelper.team.dao.MemberTeamRepository;
 import com.studyhelper.team.dao.TeamRepository;
@@ -31,6 +34,8 @@ public class MatchTest {
 	private MemberTeamRepository memberTeamRepository;
 	@Autowired
 	private MatchRepository matchRepository;
+	@Autowired
+	private MemberService memberService;
 
 	@Test
 	public void matchTest() {
@@ -42,18 +47,19 @@ public class MatchTest {
 		member.setNickName("sdf");
 		member.setPassword(encoder.encode("asd"));
 		member.setRole(Role.ROLE_ADMIN);
-		
+
+		memberRepository.save(member);
+
 		Matching match = new Matching();
 		match.setRegion(Region.SEOUL_GANGNAM);
 		match.setSize(4);
 		match.setSubject(Subject.PROGRAMMING_C);
-		match.setMember(member);
-		
-		
-//		memberRepository.save(member); //왜?
-//		matchRepository.save(match);
-//		
-//		Member gMember = memberRepository.findMemberById("dfdo3").get();
-//		System.out.println(gMember.getMatchs().size());
+
+		memberService.saveMatching(member, match);
+		List<Matching> gMatching = memberService.findMatchingsById("dfdo3");
+
+		for (Matching m : gMatching) {
+			System.out.println(m.getMember().getId());
+		}
 	}
 }

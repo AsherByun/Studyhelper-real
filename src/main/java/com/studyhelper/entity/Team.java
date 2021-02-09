@@ -28,6 +28,8 @@ public class Team {
 	@Id
 	@GeneratedValue
 	private Long seq;
+	
+	private String teamName;
 
 	@OneToMany(mappedBy = "team")
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
@@ -50,6 +52,14 @@ public class Team {
 
 	public void setMemberTeams(Set<MemberTeam> memberTeams) {
 		this.memberTeams = memberTeams;
+	}
+
+	public String getTeamName() {
+		return teamName;
+	}
+
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
 	}
 
 }

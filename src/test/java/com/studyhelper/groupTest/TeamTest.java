@@ -21,6 +21,7 @@ import com.studyhelper.enums.Role;
 import com.studyhelper.entity.Member;
 import com.studyhelper.entity.MemberTeam;
 import com.studyhelper.member.dao.MemberRepository;
+import com.studyhelper.member.service.MemberService;
 import com.studyhelper.team.dao.MemberTeamRepository;
 import com.studyhelper.team.dao.TeamRepository;
 
@@ -35,6 +36,8 @@ public class TeamTest {
 	private TeamRepository teamRepository;
 	@Autowired
 	private MemberTeamRepository memberTeamRepository;
+	@Autowired
+	private MemberService memberService;
 	
 	@Test
 	public void groupInputTest() {
@@ -47,29 +50,20 @@ public class TeamTest {
 		member.setPassword(encoder.encode("asd"));
 		member.setRole(Role.ROLE_ADMIN);
 		
-		Team team = new Team();
-		MemberTeam memberTeam = new MemberTeam();
-		
-		memberTeam.setMember(member);
-		memberTeam.setTeam(team);
 		System.out.println(member.getId()+"  "+member.getName());
-		
-
 		//순서 중요 member - team 부터 영속시켜야된다
+		Team team = new Team();
+		team.setTeamName("first");
+		
 		memberRepository.save(member);
 		teamRepository.save(team);
-		memberTeamRepository.save(memberTeam);
-//		System.out.println("asdfasdf");
-//		Optional<Member> gm = memberRepository.findById("dfdo");
-//		Team gTeam = teamRepository.findById(1L).get();
-//		
-//		Member gMember = gm.get();
-//		System.out.println(gMember.getId());
-//		System.out.println(gTeam.getSeq());
-//		
-//		for(MemberTeam mt:gMember.getMemberTeams()) {
-//			System.out.println(mt.getSeq());
-//		}
+
+		MemberTeam memberTeam = memberService.saveMemberTeam(member, team);
+		System.out.println(memberTeam.getTeam().getTeamName());
+		
+		Member gMember = memberRepository.findMemberById("dfdo").get();
+		System.out.println(gMember.getId());
+		memberService.findMemberTeamsById("dfdo");
 		
 	}
 
