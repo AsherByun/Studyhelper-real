@@ -77,5 +77,4 @@ public class Matching {
 		member.getMatchs().add(this);
 	}
 	
-	
 }

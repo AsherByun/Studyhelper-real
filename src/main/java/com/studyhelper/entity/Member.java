@@ -48,10 +48,10 @@ public class Member {
 	@Column(columnDefinition = "boolean default false")
 	private boolean isFirstAccess;
 
-	@OneToMany(mappedBy = "member")
+	@OneToMany(mappedBy = "member",fetch = FetchType.EAGER)
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
-	@OneToMany(mappedBy = "member")
+	@OneToMany(mappedBy = "member",fetch = FetchType.EAGER)
 	private Set<Matching> matchs = new HashSet<Matching>();
 
 	public Set<Matching> getMatchs() {

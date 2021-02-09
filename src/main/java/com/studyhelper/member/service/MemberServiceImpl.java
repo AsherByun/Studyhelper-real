@@ -36,13 +36,13 @@ public class MemberServiceImpl implements MemberService {
 		this.memberTeamRepository = memberTeamRepository;
 		this.matchRepository = matchRepository;
 	}
-
+	@Transactional
 	@Override
 	public boolean checkIdAndNickName(Member member) {
 
 		return memberRepo.isSameIdOrNickName(member.getNickName(), member.getId()) == 1;
 	}
-
+	@Transactional
 	@Override
 	public Member saveMember(Member member) {
 		member.setPassword(encoder.encode(member.getPassword()));

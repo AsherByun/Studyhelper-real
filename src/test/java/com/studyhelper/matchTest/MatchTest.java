@@ -54,7 +54,7 @@ public class MatchTest {
 //		match.setRegion(Region.SEOUL_GANGNAM);
 //		match.setSize(4);
 //		match.setSubject(Subject.PROGRAMMING_C);
-
+//
 //		memberService.saveMatching(member, match);
 //		List<Matching> gMatching = memberService.findMatchingsById("dfdo3");
 //
