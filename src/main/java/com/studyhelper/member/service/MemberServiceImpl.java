@@ -53,8 +53,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<Team> findMemberTeamsById(String id) {
 		Optional<Member> memberOptional = memberRepo.findById(id);
-
-		if (memberOptional.isEmpty()) { // null값대신 여기서 try catch나 exception 설정해주도록하자
+		// null값대신 여기서 try catch나 exception 설정해주도록하자
+		if (!memberOptional.isPresent()) {
 			return null;
 		}
 		Member member = memberOptional.get();
@@ -84,7 +84,7 @@ public class MemberServiceImpl implements MemberService {
 	public Matching saveMatching(Member member, Matching matching) {
 		matching.setMember(member);
 		matchRepository.save(matching);
-		
+
 		return matching;
 	}
 
@@ -93,7 +93,7 @@ public class MemberServiceImpl implements MemberService {
 	public List<Matching> findMatchingsById(String id) {
 		Optional<Member> memberOptional = memberRepo.findById(id);
 
-		if (memberOptional.isEmpty()) {
+		if (!memberOptional.isPresent()) {
 			return null;
 		}
 		Member member = memberOptional.get();
