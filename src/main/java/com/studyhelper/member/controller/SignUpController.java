@@ -34,6 +34,6 @@ public class SignUpController {
 		}
 		memberService.saveMember(member);
 
-		return "login";
+		return "redirect:login";
 	}
 }
