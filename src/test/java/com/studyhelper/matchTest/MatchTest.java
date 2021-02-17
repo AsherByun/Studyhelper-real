@@ -17,7 +17,7 @@ import com.studyhelper.enums.Role;
 import com.studyhelper.enums.Subject;
 import com.studyhelper.member.dao.MemberRepository;
 import com.studyhelper.member.service.MemberService;
-import com.studyhelper.team.dao.MatchRepository;
+import com.studyhelper.team.dao.MatchingRepository;
 import com.studyhelper.team.dao.MemberTeamRepository;
 import com.studyhelper.team.dao.TeamRepository;
 
@@ -33,7 +33,7 @@ public class MatchTest {
 	@Autowired
 	private MemberTeamRepository memberTeamRepository;
 	@Autowired
-	private MatchRepository matchRepository;
+	private MatchingRepository matchRepository;
 	@Autowired
 	private MemberService memberService;
 

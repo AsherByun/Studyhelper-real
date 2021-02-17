@@ -1,6 +1,8 @@
 package com.studyhelper.test;
 
+import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,7 +19,8 @@ import com.studyhelper.enums.Region;
 import com.studyhelper.enums.Role;
 import com.studyhelper.enums.Subject;
 import com.studyhelper.member.dao.MemberRepository;
-import com.studyhelper.team.dao.MatchRepository;
+import com.studyhelper.member.service.MatchingService;
+import com.studyhelper.team.dao.MatchingRepository;
 import com.studyhelper.team.dao.MemberTeamRepository;
 import com.studyhelper.team.dao.TeamRepository;
 
@@ -32,21 +35,37 @@ public class DBTest {
 	@Autowired
 	private MemberTeamRepository memberTeamRepository;
 	@Autowired
-	private MatchRepository matchRepository;
+	private MatchingRepository matchRepository;
+	@Autowired
+	private MatchingService matchingService;
+
+	@GetMapping("/testing/matchs")
+	public List<Matching> testMatch() {
+//		List<Matching> lists = matchRepository.searchAllMatchings();
+//		Matching matching =new Matching();
+//		matching.setRegion(Region.SEOUL_GANGNAM);
+//		matching.setRequestMatchingDate(new Date());
+//		matching.setSize(4);
+//		matching.setSubject(Subject.PROGRAMMING_C);
+//		
+//		matchingService.insertMatching(matching);
+		List<Matching> lists = matchRepository.searchAllMatchings();
+		return lists;
+	}
 
 	@GetMapping("/testing/match")
 	public String testMatch(String id) {
 		Member member = memberRepository.findMemberById(id).get();
-		
-		Matching match= new Matching();
+
+		Matching match = new Matching();
 		match.setRegion(Region.SEOUL_GANGNAM);
 		match.setSize(4);
 		match.setSubject(Subject.PROGRAMMING_C);
 		match.setMember(member);
-		
+
 		memberRepository.save(member);
 		matchRepository.save(match);
-		
+
 		return "aaaaaaaaaaaaaaaaaaaaaaa";
 	}
 
@@ -83,9 +102,10 @@ public class DBTest {
 		for (MemberTeam mt : member.getMemberTeams()) {
 			System.out.println(mt.getSeq());
 			System.out.println(mt.getTeam().getSeq());
-		}System.out.println("--------------------------");
+		}
+		System.out.println("--------------------------");
 
-		for(Matching match:member.getMatchs()) {
+		for (Matching match : member.getMatchs()) {
 			System.out.println(match.getRegion().toString());
 		}
 		return "aaaaaaaaaaa";

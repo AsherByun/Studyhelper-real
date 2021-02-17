@@ -1,5 +1,8 @@
 package com.studyhelper.groupTest;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +58,14 @@ public class TeamTest {
 		
 		Member gMember = memberRepository.findMemberById("dfdo").get();
 		System.out.println(gMember.getId());
-		memberService.findMemberTeamsById("dfdo");
-		
+		List<Team> lists = memberService.findMemberTeamsById("dfdo");
+		for(Team t:lists) {
+			System.out.println(t.getTeamName());
+		}
+		List<Member> members = (List<Member>) memberRepository.findAll();
+		for(Member m:members) {
+			System.out.println(m.getId()+">>>>>>>>");
+		}
 	}
 
 }

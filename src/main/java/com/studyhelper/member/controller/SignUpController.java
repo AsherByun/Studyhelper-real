@@ -11,15 +11,16 @@ import com.studyhelper.entity.Member;
 import com.studyhelper.enums.Role;
 import com.studyhelper.member.service.MemberService;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
+@RequiredArgsConstructor
 public class SignUpController {
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	public final MemberService memberService;
 
-	public SignUpController(MemberService memberService) {
-		this.memberService = memberService;
-	}
-
+	
 	@GetMapping("/signup")
 	public String signup() {
 		return "signup";

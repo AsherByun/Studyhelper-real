@@ -31,25 +31,10 @@ public class MemberTeam {
 	@JoinColumn(name = "team_id")
 	private Team team;
 
-	public Long getSeq() {
-		return seq;
-	}
-
-	public void setSeq(Long seq) {
-		this.seq = seq;
-	}
-
-	public Member getMember() {
-		return member;
-	}
 
 	public void setMember(Member member) {
 		this.member = member;
 		member.addMemberTeams(this);
-	}
-
-	public Team getTeam() {
-		return team;
 	}
 
 	public void setTeam(Team team) {

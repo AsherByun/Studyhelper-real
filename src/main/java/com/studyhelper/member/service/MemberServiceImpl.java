@@ -15,44 +15,40 @@ import com.studyhelper.entity.Member;
 import com.studyhelper.entity.MemberTeam;
 import com.studyhelper.entity.Team;
 import com.studyhelper.member.dao.MemberRepository;
-import com.studyhelper.team.dao.MatchRepository;
+import com.studyhelper.team.dao.MatchingRepository;
 import com.studyhelper.team.dao.MemberTeamRepository;
 import com.studyhelper.team.dao.TeamRepository;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private PasswordEncoder encoder;
 
-	public final MemberRepository memberRepo;
+	public final MemberRepository memberRepository;
 	public final MemberTeamRepository memberTeamRepository;
 	public final TeamRepository teamRepository;
-	public final MatchRepository matchRepository;
+	public final MatchingRepository matchRepository;
 
-	public MemberServiceImpl(MemberRepository meberRepo, TeamRepository teamRepository,
-			MemberTeamRepository memberTeamRepository, MatchRepository matchRepository) {
-		this.memberRepo = meberRepo;
-		this.teamRepository = teamRepository;
-		this.memberTeamRepository = memberTeamRepository;
-		this.matchRepository = matchRepository;
-	}
 	@Transactional
 	@Override
 	public boolean checkIdAndNickName(Member member) {
 
-		return memberRepo.isSameIdOrNickName(member.getNickName(), member.getId()) == 1;
+		return memberRepository.isSameIdOrNickName(member.getNickName(), member.getId()) == 1;
 	}
 	@Transactional
 	@Override
 	public Member saveMember(Member member) {
 		member.setPassword(encoder.encode(member.getPassword()));
-		return memberRepo.save(member);
+		return memberRepository.save(member);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
 	public List<Team> findMemberTeamsById(String id) {
-		Optional<Member> memberOptional = memberRepo.findById(id);
+		Optional<Member> memberOptional = memberRepository.findById(id);
 		// null값대신 여기서 try catch나 exception 설정해주도록하자
 		if (!memberOptional.isPresent()) {
 			return null;
@@ -74,7 +70,7 @@ public class MemberServiceImpl implements MemberService {
 		MemberTeam memberTeam = new MemberTeam();
 		memberTeam.setMember(member);
 		memberTeam.setTeam(team);
-
+		
 		memberTeamRepository.save(memberTeam);
 		return memberTeam;
 	}
@@ -91,7 +87,7 @@ public class MemberServiceImpl implements MemberService {
 	@Transactional
 	@Override
 	public List<Matching> findMatchingsById(String id) {
-		Optional<Member> memberOptional = memberRepo.findById(id);
+		Optional<Member> memberOptional = memberRepository.findById(id);
 
 		if (!memberOptional.isPresent()) {
 			return null;

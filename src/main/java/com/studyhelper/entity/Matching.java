@@ -1,5 +1,9 @@
 package com.studyhelper.entity;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.studyhelper.enums.Region;
 import com.studyhelper.enums.Subject;
@@ -31,46 +37,12 @@ public class Matching {
 	private Region region;
 	@Enumerated(EnumType.STRING)
 	private Subject subject;
+	@Temporal(value = TemporalType.TIMESTAMP)
+	private Date requestMatchingDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "member_id")
 	private Member member;
-
-	public Long getSeq() {
-		return seq;
-	}
-
-	public void setSeq(Long seq) {
-		this.seq = seq;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public Region getRegion() {
-		return region;
-	}
-
-	public void setRegion(Region region) {
-		this.region = region;
-	}
-
-	public Subject getSubject() {
-		return subject;
-	}
-
-	public void setSubject(Subject subject) {
-		this.subject = subject;
-	}
-
-	public Member getMember() {
-		return member;
-	}
 
 	public void setMember(Member member) {
 		this.member = member;

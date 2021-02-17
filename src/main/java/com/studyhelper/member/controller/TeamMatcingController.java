@@ -1,5 +1,7 @@
 package com.studyhelper.member.controller;
 
+import java.util.Date;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,8 @@ public class TeamMatcingController {
 	@PostMapping("/matching/request")
 	public String postMatching(@AuthenticationPrincipal SecurityUser securityUser, Matching matching) {
 		Member member = securityUser.getMember();
+		matching.setRequestMatchingDate(new Date());
+		
 		memberService.saveMatching(member, matching);
 		
 		return "userpage";
