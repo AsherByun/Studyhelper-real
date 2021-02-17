@@ -52,6 +52,12 @@ public class DBTest {
 		List<Matching> lists = matchRepository.searchAllMatchings();
 		return lists;
 	}
+	@GetMapping("/testing/members")
+	public Member testMembers(){
+		List<Member> members = memberRepository.findAll();
+		System.out.println(members.size());
+		return members.get(0);
+	}
 
 	@GetMapping("/testing/match")
 	public String testMatch(String id) {

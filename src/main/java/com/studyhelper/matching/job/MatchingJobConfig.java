@@ -31,7 +31,7 @@ import javax.persistence.EntityManagerFactory;
 @Configuration
 public class MatchingJobConfig {
 	public static final String JOB_NAME = "matchingJob";
-	public static final String BASE_TEAM_NAME = "BASE";
+	
 	
 	private final JobBuilderFactory jobBuilderFactory;
 	private final StepBuilderFactory stepBuilderFactory;

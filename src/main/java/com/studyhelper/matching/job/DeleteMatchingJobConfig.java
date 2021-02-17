@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Configuration;
 import com.studyhelper.entity.Matching;
 import com.studyhelper.entity.Member;
 import com.studyhelper.entity.MemberTeam;
+import com.studyhelper.matching.job.match.algorithm.MatchTrie;
 
 import java.util.Iterator;
 
@@ -31,11 +32,13 @@ import javax.persistence.EntityManagerFactory;
 @Configuration
 public class DeleteMatchingJobConfig {
 	public static final String JOB_NAME = "DeleteMatchingJob";
+	
 	private final JobBuilderFactory jobBuilderFactory;
 	private final StepBuilderFactory stepBuilderFactory;
 	private final EntityManagerFactory entityManagerFactory;
 	private final CreateDateJobParameter createDateJobParameter;
 	private int chunkSize;
+	private final MatchTrie matchTrie;
 
 	@Value("${chunkSize:100}")
 	public void setChunkSize(int chunkSize) {
@@ -50,6 +53,7 @@ public class DeleteMatchingJobConfig {
 
 	@Bean(name = JOB_NAME)
 	public Job matchingJob() {
+		matchTrie.setMatchs();
 		return jobBuilderFactory.get(JOB_NAME).start(deleteMatching()).incrementer(new RunIdIncrementer()).build();
 	}
 
@@ -72,7 +76,7 @@ public class DeleteMatchingJobConfig {
 		log.info("=======================> delete");
 		return list -> {
 			for (Matching m : list) {
-				log.info(">>>>>>>>>>>>>>>>>>> {}", m.getMember().getId());
+				matchTrie.pushMatching(m);
 			}
 		};
 	}
