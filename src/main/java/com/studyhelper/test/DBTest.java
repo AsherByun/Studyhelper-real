@@ -55,7 +55,16 @@ public class DBTest {
 	@GetMapping("/testing/members")
 	public Member testMembers(){
 		List<Member> members = memberRepository.findAll();
-		System.out.println(members.size());
+		
+		for(Member member:members) {
+			System.out.println("=====================");
+			for(MemberTeam memberTeam:member.getMemberTeams()) {
+				System.out.println(memberTeam.getTeam().getTeamName());
+			}
+			System.out.println("=====================");
+		}
+		
+		
 		return members.get(0);
 	}
 

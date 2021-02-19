@@ -76,8 +76,9 @@ public class MatchTrie {
 				Member member = matching.getMember();
 				
 				memberService.saveMemberTeam(member, team);
-				System.out.println(">>>>>>>>>>>"+member.getId());
+				matchingRepository.delete(matching);
 			}
+			
 			matchs[regionNum][subjectNum][sizeNum] = new ArrayList<Matching>(); // 삭제시켜야된다 --디비도접근
 		}
 	}

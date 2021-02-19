@@ -53,7 +53,6 @@ public class DeleteMatchingJobConfig {
 
 	@Bean(name = JOB_NAME)
 	public Job matchingJob() {
-		matchTrie.setMatchs();
 		return jobBuilderFactory.get(JOB_NAME).start(deleteMatching()).incrementer(new RunIdIncrementer()).build();
 	}
 
@@ -75,9 +74,7 @@ public class DeleteMatchingJobConfig {
 	public ItemWriter<Matching> deleteWriter() {
 		log.info("=======================> delete");
 		return list -> {
-			for (Matching m : list) {
-				matchTrie.pushMatching(m);
-			}
+			
 		};
 	}
 

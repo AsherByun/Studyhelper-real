@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Configuration;
 import com.studyhelper.entity.Matching;
 import com.studyhelper.entity.Member;
 import com.studyhelper.entity.MemberTeam;
+import com.studyhelper.matching.job.match.algorithm.MatchTrie;
 
 import java.util.Iterator;
 
@@ -31,49 +32,44 @@ import javax.persistence.EntityManagerFactory;
 @Configuration
 public class MatchingJobConfig {
 	public static final String JOB_NAME = "matchingJob";
-	
-	
+
 	private final JobBuilderFactory jobBuilderFactory;
 	private final StepBuilderFactory stepBuilderFactory;
 	private final EntityManagerFactory entityManagerFactory;
-	
+	private final CreateDateJobParameter createDateJobParameter;
 	private int chunkSize;
+	private final MatchTrie matchTrie;
 
 	@Value("${chunkSize:100}")
 	public void setChunkSize(int chunkSize) {
 		this.chunkSize = chunkSize;
 	}
-	
+
 	@Bean(name = JOB_NAME)
 	public Job matchingJob() {
-		return jobBuilderFactory.get(JOB_NAME)
-				.start(matchingStep()).incrementer(new RunIdIncrementer()).build();
+		return jobBuilderFactory.get(JOB_NAME).start(matchingStep()).build();
 	}
-	
+
 	@Bean(name = JOB_NAME + "_makeTeamStep")
 	@JobScope
 	public Step matchingStep() {
-		return stepBuilderFactory.get(JOB_NAME + "_makeTeamStep").<Member, Member>chunk(chunkSize).reader(makeTeamReader())
-				.processor(makeTeamProcessor()).writer(makeTeamWriter()).build();
+		return stepBuilderFactory.get(JOB_NAME + "_makeTeamStep").<Matching, Matching>chunk(chunkSize)
+				.reader(makeTeamReader()).writer(makeTeamWriter()).build();
 	}
 
 	@Bean(name = JOB_NAME + "_makeTeamReader")
 	@StepScope
-	public JpaPagingItemReader<Member> makeTeamReader() {
-		return new JpaPagingItemReaderBuilder<Member>().name(JOB_NAME + "_makeTeamReader")
-				.entityManagerFactory(entityManagerFactory).pageSize(chunkSize).queryString("SELECT m FROM Member m")
+	public JpaPagingItemReader<Matching> makeTeamReader() {
+		return new JpaPagingItemReaderBuilder<Matching>().name(JOB_NAME + "_makeTeamReader")
+				.entityManagerFactory(entityManagerFactory).pageSize(chunkSize).queryString("SELECT m FROM Matching m")
 				.build();
 	}
 
-	public ItemProcessor<Member, Member> makeTeamProcessor() {
-		return member -> {
-			return member;
-		};
-	}
-
-	public ItemWriter<Member> makeTeamWriter() {
+	public ItemWriter<Matching> makeTeamWriter() {
 		return list -> {
-			
+			for (Matching m : list) {
+				matchTrie.pushMatching(m);
+			}
 		};
 	}
 }
