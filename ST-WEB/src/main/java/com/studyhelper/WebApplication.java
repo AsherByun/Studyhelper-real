@@ -3,23 +3,27 @@ package com.studyhelper;
 import java.io.File;
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@EntityScan(basePackages = {"com.domain"})
 @SpringBootApplication
-public class StudyHelperEc21Application {
-
+public class WebApplication {
 	public static String APPLICATION_LOCATIONS = "spring.config.location=";
 	public static String LOCAL_LOCATION = "C:/Users/Owner/eclipse-workspace/config/application-real.yml";
 	public static String DEPLOY_LOCATION = "/home/ubuntu/app/travis/config/application-real.yml";
 
 	public static void main(String[] args) {
 		setProperties();
-		System.out.println(APPLICATION_LOCATIONS);
-		new SpringApplicationBuilder(StudyHelperEc21Application.class).properties(APPLICATION_LOCATIONS).run(args);
+		new SpringApplicationBuilder(WebApplication.class).properties(APPLICATION_LOCATIONS).run(args);
 	}
 
 	public static void setProperties() {
@@ -32,5 +36,10 @@ public class StudyHelperEc21Application {
 		if (deploy.exists()) {
 			APPLICATION_LOCATIONS += DEPLOY_LOCATION;
 		}
+	}
+	
+	@GetMapping("web")
+	public String Web() {
+		return "web hello";
 	}
 }
