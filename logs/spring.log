@@ -16,3 +16,57 @@
 2021-02-22 00:11:41.324  INFO 13728 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-02-22 00:11:41.327  INFO 13728 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-02-22 00:11:41.334  INFO 13728 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-22 00:30:48.706  INFO 2280 --- [restartedMain] c.s.StudyHelperEc21Application           : Starting StudyHelperEc21Application using Java 14.0.2 on DESKTOP-802U2A9 with PID 2280 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real)
+2021-02-22 00:30:48.711  INFO 2280 --- [restartedMain] c.s.StudyHelperEc21Application           : The following profiles are active: real
+2021-02-22 00:30:48.740  INFO 2280 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-22 00:30:49.040  INFO 2280 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-22 00:30:49.048  INFO 2280 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-02-22 00:30:49.301  INFO 2280 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-22 00:30:49.348  INFO 2280 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-22 00:30:49.440  INFO 2280 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-22 00:30:49.530  INFO 2280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-22 00:30:49.754  INFO 2280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-22 00:30:49.765  INFO 2280 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-02-22 00:30:49.952  INFO 2280 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-22 00:30:49.959  INFO 2280 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:30:49.999  WARN 2280 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-02-22 00:30:50.072  INFO 2280 --- [restartedMain] c.s.StudyHelperEc21Application           : Started StudyHelperEc21Application in 1.659 seconds (JVM running for 2.14)
+2021-02-22 00:30:50.078  INFO 2280 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:30:50.082  INFO 2280 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-22 00:30:50.089  INFO 2280 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-22 00:40:38.412  INFO 14400 --- [restartedMain] c.s.StudyHelperEc21Application           : Starting StudyHelperEc21Application using Java 14.0.2 on DESKTOP-802U2A9 with PID 14400 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real)
+2021-02-22 00:40:38.418  INFO 14400 --- [restartedMain] c.s.StudyHelperEc21Application           : The following profiles are active: real
+2021-02-22 00:40:38.449  INFO 14400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-22 00:40:38.773  INFO 14400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-22 00:40:38.783  INFO 14400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-02-22 00:40:39.054  INFO 14400 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-22 00:40:39.104  INFO 14400 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-22 00:40:39.202  INFO 14400 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-22 00:40:39.283  INFO 14400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-22 00:40:39.519  INFO 14400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-22 00:40:39.531  INFO 14400 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-02-22 00:40:39.720  INFO 14400 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-22 00:40:39.727  INFO 14400 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:40:39.772  INFO 14400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-22 00:40:39.845  INFO 14400 --- [restartedMain] c.s.StudyHelperEc21Application           : Started StudyHelperEc21Application in 1.748 seconds (JVM running for 2.274)
+2021-02-22 00:40:39.851  INFO 14400 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:40:39.854  INFO 14400 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-22 00:40:39.860  INFO 14400 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-02-22 00:49:27.471  INFO 9200 --- [restartedMain] c.s.StudyHelperEc21Application           : Starting StudyHelperEc21Application using Java 14.0.2 on DESKTOP-802U2A9 with PID 9200 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real)
+2021-02-22 00:49:27.478  INFO 9200 --- [restartedMain] c.s.StudyHelperEc21Application           : The following profiles are active: real
+2021-02-22 00:49:27.512  INFO 9200 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-22 00:49:27.843  INFO 9200 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-22 00:49:27.852  INFO 9200 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-02-22 00:49:28.128  INFO 9200 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-22 00:49:28.178  INFO 9200 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-22 00:49:28.275  INFO 9200 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-22 00:49:28.347  INFO 9200 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-22 00:49:28.582  INFO 9200 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-22 00:49:28.594  INFO 9200 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-02-22 00:49:28.783  INFO 9200 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-22 00:49:28.791  INFO 9200 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:49:28.833  INFO 9200 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-22 00:49:28.908  INFO 9200 --- [restartedMain] c.s.StudyHelperEc21Application           : Started StudyHelperEc21Application in 1.729 seconds (JVM running for 2.229)
+2021-02-22 00:49:28.913  INFO 9200 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:49:28.917  INFO 9200 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-22 00:49:28.926  INFO 9200 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

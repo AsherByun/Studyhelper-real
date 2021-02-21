@@ -80,3 +80,118 @@
 2021-02-22 00:10:03.398  INFO 4368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
 2021-02-22 00:10:03.402  INFO 4368 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 0.613 seconds (JVM running for 1601.175)
 2021-02-22 00:10:03.403  INFO 4368 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-02-22 00:24:44.662  INFO 4368 --- [Thread-39] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-22 00:24:44.663  INFO 4368 --- [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:24:44.664  INFO 4368 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2021-02-22 00:24:44.669  INFO 4368 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2021-02-22 00:24:44.731 ERROR 4368 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [C:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.yml]' via location 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' does not exist
+
+Action:
+
+Check that the value 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' is correct, or prefix it with 'optional:'
+
+2021-02-22 00:24:46.247 ERROR 4368 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [C:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.yml]' via location 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' does not exist
+
+Action:
+
+Check that the value 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' is correct, or prefix it with 'optional:'
+
+2021-02-22 00:26:19.611 ERROR 4368 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [C:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.yml]' via location 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' does not exist
+
+Action:
+
+Check that the value 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' is correct, or prefix it with 'optional:'
+
+2021-02-22 00:28:27.994 ERROR 4368 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [C:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.yml]' via location 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' does not exist
+
+Action:
+
+Check that the value 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' is correct, or prefix it with 'optional:'
+
+2021-02-22 00:28:30.825  INFO 4368 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 4368 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-02-22 00:28:30.826  INFO 4368 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-02-22 00:28:31.038  INFO 4368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-22 00:28:31.081  INFO 4368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 4 JPA repository interfaces.
+2021-02-22 00:28:31.154  INFO 4368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-02-22 00:28:31.154  INFO 4368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-22 00:28:31.155  INFO 4368 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-22 00:28:31.171  INFO 4368 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-02-22 00:28:31.171  INFO 4368 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2021-02-22 00:28:31.204  INFO 4368 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-22 00:28:31.210  INFO 4368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2021-02-22 00:28:31.223  INFO 4368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2021-02-22 00:28:31.224  INFO 4368 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-02-22 00:28:31.296  INFO 4368 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-22 00:28:31.297  INFO 4368 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:28:31.306  INFO 4368 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-22 00:28:31.397  WARN 4368 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-22 00:28:31.482  INFO 4368 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5876c799, org.springframework.security.web.context.SecurityContextPersistenceFilter@57e757ab, org.springframework.security.web.header.HeaderWriterFilter@51ee4b9, org.springframework.security.web.authentication.logout.LogoutFilter@5b56a1b7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4dfa82bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@155966ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@671073f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6158997e, org.springframework.security.web.session.SessionManagementFilter@ccbbd60, org.springframework.security.web.access.ExceptionTranslationFilter@534227ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@473c01f3]
+2021-02-22 00:28:31.545  INFO 4368 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-22 00:28:31.559  INFO 4368 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-02-22 00:28:31.625  INFO 4368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-02-22 00:28:31.632  INFO 4368 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 0.828 seconds (JVM running for 2709.406)
+2021-02-22 00:28:31.637  INFO 4368 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-02-22 00:31:00.877  INFO 4368 --- [Thread-44] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-22 00:31:00.881  INFO 4368 --- [Thread-44] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-22 00:31:00.883  INFO 4368 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2021-02-22 00:31:00.902  INFO 4368 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2021-02-22 00:31:00.989 ERROR 4368 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [C:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.yml]' via location 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' does not exist
+
+Action:
+
+Check that the value 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' is correct, or prefix it with 'optional:'
+
+2021-02-22 00:31:02.910 ERROR 4368 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [C:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.ymlC:\Users\Owner\eclipse-workspace\config\application-real.yml]' via location 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' does not exist
+
+Action:
+
+Check that the value 'C:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.ymlC:/Users/Owner/eclipse-workspace/config/application-real.yml' is correct, or prefix it with 'optional:'
+

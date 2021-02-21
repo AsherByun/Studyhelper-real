@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ST-BATCH</artifactId>
-
+	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>com.studyhelper</groupId>
@@ -25,4 +25,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+	</build>
 </project>
