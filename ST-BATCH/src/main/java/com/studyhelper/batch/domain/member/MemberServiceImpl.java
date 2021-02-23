@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.domain.entity.Matching;
-import com.domain.entity.Member;
-import com.domain.entity.MemberTeam;
-import com.domain.entity.Team;
 import com.studyhelper.batch.domain.matching.MatchingRepository;
 import com.studyhelper.batch.domain.team.MemberTeamRepository;
 import com.studyhelper.batch.domain.team.TeamRepository;
+import com.studyhelper.domain.entity.Matching;
+import com.studyhelper.domain.entity.Member;
+import com.studyhelper.domain.entity.MemberTeam;
+import com.studyhelper.domain.entity.Team;
 
 import lombok.RequiredArgsConstructor;
 

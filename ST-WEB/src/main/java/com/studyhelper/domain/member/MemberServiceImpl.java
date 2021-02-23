@@ -10,10 +10,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.domain.entity.Matching;
-import com.domain.entity.Member;
-import com.domain.entity.MemberTeam;
-import com.domain.entity.Team;
+import com.studyhelper.domain.entity.Matching;
+import com.studyhelper.domain.entity.Member;
+import com.studyhelper.domain.entity.MemberTeam;
+import com.studyhelper.domain.entity.Team;
 import com.studyhelper.domain.matching.MatchingRepository;
 import com.studyhelper.domain.team.MemberTeamRepository;
 import com.studyhelper.domain.team.TeamRepository;

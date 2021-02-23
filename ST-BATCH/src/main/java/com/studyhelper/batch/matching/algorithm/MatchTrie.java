@@ -8,16 +8,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import com.domain.entity.Matching;
-import com.domain.entity.Member;
-import com.domain.entity.Team;
-import com.domain.enums.Region;
-import com.domain.enums.Subject;
 import com.studyhelper.batch.domain.matching.MatchingRepository;
 import com.studyhelper.batch.domain.member.MemberRepository;
 import com.studyhelper.batch.domain.member.MemberService;
 import com.studyhelper.batch.domain.team.MemberTeamRepository;
 import com.studyhelper.batch.domain.team.TeamRepository;
+import com.studyhelper.domain.entity.Matching;
+import com.studyhelper.domain.entity.Member;
+import com.studyhelper.domain.entity.Team;
+import com.studyhelper.domain.enums.Region;
+import com.studyhelper.domain.enums.Subject;
 
 import lombok.RequiredArgsConstructor;
 

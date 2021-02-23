@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.domain.entity.Member;
-import com.domain.enums.Role;
+import com.studyhelper.domain.entity.Member;
+import com.studyhelper.domain.enums.Role;
 import com.studyhelper.domain.member.MemberService;
 
 import lombok.RequiredArgsConstructor;

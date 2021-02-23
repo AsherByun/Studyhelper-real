@@ -1,4 +1,4 @@
-package com.domain.entity;
+package com.studyhelper.domain.entity;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,8 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.domain.enums.Gender;
-import com.domain.enums.Role;
+import com.studyhelper.domain.enums.Gender;
+import com.studyhelper.domain.enums.Role;
 
 import lombok.Getter;
 import lombok.Setter;

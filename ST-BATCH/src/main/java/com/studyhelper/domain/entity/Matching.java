@@ -1,4 +1,4 @@
-package com.domain.entity;
+package com.studyhelper.domain.entity;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -16,8 +16,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.domain.enums.Region;
-import com.domain.enums.Subject;
+import com.studyhelper.domain.enums.Region;
+import com.studyhelper.domain.enums.Subject;
 
 import lombok.Getter;
 import lombok.Setter;

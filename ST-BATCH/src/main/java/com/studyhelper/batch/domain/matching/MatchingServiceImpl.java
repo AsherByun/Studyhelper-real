@@ -4,7 +4,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.domain.entity.Matching;
+import com.studyhelper.domain.entity.Matching;
 
 import lombok.RequiredArgsConstructor;
 

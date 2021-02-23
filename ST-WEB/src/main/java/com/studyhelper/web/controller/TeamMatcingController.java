@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.domain.entity.Matching;
-import com.domain.entity.Member;
+import com.studyhelper.domain.entity.Matching;
+import com.studyhelper.domain.entity.Member;
 import com.studyhelper.domain.member.MemberService;
 import com.studyhelper.member.security.SecurityUser;
 

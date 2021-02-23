@@ -16,7 +16,7 @@ cache:
   directories:
     - $HOME/.m2
     - $HOME/.mvnw
-script: "./mvnw clean install spring-boot:repackage"
+script: "./mvnw clean package"
 
 before_deploy:
  - zip -r studyhelper_ec2 *

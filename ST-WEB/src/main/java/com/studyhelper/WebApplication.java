@@ -11,10 +11,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@EntityScan(basePackages = {"com.domain"})
+@EntityScan(basePackages = {"com.studyhelper.domain"})
 @SpringBootApplication
 public class WebApplication {
 	public static String APPLICATION_LOCATIONS = "spring.config.location=";

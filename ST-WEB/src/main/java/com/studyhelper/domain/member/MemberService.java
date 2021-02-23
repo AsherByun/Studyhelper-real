@@ -2,10 +2,10 @@ package com.studyhelper.domain.member;
 
 import java.util.List;
 
-import com.domain.entity.Matching;
-import com.domain.entity.Member;
-import com.domain.entity.MemberTeam;
-import com.domain.entity.Team;
+import com.studyhelper.domain.entity.Matching;
+import com.studyhelper.domain.entity.Member;
+import com.studyhelper.domain.entity.MemberTeam;
+import com.studyhelper.domain.entity.Team;
 
 public interface MemberService {
 	//중복된 아이디, 닉네임이 있는지 확인

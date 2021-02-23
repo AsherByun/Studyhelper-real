@@ -18,8 +18,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.domain.entity.Matching;
 import com.studyhelper.batch.matching.algorithm.MatchTrie;
+import com.studyhelper.domain.entity.Matching;
 
 import java.util.Iterator;
 
@@ -34,7 +34,6 @@ public class MatchingJobConfig {
 	private final JobBuilderFactory jobBuilderFactory;
 	private final StepBuilderFactory stepBuilderFactory;
 	private final EntityManagerFactory entityManagerFactory;
-	private final CreateDateJobParameter createDateJobParameter;
 	private int chunkSize;
 	private final MatchTrie matchTrie;
 

@@ -3,7 +3,7 @@ package com.studyhelper.member.security;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 
-import com.domain.entity.Member;
+import com.studyhelper.domain.entity.Member;
 
 public class SecurityUser extends User {
 	private static final long serialVersionUID = 1L;

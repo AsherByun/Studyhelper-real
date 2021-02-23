@@ -18,8 +18,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.domain.entity.Matching;
 import com.studyhelper.batch.matching.algorithm.MatchTrie;
+import com.studyhelper.domain.entity.Matching;
 
 import java.util.Iterator;
 
@@ -30,11 +30,11 @@ import javax.persistence.EntityManagerFactory;
 @Configuration
 public class DeleteMatchingJobConfig {
 	public static final String JOB_NAME = "DeleteMatchingJob";
-	
+
 	private final JobBuilderFactory jobBuilderFactory;
 	private final StepBuilderFactory stepBuilderFactory;
 	private final EntityManagerFactory entityManagerFactory;
-	private final CreateDateJobParameter createDateJobParameter;
+//	private final CreateDateJobParameter createDateJobParameter;
 	private int chunkSize;
 	private final MatchTrie matchTrie;
 
@@ -43,11 +43,11 @@ public class DeleteMatchingJobConfig {
 		this.chunkSize = chunkSize;
 	}
 
-	@Bean(JOB_NAME + "_createDateJopParameter")
-	@JobScope
-	public CreateDateJobParameter CreateDateJobParameter() {
-		return new CreateDateJobParameter();
-	}
+//	@Bean(JOB_NAME + "_createDateJopParameter")
+//	@JobScope
+//	public CreateDateJobParameter CreateDateJobParameter() {
+//		return new CreateDateJobParameter();
+//	}
 
 	@Bean(name = JOB_NAME)
 	public Job matchingJob() {
@@ -72,7 +72,7 @@ public class DeleteMatchingJobConfig {
 	public ItemWriter<Matching> deleteWriter() {
 		log.info("=======================> delete");
 		return list -> {
-			
+
 		};
 	}
 

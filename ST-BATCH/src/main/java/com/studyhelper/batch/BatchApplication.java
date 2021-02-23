@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableBatchProcessing
-@EntityScan(basePackages = {"com.domain"})
+@EntityScan(basePackages = {"com.studyhelper.domain"})
 @SpringBootApplication
 public class BatchApplication {
 

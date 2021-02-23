@@ -1,4 +1,4 @@
-package com.domain.entity;
+package com.studyhelper.domain.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

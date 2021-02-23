@@ -94,7 +94,6 @@
 
 	<modules>
 		<module>ST-WEB</module>
-		<module>ST-DOMAIN</module>
 		<module>ST-BATCH</module>
 	</modules>
 </project>

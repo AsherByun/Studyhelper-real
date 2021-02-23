@@ -3,8 +3,8 @@ package com.studyhelper.batch.matching.algorithm;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import com.domain.enums.Region;
-import com.domain.enums.Subject;
+import com.studyhelper.domain.enums.Region;
+import com.studyhelper.domain.enums.Subject;
 
 
 public class ConvertHashMap {
