@@ -11,8 +11,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableBatchProcessing
+@EnableScheduling
 @EntityScan(basePackages = {"com.studyhelper.domain"})
 @SpringBootApplication
 public class BatchApplication {
