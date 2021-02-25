@@ -20,5 +20,6 @@ public class Matching {
 	private Region region;
 	private Subject subject;
 	private String memberId;
+	private String requestMatchingDate;
 
 }

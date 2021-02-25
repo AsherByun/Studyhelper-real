@@ -1,5 +1,7 @@
 package com.studyhelper.domain.matching;
 
+import java.time.LocalDate;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ public class MatchingServiceImpl implements MatchingService{
 	@Transactional
 	public void saveMatching(Member member,Matching matching) {
 		matching.setMemberId(member.getId());
+		matching.setRequestMatchingDate(LocalDate.now().toString());
 		
 		matchingRepository.save(matching);
 	}

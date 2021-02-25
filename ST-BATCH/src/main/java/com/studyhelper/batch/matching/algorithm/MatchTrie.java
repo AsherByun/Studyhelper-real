@@ -31,7 +31,6 @@ import lombok.RequiredArgsConstructor;
 public class MatchTrie {
 	public static final String BASE_TEAM_NAME = "BASE";
 
-	
 	private final int REGION_LENGTH = Region.values().length;
 	private final int SUBJECT_LENGTH = Subject.values().length;
 	private final int MAX_SIZE = 6;
@@ -39,7 +38,6 @@ public class MatchTrie {
 	private final MatchingRepository matchingRepository;
 	private final MemberRepository memberRepository;
 	private final TeamRepository teamRepository;
-	private final MemberTeamRepository memberTeamRepository;
 	private final MemberService memberService;
 
 	public List<Matching>[][][] matchs;

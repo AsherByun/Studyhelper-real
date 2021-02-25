@@ -1,5 +1,6 @@
 package com.studyhelper.web.controller;
 
+import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.List;
 
@@ -32,12 +33,22 @@ public class TestRestController {
 		for(int i=0;i<100;i++) {
 			Member member = memberRepository.findById("king"+i).get();
 			Matching matching = new Matching();
-			matching.setRegion(Region.values()[i%4]);
-			matching.setSubject(Subject.values()[i%4]);
+			matching.setRegion(Region.values()[(i+1)%4]);
+			matching.setSubject(Subject.values()[(i+1)%4]);
 			matching.setSize(4);
 			matching.setMemberId(member.getId());
 			
 			matchingRepository.save(matching);
 		}
+	}
+	@GetMapping("/matching/teams")
+	public void matchingTeams() {
+//		List<Member> members = memberRepository.findAll();
+//		for(Member member:members) {
+//			System.out.println(member.getId() +"  "+member.getMemberTeams().size());
+//		}
+		LocalDate localDate = LocalDate.now();
+		String time = localDate.toString();
+		System.out.println(time);
 	}
 }

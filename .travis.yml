@@ -8,6 +8,8 @@ addons:
       - oracle-java8-installer
 services:
   -mysql
+before_script:
+    - sudo redis-server /etc/redis/redis.conf --port 6379 --requirepass 'secret'
 before_install:
   - mysql -e 'CREATE DATABASE studyhelper CHARACTER SET utf8 COLLATE utf8_general_ci;'
   - chmod +x mvnw
