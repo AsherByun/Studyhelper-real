@@ -13,7 +13,8 @@ public interface MemberService {
 	//회원가입 저장
 	Member saveMember(Member member);
 	//맴버가 속해있는 팀들을 가져온다
-	List<Team> findMemberTeamsById(String id);
+	List<Team> findMemberTeamsById(Member member);
 	//멤버가 팀을 매칭했을때 저장하는 서비스
 	MemberTeam saveMemberTeam(Member member, Team team);
+	
 }

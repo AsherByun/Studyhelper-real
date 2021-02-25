@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>로그인</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+	<h3>팀원들</h3>
+	<div th:each="member : ${members}" th:align="center" >
+		<div th:text="${member.id}"></div>
+	</div>
+</body>
+</html>
