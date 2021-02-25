@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.studyhelper.domain.entity.Matching;
 import com.studyhelper.domain.entity.Member;
+import com.studyhelper.domain.enums.Gender;
 import com.studyhelper.domain.enums.Region;
+import com.studyhelper.domain.enums.Role;
 import com.studyhelper.domain.enums.Subject;
 import com.studyhelper.domain.matching.MatchingRepository;
 import com.studyhelper.domain.member.MemberRepository;
+import com.studyhelper.domain.member.MemberService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class TestRestController {
 	private final MatchingRepository matchingRepository;
 	private final MemberRepository memberRepository;
+	private final MemberService memberService;
 
 	@GetMapping("/matching/all")
 	public List<Matching> getMatchingAll() {
@@ -33,8 +37,8 @@ public class TestRestController {
 		for(int i=0;i<100;i++) {
 			Member member = memberRepository.findById("king"+i).get();
 			Matching matching = new Matching();
-			matching.setRegion(Region.values()[(i+1)%4]);
-			matching.setSubject(Subject.values()[(i+1)%4]);
+			matching.setRegion(Region.values()[(i+3)%4]);
+			matching.setSubject(Subject.values()[(i+3)%4]);
 			matching.setSize(4);
 			matching.setMemberId(member.getId());
 			
@@ -43,12 +47,24 @@ public class TestRestController {
 	}
 	@GetMapping("/matching/teams")
 	public void matchingTeams() {
-//		List<Member> members = memberRepository.findAll();
-//		for(Member member:members) {
-//			System.out.println(member.getId() +"  "+member.getMemberTeams().size());
-//		}
-		LocalDate localDate = LocalDate.now();
-		String time = localDate.toString();
-		System.out.println(time);
+		List<Member> members = memberRepository.findAll();
+		for(Member member:members) {
+			System.out.println(member.getId() +"  "+member.getMemberTeams().size());
+		}
+	}
+	@GetMapping("/member/make")
+	public void makeMember() {
+		for(int i=0;i<100;i++) {
+			Member member = new Member();
+			member.setAge(26);
+			member.setGender(Gender.MAN);
+			member.setId("king"+i);
+			member.setName("king"+i);
+			member.setNickName("king"+i);
+			member.setPassword("1234");
+			member.setRole(Role.ROLE_MEMBER);
+			
+			memberService.saveMember(member);
+		}
 	}
 }

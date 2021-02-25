@@ -5,3 +5,7 @@ document.getElementById("goMailBtn").addEventListener("click", function() {
 document.getElementById("goMatchingBtn").addEventListener("click", function() {
 	location.href = "/matching/request";
 })
+
+document.getElementById("goTeam").addEventListener("click", function() {
+	location.href = "/team/teamList";
+})

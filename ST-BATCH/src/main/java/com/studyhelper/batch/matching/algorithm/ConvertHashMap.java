@@ -6,7 +6,9 @@ import java.util.Iterator;
 import com.studyhelper.domain.enums.Region;
 import com.studyhelper.domain.enums.Subject;
 
-
+/*
+ * 
+ */
 public class ConvertHashMap {
 	public HashMap<String,Integer> converter;
 	

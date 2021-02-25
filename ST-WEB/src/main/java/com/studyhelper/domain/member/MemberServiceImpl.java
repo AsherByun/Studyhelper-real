@@ -46,13 +46,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Team> findMemberTeamsById(String id) {
-		Optional<Member> memberOptional = memberRepository.findById(id);
-		// null값대신 여기서 try catch나 exception 설정해주도록하자
-		if (!memberOptional.isPresent()) {
-			return null;
-		}
-		Member member = memberOptional.get();
+	public List<Team> findMemberTeamsById(Member member) {
 		List<Team> teams = new ArrayList<Team>();
 
 		for (MemberTeam memberTeam : member.getMemberTeams()) {
