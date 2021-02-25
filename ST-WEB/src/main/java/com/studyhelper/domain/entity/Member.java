@@ -51,9 +51,6 @@ public class Member {
 	@OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
-	@OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
-	private Set<Matching> matchs = new HashSet<Matching>();
-
 	public void addMemberTeams(MemberTeam memberTeam) {
 		memberTeams.add(memberTeam);
 	}

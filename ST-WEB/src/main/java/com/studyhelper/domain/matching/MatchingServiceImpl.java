@@ -5,18 +5,21 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.studyhelper.domain.entity.Matching;
+import com.studyhelper.domain.entity.Member;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class MatchingServiceImpl implements MatchingService{
-	public final MatchingRepository matchRepository;
+	private final MatchingRepository matchingRepository;
 	
-	@Transactional
 	@Override
-	public void insertMatching(Matching matching) {
-		matchRepository.save(matching);
+	@Transactional
+	public void saveMatching(Member member,Matching matching) {
+		matching.setMemberId(member.getId());
+		
+		matchingRepository.save(matching);
 	}
 
 }

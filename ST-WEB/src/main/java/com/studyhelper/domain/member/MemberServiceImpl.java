@@ -74,31 +74,4 @@ public class MemberServiceImpl implements MemberService {
 		return memberTeam;
 	}
 
-	@Transactional
-	@Override
-	public Matching saveMatching(Member member, Matching matching) {
-		matching.setMember(member);
-		matchRepository.save(matching);
-
-		return matching;
-	}
-
-	@Transactional
-	@Override
-	public List<Matching> findMatchingsById(String id) {
-		Optional<Member> memberOptional = memberRepository.findById(id);
-
-		if (!memberOptional.isPresent()) {
-			return null;
-		}
-		Member member = memberOptional.get();
-
-		List<Matching> matchings = new ArrayList<Matching>();
-		for (Matching matching : member.getMatchs()) { // n+1 문제.
-			matchings.add(matching);
-		}
-
-		return matchings;
-	}
-
 }

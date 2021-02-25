@@ -1,52 +1,24 @@
 package com.studyhelper.domain.entity;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
 import com.studyhelper.domain.enums.Region;
 import com.studyhelper.domain.enums.Subject;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@Entity
 @Setter
 @Getter
-@Table(name = "MATCHING")
+@RedisHash("matchings")
 public class Matching {
 	@Id
-	@GeneratedValue
-	private Long seq;
-	
+	private String seq;
 	private int size;
-	@Enumerated(EnumType.STRING)
 	private Region region;
-	@Enumerated(EnumType.STRING)
 	private Subject subject;
-	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date requestMatchingDate;
-	
-	@ManyToOne
-	@JoinColumn(name = "member_id")
-	private Member member;
+	private String memberId;
 
-	public void setMember(Member member) {
-		this.member = member;
-		member.getMatchs().add(this);
-	}
-	
 }
