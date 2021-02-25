@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>매칭신청</title>
+</head>
+<body th:align="center">
+	<h1>매칭신청</h1>
+	<form method="post" th:action="@{/matching/request}">
+		<table th:align="center" border="1" th:cellpadding="0"
+			th:cellspacing="0">
+			<tr>
+				<td bgcolor="orange" >과목</td>
+				<td>
+					<select th:name="subject">
+						<option value="PROGRAMMING_JAVA">자바</option>
+						<option value="PROGRAMMING_PYTHON">파이썬</option>
+						<option value="PROGRAMMING_C">c언어</option>
+						<option value="PROGRAMMING_CPP">c++</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="orange" >지역</td>
+				<td>
+					<select th:name="region">
+						<option value="SEOUL_SHINCHON">신촌</option>
+						<option value="SEOUL_GEONDAE">건대</option>
+						<option value="SEOUL_HONGDAE">홍대</option>
+						<option value="SEOUL_GANGNAM">강남</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="orange">선호인원</td>
+				<td><input type="text" name="size" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="매칭신청" />
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
