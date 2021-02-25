@@ -79,12 +79,7 @@ public class MatchTrie {
 			teamRepository.save(team);
 			for (Matching matching : matchs[regionNum][subjectNum][sizeNum]) {
 				Optional<Member> member = memberRepository.findById(matching.getMemberId());
-
-				if (member.isEmpty()) {
-					matchs[regionNum][subjectNum][sizeNum].remove(member);
-					matchingRepository.delete(match);
-					return null;
-				}
+				//회원 탈퇴시 매칭정보도 삭제해줘야함
 
 				MemberTeam memberTeam = memberService.matchingTeamByMembers(member.get(), team);
 				matchingRepository.delete(matching);
