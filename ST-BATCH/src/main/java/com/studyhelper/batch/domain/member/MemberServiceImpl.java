@@ -22,33 +22,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class MemberServiceImpl implements MemberService {
-	public final MemberRepository memberRepository;
-	public final MemberTeamRepository memberTeamRepository;
-	public final TeamRepository teamRepository;
-	public final MatchingRepository matchRepository;
-
-	@Transactional(readOnly = true)
-	@Override
-	public List<Team> findMemberTeamsById(String id) {
-		Optional<Member> memberOptional = memberRepository.findById(id);
-		// null값대신 여기서 try catch나 exception 설정해주도록하자
-		if (!memberOptional.isPresent()) {
-			return null;
-		}
-		Member member = memberOptional.get();
-		List<Team> teams = new ArrayList<Team>();
-
-		for (MemberTeam memberTeam : member.getMemberTeams()) {
-			Team team = memberTeam.getTeam();
-			teams.add(team);
-		}
-
-		return teams;
-	}
+	private final MemberRepository memberRepository;
+	private final MemberTeamRepository memberTeamRepository;
+	private final TeamRepository teamRepository;
+	private final MatchingRepository matchingRepository;
 
 	@Transactional
 	@Override
-	public MemberTeam saveMemberTeam(Member member, Team team) {
+	public List<Matching> findMatchingsById(String id) {
+
+		return matchingRepository.findAll();
+	}
+	
+	@Transactional
+	@Override
+	public MemberTeam matchingTeamByMembers(Member member, Team team) {
 		MemberTeam memberTeam = new MemberTeam();
 		memberTeam.setMember(member);
 		memberTeam.setTeam(team);
