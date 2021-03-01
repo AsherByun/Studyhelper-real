@@ -7306,3 +7306,4 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/chat
 2021-03-01 19:37:50.704  INFO 23968 --- [http-nio-8081-exec-7] c.s.domain.team.TeamServiceImpl          : king72 추가
 2021-03-01 19:37:50.705  INFO 23968 --- [http-nio-8081-exec-7] c.s.domain.team.TeamServiceImpl          : king0 추가
 2021-03-01 19:37:50.705  INFO 23968 --- [http-nio-8081-exec-7] c.s.domain.team.TeamServiceImpl          : king64 추가
+2021-03-01 19:37:50.705  INFO 23968 --- [http-nio-8081-exec-7] c.s.domain.team.TeamServiceImpl          : king24 추가

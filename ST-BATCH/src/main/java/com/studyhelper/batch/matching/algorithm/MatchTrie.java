@@ -82,9 +82,6 @@ public class MatchTrie {
 			for (Matching matching : matchs[regionNum][subjectNum][sizeNum]) {
 				Optional<Member> member = memberRepository.findById(matching.getMemberId());
 				//회원 탈퇴시 매칭정보도 삭제해줘야함
-				if (member.isEmpty()) {
-					return Optional.ofNullable(null);
-				}
 				
 				MemberTeam memberTeam = memberService.matchingTeamByMembers(member.get(), team);
 				matchingRepository.delete(matching);
