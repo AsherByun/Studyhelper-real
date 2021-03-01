@@ -15,7 +15,7 @@
 		</h3>
 	</div>
 	<div th:align="center"><input type="button" value="쪽지확인" id="goMailBtn"/></div>
-	<div th:align="center"><input type="button" value="메칭하기" id="goMatchingBtn"/></div>
+	<div th:align="center"><input type="button" value="매칭하기" id="goMatchingBtn"/></div>
 	<span sec:authorize="hasAnyRole('ROLE_HAVEGROUP','ROLE_ADMIN','ROLE_MEMBER')">
 		<div th:if = "${teams != null}" th:align="center">
 			<input type="button" value="내 스터디로 가기" id="goTeam"/>

@@ -30,7 +30,8 @@ public class Team {
 	private Long seq;
 
 	private String teamName;
-
+	private String chatRoomId;
+	
 	@OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 

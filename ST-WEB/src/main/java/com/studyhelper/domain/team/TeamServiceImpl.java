@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.studyhelper.domain.chat.dto.ChatRoom;
 import com.studyhelper.domain.entity.Member;
 import com.studyhelper.domain.entity.MemberTeam;
 import com.studyhelper.domain.entity.Team;
@@ -34,6 +35,14 @@ public class TeamServiceImpl implements TeamService{
 		}
 		
 		return members;
+	}
+	
+	@Transactional
+	@Override
+	public Team saveTeamChatId(Team team, ChatRoom chatRoom) {
+		team.setChatRoomId(chatRoom.getRoomId());
+		
+		return team;
 	}
 
 }
