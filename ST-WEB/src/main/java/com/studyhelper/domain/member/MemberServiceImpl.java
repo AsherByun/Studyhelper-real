@@ -57,15 +57,4 @@ public class MemberServiceImpl implements MemberService {
 		return teams;
 	}
 
-	@Transactional
-	@Override
-	public MemberTeam saveMemberTeam(Member member, Team team) {
-		MemberTeam memberTeam = new MemberTeam();
-		memberTeam.setMember(member);
-		memberTeam.setTeam(team);
-		
-		memberTeamRepository.save(memberTeam);
-		return memberTeam;
-	}
-
 }
