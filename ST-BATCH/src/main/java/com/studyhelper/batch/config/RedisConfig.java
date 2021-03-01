@@ -15,12 +15,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 @EnableRedisRepositories
 public class RedisConfig {
-	@Value("${spring.redis.host}")
-	private String redisHost;
-
-	@Value("${spring.redis.port}")
-	private int redisPort;
-
+	
 	@Bean
 	public RedisMessageListenerContainer redisMessageListenerContainer(RedisConnectionFactory connectionFactory) {
 		RedisMessageListenerContainer container = new RedisMessageListenerContainer();

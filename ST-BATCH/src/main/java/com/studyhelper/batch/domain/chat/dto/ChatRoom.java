@@ -1,4 +1,4 @@
-package com.studyhelper.batch.domain.dto;
+package com.studyhelper.batch.domain.chat.dto;
 
 import java.io.Serializable;
 import java.util.UUID;

@@ -41,6 +41,7 @@ public class TestRestController {
 			matching.setSubject(Subject.values()[(i+3)%4]);
 			matching.setSize(4);
 			matching.setMemberId(member.getId());
+			matching.setRequestMatchingDate(LocalDate.now().toString());
 			
 			matchingRepository.save(matching);
 		}

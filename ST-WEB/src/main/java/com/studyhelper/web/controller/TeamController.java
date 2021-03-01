@@ -6,23 +6,46 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.studyhelper.domain.chat.dao.ChatRoomRepository;
+import com.studyhelper.domain.chat.dto.ChatRoom;
+import com.studyhelper.domain.chat.pubsub.RedisPublisher;
 import com.studyhelper.domain.entity.Member;
 import com.studyhelper.domain.entity.Team;
 import com.studyhelper.domain.member.MemberService;
+import com.studyhelper.domain.team.TeamRepository;
 import com.studyhelper.domain.team.TeamService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
 @Controller
+@Slf4j
 public class TeamController {
+	private final RedisPublisher redisPublisher;
+	private final ChatRoomRepository chatRoomRepository;
 	private final MemberService memberSerivce;
 	private final TeamService teamService;
+	private final TeamRepository teamRepository;
+	
+	@GetMapping("/team/chatting")
+	public String teamChatting(Team team,Model model) {
+		team = teamRepository.findById(team.getSeq()).get();
+		
+		if (team.getChatRoomId()==null) {
+			ChatRoom chatRoom = chatRoomRepository.createChatRoom(team.getSeq().toString());
+			team = teamService.saveTeamChatId(team, chatRoom);
+		}
+		
+		return "/chat/room";
+	}
 	
 	@GetMapping("/team/main")
 	public String teamMain(Team team,Model model) {
 		List<Member> teamMembers = teamService.findMembersSameTeams(team);
+		Team targetTeam = teamRepository.findById(team.getSeq()).get();
 		
+		model.addAttribute("team", targetTeam);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";
 	}

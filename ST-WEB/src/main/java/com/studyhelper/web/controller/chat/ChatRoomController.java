@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.studyhelper.domain.chat.dao.ChatRoomRepository;
 import com.studyhelper.domain.chat.dto.ChatRoom;
 
-import jdk.internal.org.jline.utils.Log;
-
 import java.util.List;
 
 import org.springframework.stereotype.Controller;

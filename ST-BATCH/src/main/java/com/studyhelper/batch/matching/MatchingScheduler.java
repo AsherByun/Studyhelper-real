@@ -4,9 +4,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import com.studyhelper.batch.domain.chat.dao.ChatRoomRepository;
+import com.studyhelper.batch.domain.chat.dto.ChatRoom;
 import com.studyhelper.batch.domain.matching.MatchingRepository;
 import com.studyhelper.batch.domain.matching.MatchingService;
 import com.studyhelper.batch.domain.member.MemberRepository;
@@ -24,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MatchingScheduler {
 	private final MatchingRepository matchingRepository;
 	private final MatchTrie matchTrie;
+	private final ChatRoomRepository chatRoomRepository;
 	
 	@Scheduled(fixedDelay = 1000000)
 	public void runMatching() {
@@ -34,6 +39,11 @@ public class MatchingScheduler {
 		for(Matching matching:matchings) {
 			Optional<Team> team = matchTrie.pushMatching(matching);
 			if (team.isPresent()) {
+				//팀이 생성됐다면 채팅방을 맵핑해줘야함
+				Team newTeam = team.get();
+				ChatRoom chatRoom = chatRoomRepository.createChatRoom(newTeam.getTeamName());
+				newTeam.setChatRoomId(chatRoom.getRoomId());
+				
 				log.info("매칭이 완료됐습니다 "+team.get().getTeamName());
 			}
 		}
