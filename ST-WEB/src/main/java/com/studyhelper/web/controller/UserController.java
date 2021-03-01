@@ -13,8 +13,10 @@ import com.studyhelper.domain.member.MemberService;
 import com.studyhelper.member.security.SecurityUser;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
+@Slf4j
 @RequiredArgsConstructor
 public class UserController {
 	private final MemberService memberService;
@@ -24,6 +26,7 @@ public class UserController {
 		
 		return "mailpage";
 	}
+	
 	@GetMapping("/team/teamList")
 	public String teamList(Model model,@AuthenticationPrincipal SecurityUser securityUser) {
 		Member member = securityUser.getMember();

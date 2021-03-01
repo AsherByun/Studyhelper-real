@@ -48,7 +48,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<Team> findMemberTeamsById(Member member) {
 		List<Team> teams = new ArrayList<Team>();
-
+		
 		for (MemberTeam memberTeam : member.getMemberTeams()) {
 			Team team = memberTeam.getTeam();
 			teams.add(team);

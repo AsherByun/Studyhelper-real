@@ -16,5 +16,8 @@
 
 	<h2>팀 게시판으로 가기</h2>
 	<a th:href="@{/team/boardLists(seq=${team.seq})}">팀 게시판으로 가기</a>
+	
+	<h2>팀 게시판</h2>
+	<a th:href="@{/board/insertBoard(seq=${team.seq})}">게시글 등록하기</a>
 </body>
 </html>

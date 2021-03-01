@@ -11,4 +11,5 @@ public interface TeamService{
 	List<Member> findMembersSameTeams(Team team);
 	//팀에 채팅방 아이디 넣기
 	Team saveTeamChatId(Team team,ChatRoom chatRoom);
+	
 }
