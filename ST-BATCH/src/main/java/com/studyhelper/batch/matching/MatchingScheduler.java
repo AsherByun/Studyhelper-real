@@ -23,8 +23,6 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class MatchingScheduler {
 	private final MatchingRepository matchingRepository;
-	private final MatchingService matchingService;
-	private final MemberRepository memberRepo;
 	private final MatchTrie matchTrie;
 	
 	@Scheduled(fixedDelay = 1000000)
