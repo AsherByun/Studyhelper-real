@@ -16,4 +16,6 @@ public interface MemberService {
 	List<Team> findMemberTeamsById(Member member);
 	//이팀에 속해있는지 파악
 	boolean isInThisTeam(Team team,Member member);
+	//현재 맴버의 권한등급을 바꿔준다. 팀이있으면 ROLE_TEAM으로 팀이없으면 ROLE_MEMBER
+	void changeRole(Member member);
 }
