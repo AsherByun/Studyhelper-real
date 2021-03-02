@@ -51,10 +51,15 @@ public class TeamController {
 	}
 
 	@GetMapping("/team/main")
-	public String teamMain(Team team, Model model) {
+	public String teamMain(Team team, Model model,@AuthenticationPrincipal SecurityUser securityUser) {
 		List<Member> teamMembers = teamService.findMembersSameTeams(team);
 		Team targetTeam = teamRepository.findById(team.getSeq()).get();
-
+		Member member = securityUser.getMember();
+		
+		if (!memberSerivce.isInThisTeam(team, member)) {
+			return "userpage";
+		}
+		
 		model.addAttribute("team", targetTeam);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";

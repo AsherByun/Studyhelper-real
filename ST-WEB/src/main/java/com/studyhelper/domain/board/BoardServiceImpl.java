@@ -40,9 +40,10 @@ public class BoardServiceImpl implements BoardService {
 	@Transactional
 	@Override
 	public List<Board> getBoardsByTeam(Team team) {
-		List<Board> boards = boardRepository.getBoardsByTeamSeq(team.getSeq());
-
-		return boards;
+		team = teamRepository.findTeamByFetchBoard(team.getSeq());
+		
+		
+		return team.getBoards();
 	}
 
 }

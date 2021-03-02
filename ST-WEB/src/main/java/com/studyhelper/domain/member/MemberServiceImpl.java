@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -55,6 +56,20 @@ public class MemberServiceImpl implements MemberService {
 		}
 
 		return teams;
+	}
+	
+	@Transactional
+	@Override
+	public boolean isInThisTeam(Team team, Member member) {
+		List<Team> teams = findMemberTeamsById(member);
+		
+		for(Team t:teams) {
+			if (t.getSeq().equals(team.getSeq())) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 }

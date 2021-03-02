@@ -40,7 +40,7 @@ public class TestRestController {
 	public String getBoardAll(@AuthenticationPrincipal SecurityUser securityUser){
 		
 		Member member = memberRepository.findById(securityUser.getMember().getId()).get();
-		Set<Board> boards = member.getBoards();
+		List<Board> boards = member.getBoards();
 		
 		for(Board board:boards) {
 			System.out.println(board.getTitle());

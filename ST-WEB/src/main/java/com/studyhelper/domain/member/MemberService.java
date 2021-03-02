@@ -14,5 +14,6 @@ public interface MemberService {
 	Member saveMember(Member member);
 	//맴버가 속해있는 팀들을 가져온다
 	List<Team> findMemberTeamsById(Member member);
-	
+	//이팀에 속해있는지 파악
+	boolean isInThisTeam(Team team,Member member);
 }

@@ -36,7 +36,7 @@ public class Team {
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
 	@OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
-	private Set<Board> boards = new HashSet<Board>();
+	private List<Board> boards = new ArrayList();
 	
 	public void addMemberTeams(MemberTeam memberTeam) {
 		memberTeams.add(memberTeam);
