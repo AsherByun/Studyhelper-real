@@ -26,5 +26,12 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 </table>
 </form>	
 <a th:href="@{/board/insertBoard(seq=${team.seq})}">글등록</a>
+
+<br><br><br><br><br>
+	<div th:align="center">
+		<form action="logout" method="get">
+			<input type="submit" value="로그아웃!!!!!"/>
+		</form>
+	</div>
 </body>
 </html>

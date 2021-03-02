@@ -9,5 +9,12 @@
 	<div th:each="team : ${teams}" th:align="center" >
 		<a th:href="@{/team/main(seq=${team.seq})}" th:text="${team.teamName} + '팀 으로 이동하기'"></a>
 	</div>
+	
+	<br><br><br><br><br>
+	<div th:align="center">
+		<form action="logout" method="get">
+			<input type="submit" value="로그아웃!!!!!"/>
+		</form>
+	</div>
 </body>
 </html>

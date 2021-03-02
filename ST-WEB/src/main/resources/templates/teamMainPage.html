@@ -19,8 +19,13 @@
 	
 	<h2>팀 게시판</h2>
 	<a th:href="@{/board/insertBoard(seq=${team.seq})}">게시글 등록하기</a>
-	
-	
 	<a th:href="@{/userpage}"><h2>유저 페이지로 돌아가기</h2></a>
+
+	<br><br><br><br><br>
+	<div th:align="center">
+		<form action="logout" method="get">
+			<input type="submit" value="로그아웃!!!!!"/>
+		</form>
+	</div>
 </body>
 </html>

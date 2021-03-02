@@ -1,831 +1,115 @@
-2021-03-01 16:31:49.930  INFO 27188 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 27188 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 16:31:49.939  INFO 27188 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 16:31:49.988  INFO 27188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 16:31:50.340  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:31:50.344  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:31:50.371  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-2021-03-01 16:31:50.477  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:31:50.478  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 16:31:50.509  INFO 27188 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 16:31:50.618  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 3 JPA repository interfaces.
-2021-03-01 16:31:50.625  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:31:50.625  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:31:50.639  INFO 27188 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:31:50.641  INFO 27188 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:31:50.641  INFO 27188 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:31:50.652  INFO 27188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 Redis repository interfaces.
-2021-03-01 16:31:51.170  INFO 27188 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 16:31:51.209  INFO 27188 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 16:31:51.315  INFO 27188 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 16:31:51.402  INFO 27188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 16:31:51.652  INFO 27188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 16:31:51.664  INFO 27188 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 16:31:52.229  INFO 27188 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 16:31:52.236  INFO 27188 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:31:52.266  WARN 27188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 16:31:52.768  WARN 27188 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 16:31:52.771  INFO 27188 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 16:31:52.789  INFO 27188 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 16:31:52.864  INFO 27188 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 16:31:52.912  INFO 27188 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.293 seconds (JVM running for 3.841)
-2021-03-01 16:31:52.913  INFO 27188 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 16:31:52.914 DEBUG 27188 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:31:53.443 ERROR 27188 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:31:53.445 DEBUG 27188 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:31:53.785  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:53.835  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:53.879  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:53.926  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:53.971  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:54.015  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:54.052  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:54.091  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:54.135  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:54.173  INFO 27188 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:31:54.198 ERROR 27188 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.util.NoSuchElementException: No value present
-	at java.base/java.util.Optional.get(Optional.java:141) ~[na:na]
-	at com.studyhelper.batch.matching.algorithm.MatchTrie.pushMatching(MatchTrie.java:84) ~[classes/:na]
-	at com.studyhelper.batch.matching.MatchingScheduler.runMatching(MatchingScheduler.java:41) ~[classes/:na]
-	at com.studyhelper.batch.matching.MatchingScheduler$$FastClassBySpringCGLIB$$c4860845.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.3.jar:5.3.3]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.3.jar:5.3.3]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.3.jar:5.3.3]
-	at com.studyhelper.batch.matching.MatchingScheduler$$EnhancerBySpringCGLIB$$fa0f1a92.runMatching(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:45:04.424  INFO 27188 --- [RMI TCP Connection(21)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 16:45:04.429  INFO 27188 --- [RMI TCP Connection(21)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 16:45:04.432  INFO 27188 --- [RMI TCP Connection(21)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:45:04.441  INFO 27188 --- [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 16:45:04.454  INFO 27188 --- [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 16:51:14.430  INFO 5508 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 5508 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 16:51:14.437  INFO 5508 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 16:51:14.480  INFO 5508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 16:51:14.848  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:51:14.849  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:51:14.863  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 16:51:14.960  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:51:14.961  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 16:51:14.998  INFO 5508 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 16:51:15.104  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 3 JPA repository interfaces.
-2021-03-01 16:51:15.112  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:51:15.112  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:51:15.126  INFO 5508 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:51:15.127  INFO 5508 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:51:15.128  INFO 5508 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:51:15.140  INFO 5508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 Redis repository interfaces.
-2021-03-01 16:51:15.653  INFO 5508 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 16:51:15.693  INFO 5508 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 16:51:15.800  INFO 5508 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 16:51:15.887  INFO 5508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 16:51:16.136  INFO 5508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 16:51:16.148  INFO 5508 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 16:51:16.723  INFO 5508 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 16:51:16.729  INFO 5508 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:51:16.761  INFO 5508 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-03-01 16:51:17.259  WARN 5508 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 16:51:17.262  INFO 5508 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 16:51:17.279  INFO 5508 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 16:51:17.353  INFO 5508 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 16:51:17.411  INFO 5508 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.281 seconds (JVM running for 3.84)
-2021-03-01 16:51:17.413  INFO 5508 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 16:51:17.413 DEBUG 5508 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:51:17.896 ERROR 5508 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:51:17.900 DEBUG 5508 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:51:18.213  INFO 5508 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 16:51:18.214  INFO 5508 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 16:51:18.223 ERROR 5508 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.util.NoSuchElementException: No value present
-	at java.base/java.util.Optional.get(Optional.java:141) ~[na:na]
-	at com.studyhelper.batch.matching.algorithm.MatchTrie.pushMatching(MatchTrie.java:84) ~[classes/:na]
-	at com.studyhelper.batch.matching.MatchingScheduler.runMatching(MatchingScheduler.java:41) ~[classes/:na]
-	at com.studyhelper.batch.matching.MatchingScheduler$$FastClassBySpringCGLIB$$c4860845.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.3.jar:5.3.3]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.3.jar:5.3.3]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.3.jar:5.3.3]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.3.jar:5.3.3]
-	at com.studyhelper.batch.matching.MatchingScheduler$$EnhancerBySpringCGLIB$$29076d7c.runMatching(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:53:15.844  INFO 5508 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 16:53:15.847  INFO 5508 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 16:53:15.848  INFO 5508 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:53:15.853  INFO 5508 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 16:53:15.859  INFO 5508 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 16:53:34.771  INFO 15608 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 15608 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 16:53:34.778  INFO 15608 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 16:53:34.811  INFO 15608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 16:53:35.217  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:53:35.218  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:53:35.237  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 16:53:35.331  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:53:35.332  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 16:53:35.366  INFO 15608 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 16:53:35.474  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 3 JPA repository interfaces.
-2021-03-01 16:53:35.482  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:53:35.482  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:53:35.496  INFO 15608 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:53:35.498  INFO 15608 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:53:35.498  INFO 15608 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:53:35.510  INFO 15608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 Redis repository interfaces.
-2021-03-01 16:53:36.054  INFO 15608 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 16:53:36.094  INFO 15608 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 16:53:36.204  INFO 15608 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 16:53:36.288  INFO 15608 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 16:53:36.557  INFO 15608 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 16:53:36.569  INFO 15608 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 16:53:37.145  INFO 15608 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 16:53:37.152  INFO 15608 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:53:37.180  INFO 15608 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-03-01 16:53:37.669  WARN 15608 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 16:53:37.672  INFO 15608 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 16:53:37.690  INFO 15608 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 16:53:37.758  INFO 15608 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 16:53:37.812  INFO 15608 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.327 seconds (JVM running for 3.933)
-2021-03-01 16:53:37.814  INFO 15608 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 16:53:37.814 DEBUG 15608 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:53:38.300 ERROR 15608 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:53:38.485 DEBUG 15608 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:53:38.558 ERROR 15608 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.util.NoSuchElementException: No value present
-	at java.base/java.util.Optional.get(Optional.java:141) ~[na:na]
-	at com.studyhelper.batch.matching.algorithm.MatchTrie.pushMatching(MatchTrie.java:84) ~[classes/:na]
-	at com.studyhelper.batch.matching.MatchingScheduler.runMatching(MatchingScheduler.java:40) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:55:15.614  INFO 15608 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 16:55:15.617  INFO 15608 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 16:55:15.618  INFO 15608 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:55:15.622  INFO 15608 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 16:55:15.630  INFO 15608 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 16:56:14.344  INFO 29648 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 29648 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 16:56:14.350  INFO 29648 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 16:56:14.397  INFO 29648 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 16:56:14.778  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:56:14.778  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:56:14.793  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 16:56:14.893  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:56:14.894  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 16:56:14.932  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 16:56:15.067  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169 ms. Found 3 JPA repository interfaces.
-2021-03-01 16:56:15.077  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 16:56:15.077  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 16:56:15.092  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:56:15.094  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:56:15.095  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 16:56:15.106  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 Redis repository interfaces.
-2021-03-01 16:56:15.624  INFO 29648 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 16:56:15.665  INFO 29648 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 16:56:15.779  INFO 29648 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 16:56:15.861  INFO 29648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 16:56:16.112  INFO 29648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 16:56:16.125  INFO 29648 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 16:56:16.690  INFO 29648 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 16:56:16.696  INFO 29648 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 16:56:16.725  INFO 29648 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-03-01 16:56:17.220  WARN 29648 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 16:56:17.223  INFO 29648 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 16:56:17.241  INFO 29648 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 16:56:17.311  INFO 29648 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 16:56:17.359  INFO 29648 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.34 seconds (JVM running for 3.897)
-2021-03-01 16:56:17.361  INFO 29648 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 16:56:17.361 DEBUG 29648 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:56:17.841 ERROR 29648 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 16:56:18.034 DEBUG 29648 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 16:56:18.099 ERROR 29648 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.util.NoSuchElementException: No value present
-	at java.base/java.util.Optional.get(Optional.java:141) ~[na:na]
-	at com.studyhelper.batch.matching.algorithm.MatchTrie.pushMatching(MatchTrie.java:84) ~[classes/:na]
-	at com.studyhelper.batch.matching.MatchingScheduler.runMatching(MatchingScheduler.java:39) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 17:00:42.020  INFO 29648 --- [Thread-4] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:00:42.023  INFO 29648 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:00:42.032  INFO 29648 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 17:00:42.041  INFO 29648 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 17:00:42.214  INFO 29648 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 29648 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:00:42.215  INFO 29648 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:00:42.344  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:00:42.344  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:00:42.346  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:00:42.378  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:00:42.379  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:00:42.394  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:00:42.415  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:00:42.417  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:00:42.417  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:00:42.429  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:00:42.430  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:00:42.430  INFO 29648 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:00:42.441  INFO 29648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:00:42.511  INFO 29648 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:00:42.516  INFO 29648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2021-03-01 17:00:42.530  INFO 29648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2021-03-01 17:00:42.531  INFO 29648 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:00:42.609  INFO 29648 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:00:42.609  INFO 29648 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:00:42.621  INFO 29648 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-03-01 17:00:42.763  WARN 29648 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:00:42.763  INFO 29648 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:00:42.763  INFO 29648 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:00:42.796  INFO 29648 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:00:42.807  INFO 29648 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 0.616 seconds (JVM running for 269.345)
-2021-03-01 17:00:42.808  INFO 29648 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:00:42.808 DEBUG 29648 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:00:42.809  INFO 29648 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-03-01 17:00:43.045 ERROR 29648 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 17:00:43.272 DEBUG 29648 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:00:43.389  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.464  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.536  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.608  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.678  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.735  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.792  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.863  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.921  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:43.991  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.072  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.131  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.184  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.241  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.306  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.393  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.463  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.527  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.588  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.661  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.715  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.768  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.823  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.873  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:44.949  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:45.012  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:45.083  INFO 29648 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:00:48.855  INFO 29648 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 17:00:48.857  INFO 29648 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:00:48.858  INFO 29648 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:00:48.859  INFO 29648 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2021-03-01 17:00:48.864  INFO 29648 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2021-03-01 17:03:13.054  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 24244 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:03:13.060  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:03:13.094  INFO 24244 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 17:03:13.458  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:03:13.458  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:03:13.472  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:03:13.573  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:03:13.574  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:03:13.608  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:03:13.714  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:03:13.722  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:03:13.722  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:03:13.735  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:03:13.737  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:03:13.737  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:03:13.749  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:03:14.298  INFO 24244 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:03:14.345  INFO 24244 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 17:03:14.464  INFO 24244 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 17:03:14.554  INFO 24244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 17:03:14.812  INFO 24244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 17:03:14.825  INFO 24244 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:03:15.379  INFO 24244 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:03:15.385  INFO 24244 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:03:15.419  WARN 24244 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:03:15.908  WARN 24244 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:03:15.912  INFO 24244 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:03:15.930  INFO 24244 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:03:16.003  INFO 24244 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:03:16.051  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.271 seconds (JVM running for 3.844)
-2021-03-01 17:03:16.053  INFO 24244 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:03:16.053 DEBUG 24244 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:03:16.486 ERROR 24244 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 17:03:16.604 DEBUG 24244 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:03:16.764  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:16.829  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:16.892  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:16.951  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.011  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.062  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.119  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.168  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.219  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.267  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.318  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.365  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.416  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.465  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.525  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.573  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.624  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.671  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.723  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.771  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.820  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.868  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.918  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:03:17.962  INFO 24244 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : BASE  매칭되었습니다
-2021-03-01 17:04:14.167  INFO 24244 --- [Thread-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:04:14.171  INFO 24244 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:04:14.175  INFO 24244 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 17:04:14.182  INFO 24244 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 17:04:14.357  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 24244 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:04:14.358  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:04:14.464  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:04:14.464  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:04:14.466  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:04:14.491  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:04:14.491  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:04:14.507  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:04:14.529  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:04:14.533  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:04:14.533  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:04:14.545  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:04:14.545  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:04:14.545  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:04:14.558  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:04:14.626  INFO 24244 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:04:14.631  INFO 24244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2021-03-01 17:04:14.655  INFO 24244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2021-03-01 17:04:14.655  INFO 24244 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:04:14.725  INFO 24244 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:04:14.725  INFO 24244 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:04:14.736  WARN 24244 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:04:14.881  WARN 24244 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:04:14.882  INFO 24244 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:04:14.882  INFO 24244 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:04:14.911  INFO 24244 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:04:14.922  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 0.586 seconds (JVM running for 62.716)
-2021-03-01 17:04:14.923  INFO 24244 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:04:14.923 DEBUG 24244 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:04:14.924  INFO 24244 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-03-01 17:04:14.942 ERROR 24244 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 17:04:17.478  INFO 24244 --- [Thread-9] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:04:17.480  INFO 24244 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:04:17.481  INFO 24244 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2021-03-01 17:04:17.489  INFO 24244 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2021-03-01 17:04:17.661  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 24244 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:04:17.661  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:04:17.759  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:04:17.759  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:04:17.761  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:04:17.784  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:04:17.785  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:04:17.801  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:04:17.821  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:04:17.824  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:04:17.824  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:04:17.835  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:04:17.835  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:04:17.836  INFO 24244 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:04:17.845  INFO 24244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:04:17.907  INFO 24244 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:04:17.912  INFO 24244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2021-03-01 17:04:17.926  INFO 24244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2021-03-01 17:04:17.926  INFO 24244 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:04:17.986  INFO 24244 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:04:17.986  INFO 24244 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:04:17.997  WARN 24244 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:04:18.119  WARN 24244 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:04:18.120  INFO 24244 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:04:18.120  INFO 24244 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:04:18.152  INFO 24244 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:04:18.163  INFO 24244 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 0.523 seconds (JVM running for 65.956)
-2021-03-01 17:04:18.164  INFO 24244 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:04:18.164 DEBUG 24244 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:04:18.165  INFO 24244 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-03-01 17:04:18.184 ERROR 24244 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 17:05:41.787  INFO 24244 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 17:05:41.789  INFO 24244 --- [RMI TCP Connection(12)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:05:41.790  INFO 24244 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:05:41.791  INFO 24244 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2021-03-01 17:05:41.797  INFO 24244 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2021-03-01 17:06:29.920  INFO 16008 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 16008 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:06:29.927  INFO 16008 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:06:29.967  INFO 16008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 17:06:30.331  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:06:30.332  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:06:30.346  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:06:30.448  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:06:30.449  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:06:30.481  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:06:30.588  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:06:30.596  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:06:30.596  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:06:30.610  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:06:30.612  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:06:30.613  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:06:30.624  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:06:31.131  INFO 16008 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:06:31.169  INFO 16008 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 17:06:31.278  INFO 16008 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 17:06:31.363  INFO 16008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 17:06:31.615  INFO 16008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 17:06:31.627  INFO 16008 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:06:32.180  INFO 16008 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:06:32.186  INFO 16008 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:06:32.217  WARN 16008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:06:32.704  WARN 16008 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:06:32.707  INFO 16008 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:06:32.724  INFO 16008 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:06:32.798  INFO 16008 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:06:32.848  INFO 16008 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.216 seconds (JVM running for 3.772)
-2021-03-01 17:06:32.849  INFO 16008 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:06:32.849 DEBUG 16008 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:06:33.144 ERROR 16008 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: text
-	at java.base/java.util.Objects.requireNonNull(Objects.java:247) ~[na:na]
-	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1949) ~[na:na]
-	at java.base/java.time.LocalDate.parse(LocalDate.java:429) ~[na:na]
-	at com.studyhelper.batch.matching.DeleteJobScheduler.runDeleteJob(DeleteJobScheduler.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.3.jar:5.3.3]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-01 17:10:38.625  INFO 16008 --- [Thread-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:10:38.627  INFO 16008 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:10:38.635  INFO 16008 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 17:10:38.650  INFO 16008 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 17:10:38.844  INFO 16008 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 16008 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:10:38.844  INFO 16008 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:10:38.951  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:10:38.951  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:10:38.953  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:10:38.977  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:10:38.977  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:10:38.993  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:10:39.010  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:10:39.013  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:10:39.013  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:10:39.023  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:10:39.024  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:10:39.024  INFO 16008 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:10:39.033  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:10:39.100  INFO 16008 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:10:39.104  INFO 16008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2021-03-01 17:10:39.119  INFO 16008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2021-03-01 17:10:39.120  INFO 16008 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:10:39.190  INFO 16008 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:10:39.190  INFO 16008 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:10:39.202  WARN 16008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:10:39.342  WARN 16008 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:10:39.342  INFO 16008 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:10:39.343  INFO 16008 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:10:39.374  INFO 16008 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:10:39.386  INFO 16008 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 0.564 seconds (JVM running for 250.309)
-2021-03-01 17:10:39.387  INFO 16008 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:10:39.387 DEBUG 16008 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:10:39.389  INFO 16008 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-03-01 17:10:39.683 DEBUG 16008 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:10:39.817  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:39.878  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:39.940  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.018  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.074  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.128  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.181  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.244  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.303  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.355  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.405  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.453  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.502  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.564  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.629  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.690  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.735  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.783  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.831  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.878  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.926  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:40.988  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:41.036  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:10:41.081  INFO 16008 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:12:36.777  INFO 16008 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 17:12:36.778  INFO 16008 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:12:36.779  INFO 16008 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:12:36.780  INFO 16008 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2021-03-01 17:12:36.785  INFO 16008 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2021-03-01 17:14:17.790  INFO 24840 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 24840 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:14:17.796  INFO 24840 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:14:17.835  INFO 24840 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 17:14:18.214  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:14:18.214  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:14:18.229  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:14:18.336  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:14:18.337  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:14:18.368  INFO 24840 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:14:18.473  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:14:18.480  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:14:18.480  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:14:18.494  INFO 24840 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:14:18.495  INFO 24840 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:14:18.496  INFO 24840 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:14:18.507  INFO 24840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:14:19.019  INFO 24840 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:14:19.059  INFO 24840 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 17:14:19.170  INFO 24840 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 17:14:19.257  INFO 24840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 17:14:19.520  INFO 24840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 17:14:19.534  INFO 24840 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:14:20.134  INFO 24840 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:14:20.141  INFO 24840 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:14:20.174  WARN 24840 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:14:20.704  WARN 24840 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:14:20.707  INFO 24840 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:14:20.724  INFO 24840 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:14:20.800  INFO 24840 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:14:20.848  INFO 24840 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.343 seconds (JVM running for 3.901)
-2021-03-01 17:14:20.850  INFO 24840 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:14:20.850 DEBUG 24840 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:14:23.795  INFO 24840 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 17:14:23.797  INFO 24840 --- [RMI TCP Connection(6)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:14:23.798  INFO 24840 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:14:23.802  INFO 24840 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 17:14:23.809  INFO 24840 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-01 17:15:00.684  INFO 20848 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 20848 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-01 17:15:00.690  INFO 20848 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-01 17:15:00.735  INFO 20848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-01 17:15:01.138  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:15:01.139  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:15:01.154  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-03-01 17:15:01.268  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:15:01.269  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-01 17:15:01.305  INFO 20848 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-01 17:15:01.417  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 3 JPA repository interfaces.
-2021-03-01 17:15:01.427  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-01 17:15:01.428  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-01 17:15:01.444  INFO 20848 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:15:01.446  INFO 20848 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:15:01.447  INFO 20848 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-01 17:15:01.458  INFO 20848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 Redis repository interfaces.
-2021-03-01 17:15:01.989  INFO 20848 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-01 17:15:02.030  INFO 20848 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-01 17:15:02.135  INFO 20848 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-01 17:15:02.220  INFO 20848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-01 17:15:02.467  INFO 20848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-01 17:15:02.480  INFO 20848 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-01 17:15:03.040  INFO 20848 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-01 17:15:03.046  INFO 20848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:15:03.074  WARN 20848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2021-03-01 17:15:03.573  WARN 20848 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2021-03-01 17:15:03.576  INFO 20848 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2021-03-01 17:15:03.596  INFO 20848 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2021-03-01 17:15:03.668  INFO 20848 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-03-01 17:15:03.722  INFO 20848 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.347 seconds (JVM running for 3.896)
-2021-03-01 17:15:03.724  INFO 20848 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
-2021-03-01 17:15:03.724 DEBUG 20848 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:15:04.296 DEBUG 20848 --- [scheduling-1] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
-2021-03-01 17:15:04.450  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.527  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.592  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.657  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.713  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.768  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.822  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.873  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.928  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:04.988  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.044  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.094  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.145  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.196  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.252  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.301  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.349  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.402  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.449  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.501  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.548  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.604  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.657  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:05.707  INFO 20848 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭이 완료됐습니다 BASE
-2021-03-01 17:15:18.816  INFO 20848 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-03-01 17:15:18.820  INFO 20848 --- [RMI TCP Connection(6)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2021-03-01 17:15:18.823  INFO 20848 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-01 17:15:18.831  INFO 20848 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-01 17:15:18.844  INFO 20848 --- [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 22:18:42.178  INFO 28212 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 28212 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
+2021-03-02 22:18:42.194  INFO 28212 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
+2021-03-02 22:18:42.247  INFO 28212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-02 22:18:42.719  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:18:42.721  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-02 22:18:42.740  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2021-03-02 22:18:42.861  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:18:42.862  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 22:18:42.904  INFO 28212 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-02 22:18:43.056  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 190 ms. Found 3 JPA repository interfaces.
+2021-03-02 22:18:43.066  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:18:43.067  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-02 22:18:43.084  INFO 28212 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:18:43.087  INFO 28212 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:18:43.087  INFO 28212 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:18:43.101  INFO 28212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 Redis repository interfaces.
+2021-03-02 22:18:43.784  INFO 28212 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 22:18:43.826  INFO 28212 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 22:18:43.957  INFO 28212 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 22:18:44.055  INFO 28212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 22:18:44.337  INFO 28212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 22:18:44.350  INFO 28212 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-02 22:18:44.997  INFO 28212 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 22:18:45.005  INFO 28212 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:18:45.035  INFO 28212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-02 22:18:45.557  WARN 28212 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2021-03-02 22:18:45.561  INFO 28212 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2021-03-02 22:18:45.583  INFO 28212 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2021-03-02 22:18:45.667  INFO 28212 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-03-02 22:18:45.723  INFO 28212 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.875 seconds (JVM running for 4.602)
+2021-03-02 22:18:45.726  INFO 28212 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2021-03-02 22:18:45.726 DEBUG 28212 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
+2021-03-02 22:20:33.780  INFO 28212 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-02 22:20:33.784  INFO 28212 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-03-02 22:20:33.786  INFO 28212 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:20:33.791  INFO 28212 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 22:20:33.801  INFO 28212 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 22:21:03.330  INFO 23356 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 23356 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
+2021-03-02 22:21:03.339  INFO 23356 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
+2021-03-02 22:21:03.388  INFO 23356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-02 22:21:03.847  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:21:03.849  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-02 22:21:03.868  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2021-03-02 22:21:04.013  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:21:04.015  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 22:21:04.060  INFO 23356 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-02 22:21:04.196  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 175 ms. Found 3 JPA repository interfaces.
+2021-03-02 22:21:04.208  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:21:04.209  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-02 22:21:04.231  INFO 23356 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:21:04.233  INFO 23356 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:21:04.234  INFO 23356 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:21:04.249  INFO 23356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 Redis repository interfaces.
+2021-03-02 22:21:04.881  INFO 23356 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 22:21:04.923  INFO 23356 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 22:21:05.040  INFO 23356 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 22:21:05.131  INFO 23356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 22:21:05.416  INFO 23356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 22:21:05.429  INFO 23356 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-02 22:21:06.073  INFO 23356 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 22:21:06.080  INFO 23356 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:21:06.116  INFO 23356 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-02 22:21:06.641  WARN 23356 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2021-03-02 22:21:06.645  INFO 23356 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2021-03-02 22:21:06.663  INFO 23356 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2021-03-02 22:21:06.754  INFO 23356 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-03-02 22:21:06.819  INFO 23356 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 3.822 seconds (JVM running for 4.569)
+2021-03-02 22:21:06.821  INFO 23356 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2021-03-02 22:21:06.822 DEBUG 23356 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
+2021-03-02 22:21:07.162  INFO 23356 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭 시작!!!!
+2021-03-02 22:22:07.192  INFO 23356 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭 시작!!!!
+2021-03-02 22:22:16.338  INFO 23356 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-02 22:22:16.341  INFO 23356 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-03-02 22:22:16.343  INFO 23356 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:22:16.348  INFO 23356 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 22:22:16.358  INFO 23356 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-02 22:22:59.954  INFO 19404 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 19404 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
+2021-03-02 22:22:59.961  INFO 19404 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
+2021-03-02 22:23:00.006  INFO 19404 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-02 22:23:00.439  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:23:00.441  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-02 22:23:00.455  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2021-03-02 22:23:00.559  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:23:00.560  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-02 22:23:00.608  INFO 19404 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-02 22:23:00.795  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 228 ms. Found 3 JPA repository interfaces.
+2021-03-02 22:23:00.807  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-02 22:23:00.808  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-02 22:23:00.830  INFO 19404 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:23:00.832  INFO 19404 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:23:00.833  INFO 19404 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.batch.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-02 22:23:00.848  INFO 19404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 Redis repository interfaces.
+2021-03-02 22:23:01.565  INFO 19404 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-02 22:23:01.613  INFO 19404 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-02 22:23:01.781  INFO 19404 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-02 22:23:01.896  INFO 19404 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-02 22:23:02.191  INFO 19404 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-02 22:23:02.204  INFO 19404 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-02 22:23:02.907  INFO 19404 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-02 22:23:02.918  INFO 19404 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:23:02.954  INFO 19404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-02 22:23:03.513  WARN 19404 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2021-03-02 22:23:03.517  INFO 19404 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2021-03-02 22:23:03.542  INFO 19404 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2021-03-02 22:23:03.638  INFO 19404 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-03-02 22:23:03.695  INFO 19404 --- [scheduling-1] c.s.batch.matching.DeleteJobScheduler    : 매칭 삭제 시작!!
+2021-03-02 22:23:03.697  INFO 19404 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Started BatchApplication in 4.075 seconds (JVM running for 4.76)
+2021-03-02 22:23:03.700  INFO 19404 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2021-03-02 22:23:03.701 DEBUG 19404 --- [restartedMain] BatchConfiguration$ReferenceTargetSource : Initializing lazy target object
+2021-03-02 22:23:04.068  INFO 19404 --- [scheduling-1] c.s.batch.matching.MatchingScheduler     : 매칭 시작!!!!
+2021-03-02 22:23:06.786  INFO 19404 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-02 22:23:06.789  INFO 19404 --- [RMI TCP Connection(8)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2021-03-02 22:23:06.791  INFO 19404 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-02 22:23:06.797  INFO 19404 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-02 22:23:06.807  INFO 19404 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

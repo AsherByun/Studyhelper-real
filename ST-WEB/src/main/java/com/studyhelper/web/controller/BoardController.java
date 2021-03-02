@@ -18,6 +18,7 @@ import com.studyhelper.domain.entity.Board;
 import com.studyhelper.domain.entity.Member;
 import com.studyhelper.domain.entity.Team;
 import com.studyhelper.domain.team.TeamRepository;
+import com.studyhelper.exception.board.BoardNotFoundException;
 import com.studyhelper.member.security.SecurityUser;
 
 @Controller
@@ -26,6 +27,7 @@ import com.studyhelper.member.security.SecurityUser;
 public class BoardController {
 	private final BoardService boardService;
 	private final BoardRepository boardRepository;
+	private final TeamRepository teamRepository;
 	
 	@GetMapping("/board/getBoard")
 	public String getBoard(Board board,Model model) {
@@ -55,9 +57,15 @@ public class BoardController {
 	}
 
 	@PostMapping("/board/insertBoard")
-	public String insertBoardPost(Team team,Board board,@AuthenticationPrincipal SecurityUser securityUser) {
+	public String insertBoardPost(Model model,Team team,Board board,@AuthenticationPrincipal SecurityUser securityUser) {
+		if (board.getContent().equals("")||board.getTitle().equals("")) {
+			throw new BoardNotFoundException("");
+		}
+		
 		boardService.saveBoard(board, securityUser.getMember(), team);
-
-		return "login";
+		model.addAttribute("team", teamRepository.findById(team.getSeq()).get());
+		model.addAttribute("member", securityUser.getMember());
+		
+		return "teamMainPage";
 	}
 }

@@ -30,8 +30,10 @@ public class MatchingScheduler {
 	private final MatchTrie matchTrie;
 	private final ChatRoomRepository chatRoomRepository;
 	
-	@Scheduled(fixedDelay = 1000000)
+	@Scheduled(fixedDelay = 60000) // 60초에 한번씩 실행
 	public void runMatching() {
+		log.info("매칭 시작!!!!");
+		
 		matchTrie.initSetting();
 		//전체 매칭 리스트 불러오기
 		List<Matching> matchings =matchingRepository.findAll();

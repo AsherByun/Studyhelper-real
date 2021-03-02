@@ -26,8 +26,10 @@ import lombok.extern.slf4j.Slf4j;
 public class DeleteJobScheduler {
 	private final MatchingRepository matchingRepository;
 	
-	@Scheduled(fixedDelay = 2000000)
+	@Scheduled(fixedDelay = 86400000) //하루에 한번 실행
 	public void runDeleteJob() {
+		log.info("매칭 삭제 시작!!");
+		
 		List<Matching> matchings = matchingRepository.findAll();
 		
 		for(Matching matching:matchings) {
