@@ -51,6 +51,9 @@ public class Member {
 	@OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
+	@OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+	private List<Board> boards = new ArrayList();
+	
 	public void addMemberTeams(MemberTeam memberTeam) {
 		memberTeams.add(memberTeam);
 	}

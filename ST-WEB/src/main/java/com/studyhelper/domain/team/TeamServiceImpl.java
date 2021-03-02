@@ -31,7 +31,6 @@ public class TeamServiceImpl implements TeamService{
 		for(MemberTeam memberTeam:team.getMemberTeams()) {
 			Member member = memberTeam.getMember();
 			members.add(member);
-			log.info(member.getId()+" 추가");
 		}
 		
 		return members;

@@ -30,6 +30,8 @@ public class LoginController {
 		Member member = securityUser.getMember();
 		List<Team> teams = memberService.findMemberTeamsById(member);
 		
+		memberService.changeRole(member);
+		
 		model.addAttribute("teams", teams);
 		return "userpage";
 	}

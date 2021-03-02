@@ -21,7 +21,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TeamMatcingController {
 	private final MatchingService matchingService;
-	private final MemberService memberService;
 
 	@GetMapping("/matching/request")
 	public String getMatching() {

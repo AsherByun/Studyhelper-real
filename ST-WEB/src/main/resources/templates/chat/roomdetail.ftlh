@@ -41,6 +41,7 @@
     <script src="/webjars/sockjs-client/1.1.2/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
     <script>
+    	var roomid = window.location.href.split("/")[6];
         //alert(document.title);
         // websocket & stomp initialize
         var sock = new SockJS("/ws");
@@ -57,15 +58,19 @@
                 messages: []
             },
             created() {
-                this.roomId = localStorage.getItem('wschat.roomId');
-                this.sender = localStorage.getItem('wschat.sender');
+                this.roomId = roomid;
                 this.findRoom();
+                this.setSender();
             },
             methods: {
+            	setSender: function(){
+            		axios.get('/chat/info').then(response => {this.sender = response.data;});
+            	},
                 findRoom: function() {
                     axios.get('/chat/room/'+this.roomId).then(response => { this.room = response.data; });
                 },
                 sendMessage: function() {
+                	console.log(this.sender);
                     ws.send("/pub/chat/message", {}, JSON.stringify({type:'TALK', roomId:this.roomId, sender:this.sender, message:this.message}));
                     this.message = '';
                 },

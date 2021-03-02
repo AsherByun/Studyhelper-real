@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+
+<head>
+<title>게시글 목록</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+	<h1>게시글 목록</h1>
+
+	<span sec:authorize="isAuthenticated()"> <b><font
+			color="red"> <span sec:authentication="principal.member.id"></span>
+		</font></b> 님 환영합니다.............................
+	</span>
+
+	<hr>
+
+	<table th:align="center" border="1" th:cellpadding="0"
+		th:cellspacing="0" th:width="700">
+		<tr>
+			<th bgcolor="orange" width="400">제목</th>
+			<th bgcolor="orange" width="100">작성자</th>
+		</tr>
+
+		<tr th:each="board: ${boardList}">
+			<td><a th:href="@{/board/getBoard(seq=${board.seq})}"
+				th:text="${board.title}"></a></td>
+			<td th:text="${board.member.id}" th:align="center">
+		</tr>
+
+	</table>
+	<br>
+	<a th:href="@{/board/insertBoard(seq=${team.seq})}">게시글 등록</a>
+	<br><br>
+	<a th:href="@{/team/main(seq=${team.seq})}">팀 페이지로~~</a>
+</body>
+</html>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,6 +15,7 @@ import com.studyhelper.domain.entity.Matching;
 import com.studyhelper.domain.entity.Member;
 import com.studyhelper.domain.entity.MemberTeam;
 import com.studyhelper.domain.entity.Team;
+import com.studyhelper.domain.enums.Role;
 import com.studyhelper.domain.matching.MatchingRepository;
 import com.studyhelper.domain.team.MemberTeamRepository;
 import com.studyhelper.domain.team.TeamRepository;
@@ -48,13 +50,39 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<Team> findMemberTeamsById(Member member) {
 		List<Team> teams = new ArrayList<Team>();
-
+		
 		for (MemberTeam memberTeam : member.getMemberTeams()) {
 			Team team = memberTeam.getTeam();
 			teams.add(team);
 		}
 
 		return teams;
+	}
+	
+	@Transactional
+	@Override
+	public boolean isInThisTeam(Team team, Member member) {
+		List<Team> teams = findMemberTeamsById(member);
+		
+		for(Team t:teams) {
+			if (t.getSeq().equals(team.getSeq())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	@Transactional
+	@Override
+	public void changeRole(Member member) {
+		List<Team> teams = findMemberTeamsById(member);
+		member = memberRepository.findById(member.getId()).get();
+		
+		if (teams.size()>0) {
+			member.setRole(Role.ROLE_HAVEGROUP);
+		}else {
+			member.setRole(Role.ROLE_MEMBER);
+		}
 	}
 
 }

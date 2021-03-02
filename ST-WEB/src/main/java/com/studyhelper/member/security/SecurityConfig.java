@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity security) throws Exception {
 		//모든 사용자 권한 허가
 		security.authorizeRequests().antMatchers("/testing/**").permitAll();
-		security.authorizeRequests().antMatchers("/").permitAll();
+		security.authorizeRequests().antMatchers("/**").permitAll();
 		security.authorizeRequests().antMatchers("/userpage/**").authenticated();
 		security.authorizeRequests().antMatchers("/signup").permitAll();
 		//로그인 페이지 설정
