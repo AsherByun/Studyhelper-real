@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.studyhelper.domain.entity.Member;
 import com.studyhelper.domain.enums.Role;
 import com.studyhelper.domain.member.MemberService;
+import com.studyhelper.exception.login.SameIdOrNickNameException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class SignUpController {
 	public final MemberService memberService;
-
 	
 	@GetMapping("/signup")
 	public String signup() {
@@ -31,7 +31,7 @@ public class SignUpController {
 		member.setRole(Role.ROLE_MEMBER);
 
 		if (memberService.checkIdAndNickName(member)) {
-			return "signup";
+			throw new SameIdOrNickNameException("이미 있는 아이디입니다");
 		}
 		memberService.saveMember(member);
 

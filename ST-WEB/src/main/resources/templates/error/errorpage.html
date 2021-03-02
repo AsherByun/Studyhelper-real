@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>에러페이지~~~~</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+	<h1><font color="red">에러발생!!</font></h1>
+	<h3>예외 메시지 : [[${exception.message}]]</h3>
+	
+	<a th:href="@{/login}">로그인 페이지로 ~~</a>	
+</body>
+</html>
