@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.studyhelper.domain.enums.Role;
+
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
@@ -21,10 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity security) throws Exception {
 		//모든 사용자 권한 허가
-		security.authorizeRequests().antMatchers("/testing/**").permitAll();
 		security.authorizeRequests().antMatchers("/**").permitAll();
+		security.authorizeRequests().antMatchers("/board/**").hasRole("HAVEGROUP");
+		security.authorizeRequests().antMatchers("/chat/**").hasRole("HAVEGROUP");
+		security.authorizeRequests().antMatchers("/team/**").hasRole("HAVEGROUP");
 		security.authorizeRequests().antMatchers("/userpage/**").authenticated();
-		security.authorizeRequests().antMatchers("/signup").permitAll();
 		//로그인 페이지 설정
 		security.formLogin().loginPage("/login").defaultSuccessUrl("/userpage",true);
 		//ajax통신시 corps

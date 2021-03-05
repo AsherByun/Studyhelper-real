@@ -1,482 +1,437 @@
-2021-03-03 15:50:12.768  INFO 31804 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 31804 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
-2021-03-03 15:50:12.776  INFO 31804 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
-2021-03-03 15:50:12.828  INFO 31804 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-03-03 15:50:12.828  INFO 31804 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-03-03 15:50:13.806  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-03 15:50:13.808  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-03 15:50:13.827  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2021-03-03 15:50:14.029  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-03 15:50:14.030  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-03 15:50:14.218  INFO 31804 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-03-03 15:50:14.267  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 233 ms. Found 4 JPA repository interfaces.
-2021-03-03 15:50:14.276  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-03 15:50:14.276  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-03 15:50:14.308  INFO 31804 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-03 15:50:14.310  INFO 31804 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-03 15:50:14.311  INFO 31804 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-03 15:50:14.311  INFO 31804 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-03-03 15:50:14.336  INFO 31804 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 1 Redis repository interfaces.
-2021-03-03 15:50:14.905  INFO 31804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-03-03 15:50:14.914  INFO 31804 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-03 15:50:14.914  INFO 31804 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
-2021-03-03 15:50:15.040  INFO 31804 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-03 15:50:15.040  INFO 31804 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2211 ms
-2021-03-03 15:50:15.445  INFO 31804 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-03 15:50:15.513  INFO 31804 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
-2021-03-03 15:50:15.670  INFO 31804 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-03 15:50:15.776  INFO 31804 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-03 15:50:16.051  INFO 31804 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-03 15:50:16.071  INFO 31804 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2021-03-03 15:50:16.840  INFO 31804 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-03 15:50:16.847  INFO 31804 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-03 15:50:16.877  INFO 31804 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-03-03 15:50:17.332  INFO 31804 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2021-03-03 15:50:17.340  INFO 31804 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2021-03-03 15:50:17.342  INFO 31804 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2021-03-03 15:50:17.467  WARN 31804 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-03 15:50:17.520  INFO 31804 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2021-03-03 15:50:17.721  INFO 31804 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52984630, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c6e5dc0, org.springframework.security.web.header.HeaderWriterFilter@777d2d0a, org.springframework.security.web.authentication.logout.LogoutFilter@d35f056, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52175b4b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65dd1d89, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46128f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71b80949, org.springframework.security.web.session.SessionManagementFilter@1c9e70da, org.springframework.security.web.access.ExceptionTranslationFilter@57df97d4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@741c83b1]
-2021-03-03 15:50:17.864  INFO 31804 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-03-03 15:50:18.332  INFO 31804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-03-03 15:50:18.333  INFO 31804 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2021-03-03 15:50:18.333  INFO 31804 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@71a588e2]]
-2021-03-03 15:50:18.334  INFO 31804 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2021-03-03 15:50:18.341  INFO 31804 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 5.929 seconds (JVM running for 6.551)
-2021-03-03 15:51:17.579  INFO 31804 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2021-03-03 16:07:14.030  INFO 31804 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-03 16:07:14.030  INFO 31804 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-03 16:07:14.031  INFO 31804 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-03-03 16:13:51.284  INFO 31804 --- [clientInboundChannel-7] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:13:53.402  WARN 31804 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379]
-2021-03-03 16:13:53.732  INFO 31804 --- [clientInboundChannel-10] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:13:55.440 ERROR 31804 --- [clientInboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
+2021-03-05 21:46:02.593  INFO 21532 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21532 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 21:46:02.612  INFO 21532 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 21:46:02.670  INFO 21532 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-05 21:46:02.670  INFO 21532 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-05 21:46:03.523  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 21:46:03.524  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 21:46:03.543  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2021-03-05 21:46:03.737  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 21:46:03.739  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 21:46:03.962  INFO 21532 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 21:46:04.020  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 276 ms. Found 4 JPA repository interfaces.
+2021-03-05 21:46:04.031  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 21:46:04.031  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 21:46:04.063  INFO 21532 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:46:04.065  INFO 21532 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:46:04.066  INFO 21532 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:46:04.066  INFO 21532 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:46:04.093  INFO 21532 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 Redis repository interfaces.
+2021-03-05 21:46:04.704  INFO 21532 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 21:46:04.714  INFO 21532 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 21:46:04.714  INFO 21532 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 21:46:04.840  INFO 21532 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 21:46:04.840  INFO 21532 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2169 ms
+2021-03-05 21:46:05.253  INFO 21532 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 21:46:05.319  INFO 21532 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-05 21:46:05.492  INFO 21532 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 21:46:05.591  INFO 21532 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 21:46:05.868  INFO 21532 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 21:46:05.885  INFO 21532 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 21:46:06.661  INFO 21532 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 21:46:06.667  INFO 21532 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 21:46:06.699  INFO 21532 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 21:46:07.141  INFO 21532 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 21:46:07.148  INFO 21532 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 21:46:07.151  INFO 21532 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 21:46:07.264  WARN 21532 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 21:46:07.314  INFO 21532 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 21:46:07.491  WARN 21532 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_HAVEGROUP'
+2021-03-05 21:46:07.491  INFO 21532 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 21:46:07.493  INFO 21532 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2021-03-05 21:46:07.493  INFO 21532 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 21:46:07.493  INFO 21532 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 21:46:07.494  INFO 21532 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 21:46:07.497  INFO 21532 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 21:46:07.507  INFO 21532 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 21:46:07.520  INFO 21532 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-05 21:46:07.529  INFO 21532 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-05 21:46:07.546 ERROR 21532 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_HAVEGROUP'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) ~[spring-context-5.3.3.jar:5.3.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.2.jar:2.4.2]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:144) ~[spring-boot-2.4.2.jar:2.4.2]
+	at com.studyhelper.WebApplication.main(WebApplication.java:29) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-03 16:13:55.447  INFO 31804 --- [clientInboundChannel-13] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:13:57.469 ERROR 31804 --- [redisMessageListenerContainer-1] o.s.d.r.l.RedisMessageListenerContainer  : Connection failure occurred. Restarting subscription task after 5000 ms
-2021-03-03 16:13:57.551  INFO 31804 --- [clientInboundChannel-16] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:13:58.940  INFO 31804 --- [clientInboundChannel-2] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:13:59.451  INFO 31804 --- [clientInboundChannel-5] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:13:59.501 ERROR 31804 --- [clientInboundChannel-13] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
-
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.2.jar:2.4.2]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_HAVEGROUP'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.3.jar:5.3.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.3.jar:5.3.3]
+	... 26 common frames omitted
+Caused by: java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_HAVEGROUP'
+	at org.springframework.util.Assert.isTrue(Assert.java:139) ~[spring-core-5.3.3.jar:5.3.3]
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.hasRole(ExpressionUrlAuthorizationConfigurer.java:186) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.access$300(ExpressionUrlAuthorizationConfigurer.java:82) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer$AuthorizedUrl.hasRole(ExpressionUrlAuthorizationConfigurer.java:318) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at com.studyhelper.member.security.SecurityConfig.configure(SecurityConfig.java:27) ~[classes/:na]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.getHttp(WebSecurityConfigurerAdapter.java:217) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:315) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:93) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at com.studyhelper.member.security.SecurityConfig$$EnhancerBySpringCGLIB$$152da8dc.init(<generated>) ~[classes/:na]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:338) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:300) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.4.2.jar:5.4.2]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:127) ~[spring-security-config-5.4.2.jar:5.4.2]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.3.jar:5.3.3]
 	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
 
-2021-03-03 16:13:59.652  INFO 31804 --- [clientInboundChannel-11] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:14:01.528 ERROR 31804 --- [clientInboundChannel-10] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
-
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-03 16:14:03.550 ERROR 31804 --- [clientInboundChannel-11] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
-
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-03 16:14:05.596 ERROR 31804 --- [clientInboundChannel-5] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
-
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-03 16:14:07.625 ERROR 31804 --- [clientInboundChannel-2] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
-
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-03 16:14:09.676 ERROR 31804 --- [clientInboundChannel-16] .WebSocketAnnotationMethodMessageHandler : Unhandled exception from message handler method
-
-org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1553) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1461) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1247) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1230) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:979) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:359) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.core.RedisTemplate.convertAndSend(RedisTemplate.java:834) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at com.studyhelper.domain.chat.pubsub.RedisPublisher.publish(RedisPublisher.java:20) ~[classes/:na]
-	at com.studyhelper.web.controller.chat.ChatController.message(ChatController.java:32) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144) ~[spring-messaging-5.3.3.jar:5.3.3]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:320) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at io.lettuce.core.RedisClient.connect(RedisClient.java:211) ~[lettuce-core-6.0.2.RELEASE.jar:6.0.2.RELEASE]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at java.base/java.util.Optional.orElseGet(Optional.java:362) ~[na:na]
-	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1459) ~[spring-data-redis-2.4.3.jar:2.4.3]
-	... 27 common frames omitted
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:589) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:839) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.58.Final.jar:4.1.58.Final]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-03-03 16:14:11.697 ERROR 31804 --- [redisMessageListenerContainer-2] o.s.d.r.l.RedisMessageListenerContainer  : Connection failure occurred. Restarting subscription task after 5000 ms
-2021-03-03 16:14:18.724 ERROR 31804 --- [redisMessageListenerContainer-3] o.s.d.r.l.RedisMessageListenerContainer  : Connection failure occurred. Restarting subscription task after 5000 ms
-2021-03-03 16:16:23.240  INFO 31804 --- [clientInboundChannel-23] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:16:26.764  INFO 31804 --- [clientInboundChannel-26] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:21:17.582  INFO 31804 --- [MessageBroker-5] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 42], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 5], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 102]
-2021-03-03 16:47:28.649  INFO 31804 --- [clientInboundChannel-38] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
-2021-03-03 16:51:17.585  INFO 31804 --- [MessageBroker-7] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 535]
-2021-03-03 17:21:17.596  INFO 31804 --- [MessageBroker-8] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 968]
-2021-03-03 17:51:17.952  INFO 31804 --- [MessageBroker-6] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 1401]
-2021-03-03 18:21:17.964  INFO 31804 --- [MessageBroker-3] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 1834]
-2021-03-03 18:51:18.005  INFO 31804 --- [MessageBroker-4] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 2267]
-2021-03-03 19:21:18.007  INFO 31804 --- [MessageBroker-6] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 2700]
-2021-03-03 19:51:18.080  INFO 31804 --- [MessageBroker-7] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 54], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 3133]
-2021-03-03 20:21:18.092  INFO 31804 --- [MessageBroker-4] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 9], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 3551]
-2021-03-03 20:51:18.093  INFO 31804 --- [MessageBroker-6] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 9], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 3912]
-2021-03-03 21:21:18.099  INFO 31804 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 9], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 4273]
-2021-03-03 21:51:18.213  INFO 31804 --- [MessageBroker-3] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 9], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 4634]
-2021-03-03 22:21:18.218  INFO 31804 --- [MessageBroker-7] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 9], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 4995]
-2021-03-03 22:51:18.220  INFO 31804 --- [MessageBroker-6] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 3 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(3)-CONNECTED(3)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 57], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 9], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 1, completed tasks = 5356]
+2021-03-05 21:57:38.703  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21716 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 21:57:38.710  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 21:57:38.746  INFO 21716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-05 21:57:38.746  INFO 21716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-05 21:57:39.382  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 21:57:39.383  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 21:57:39.400  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2021-03-05 21:57:39.568  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 21:57:39.569  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 21:57:39.703  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 21:57:39.751  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 4 JPA repository interfaces.
+2021-03-05 21:57:39.759  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 21:57:39.760  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 21:57:39.788  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:57:39.790  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:57:39.790  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:57:39.791  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 21:57:39.811  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 Redis repository interfaces.
+2021-03-05 21:57:40.316  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 21:57:40.323  INFO 21716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 21:57:40.323  INFO 21716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 21:57:40.439  INFO 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 21:57:40.439  INFO 21716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1692 ms
+2021-03-05 21:57:40.751  INFO 21716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 21:57:40.791  INFO 21716 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-03-05 21:57:40.906  INFO 21716 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 21:57:40.990  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 21:57:41.223  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 21:57:41.236  INFO 21716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 21:57:41.854  INFO 21716 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 21:57:41.861  INFO 21716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 21:57:41.889  INFO 21716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 21:57:42.306  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 21:57:42.313  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 21:57:42.314  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 21:57:42.426  WARN 21716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 21:57:42.477  INFO 21716 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 21:57:42.655  INFO 21716 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17d6ebd0, org.springframework.security.web.context.SecurityContextPersistenceFilter@7de46dc7, org.springframework.security.web.header.HeaderWriterFilter@24bd793c, org.springframework.security.web.authentication.logout.LogoutFilter@46c8a9d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67560af6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50902db2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28197569, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9a8629c, org.springframework.security.web.session.SessionManagementFilter@5147be5e, org.springframework.security.web.access.ExceptionTranslationFilter@7f99c77c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6115b825]
+2021-03-05 21:57:42.776  INFO 21716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-03-05 21:57:43.110  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-05 21:57:43.111  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2021-03-05 21:57:43.112  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a1a7f4f]]
+2021-03-05 21:57:43.112  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2021-03-05 21:57:43.120  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 4.717 seconds (JVM running for 5.292)
+2021-03-05 21:57:48.950  INFO 21716 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 21:57:48.951  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 21:57:48.953  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-05 21:58:22.826  WARN 21716 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "com.studyhelper.member.security.SecurityUser.getMember()" because "securityUser" is null]
+2021-03-05 21:58:42.524  INFO 21716 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2021-03-05 21:58:52.242  INFO 21716 --- [clientInboundChannel-7] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 21:58:53.972  INFO 21716 --- [clientInboundChannel-10] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 21:58:55.190  INFO 21716 --- [clientInboundChannel-13] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 21:58:56.324  INFO 21716 --- [clientInboundChannel-16] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 22:20:14.399  WARN 21716 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "com.studyhelper.member.security.SecurityUser.getMember()" because "securityUser" is null]
+2021-03-05 22:20:36.754  INFO 21716 --- [clientInboundChannel-23] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 22:25:06.141  INFO 21716 --- [Thread-4] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2021-03-05 22:25:06.142  INFO 21716 --- [Thread-4] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a1a7f4f]]
+2021-03-05 22:25:06.143  INFO 21716 --- [Thread-4] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2021-03-05 22:25:06.193  INFO 21716 --- [Thread-4] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:25:06.195  INFO 21716 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:25:06.195  INFO 21716 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:25:06.195  INFO 21716 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:25:06.196  INFO 21716 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:25:06.200  INFO 21716 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 22:25:06.206  INFO 21716 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 22:25:06.391  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21716 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 22:25:06.392  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 22:25:06.588  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:06.589  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:25:06.591  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-03-05 22:25:06.624  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:06.624  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 22:25:06.658  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 22:25:06.688  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2021-03-05 22:25:06.691  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:06.691  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:25:06.713  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:06.714  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:06.714  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:06.715  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:06.735  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 Redis repository interfaces.
+2021-03-05 22:25:06.817  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 22:25:06.817  INFO 21716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 22:25:06.817  INFO 21716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 22:25:06.839  INFO 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 22:25:06.839  INFO 21716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 444 ms
+2021-03-05 22:25:06.858  WARN 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [AE2595FB14112219C8EE2161E0947687]
+2021-03-05 22:25:06.901  INFO 21716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 22:25:06.906  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-03-05 22:25:06.921  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-03-05 22:25:06.921  INFO 21716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 22:25:07.026  INFO 21716 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 22:25:07.026  INFO 21716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:25:07.038  INFO 21716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 22:25:07.151  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:25:07.154  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:25:07.154  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:25:07.210  WARN 21716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 22:25:07.234  INFO 21716 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:25:07.263  INFO 21716 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74a0bc4f, org.springframework.security.web.context.SecurityContextPersistenceFilter@360d62a7, org.springframework.security.web.header.HeaderWriterFilter@48447c9c, org.springframework.security.web.authentication.logout.LogoutFilter@6b78c4ab, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@65d1aa5a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dc5c4fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@568eef43, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@723091c0, org.springframework.security.web.session.SessionManagementFilter@50a60eb5, org.springframework.security.web.access.ExceptionTranslationFilter@6bdc03ee, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ca776ad]
+2021-03-05 22:25:07.295  INFO 21716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-03-05 22:25:07.370  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-05 22:25:07.370  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2021-03-05 22:25:07.371  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a17532a]]
+2021-03-05 22:25:07.371  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2021-03-05 22:25:07.375  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 1.007 seconds (JVM running for 1649.547)
+2021-03-05 22:25:07.379  INFO 21716 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-03-05 22:25:16.211  INFO 21716 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 22:25:16.213  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 22:25:16.216  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-03-05 22:25:16.241  INFO 21716 --- [clientInboundChannel-7] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 22:25:27.401  INFO 21716 --- [Thread-10] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2021-03-05 22:25:27.403  INFO 21716 --- [Thread-10] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a17532a]]
+2021-03-05 22:25:27.403  INFO 21716 --- [Thread-10] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2021-03-05 22:25:27.440  INFO 21716 --- [Thread-10] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:25:27.441  INFO 21716 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:25:27.441  INFO 21716 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:25:27.441  INFO 21716 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:25:27.442  INFO 21716 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:25:27.443  INFO 21716 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-03-05 22:25:27.446  INFO 21716 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-03-05 22:25:27.621  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21716 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 22:25:27.622  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 22:25:27.816  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:27.816  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:25:27.818  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-03-05 22:25:27.849  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:27.849  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 22:25:27.884  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 22:25:27.917  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2021-03-05 22:25:27.920  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:27.920  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:25:27.941  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:27.942  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:27.942  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:27.942  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:27.961  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 Redis repository interfaces.
+2021-03-05 22:25:28.046  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 22:25:28.047  INFO 21716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 22:25:28.047  INFO 21716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 22:25:28.093  INFO 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 22:25:28.093  INFO 21716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 469 ms
+2021-03-05 22:25:28.149  INFO 21716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 22:25:28.155  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-03-05 22:25:28.170  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-03-05 22:25:28.170  INFO 21716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 22:25:28.276  INFO 21716 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 22:25:28.276  INFO 21716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:25:28.289  INFO 21716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 22:25:28.395  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:25:28.398  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:25:28.399  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:25:28.453  WARN 21716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 22:25:28.475  INFO 21716 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:25:28.505  INFO 21716 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1617f291, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e2287b8, org.springframework.security.web.header.HeaderWriterFilter@75b0c38d, org.springframework.security.web.authentication.logout.LogoutFilter@415ce8e4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2aa57d3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5406dae1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27d9d747, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c82e4d4, org.springframework.security.web.session.SessionManagementFilter@3eca56c8, org.springframework.security.web.access.ExceptionTranslationFilter@30af483d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f8d4e49]
+2021-03-05 22:25:28.535  INFO 21716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-03-05 22:25:28.611  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-05 22:25:28.611  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2021-03-05 22:25:28.611  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@f1d2282]]
+2021-03-05 22:25:28.611  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2021-03-05 22:25:28.615  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 1.017 seconds (JVM running for 1670.788)
+2021-03-05 22:25:28.617  INFO 21716 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-03-05 22:25:32.929  INFO 21716 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 22:25:32.930  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 22:25:32.931  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-05 22:25:33.927  WARN 21716 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'member' on field 'age': rejected value []; codes [typeMismatch.member.age,typeMismatch.age,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [member.age,age]; arguments []; default message [age]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'age'; nested exception is java.lang.NumberFormatException: For input string: ""]]
+2021-03-05 22:25:38.218  INFO 21716 --- [clientInboundChannel-7] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 22:25:57.435  INFO 21716 --- [Thread-16] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2021-03-05 22:25:57.435  INFO 21716 --- [Thread-16] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@f1d2282]]
+2021-03-05 22:25:57.435  INFO 21716 --- [Thread-16] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2021-03-05 22:25:57.468  INFO 21716 --- [Thread-16] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:25:57.469  INFO 21716 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:25:57.469  INFO 21716 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:25:57.469  INFO 21716 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:25:57.470  INFO 21716 --- [Thread-16] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:25:57.470  INFO 21716 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-03-05 22:25:57.473  INFO 21716 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-03-05 22:25:57.652  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21716 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 22:25:57.653  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 22:25:57.846  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:57.846  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:25:57.848  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-03-05 22:25:57.876  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:57.877  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 22:25:57.907  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 22:25:57.940  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2021-03-05 22:25:57.943  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:25:57.943  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:25:57.966  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:57.966  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:57.967  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:57.967  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:25:57.990  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 1 Redis repository interfaces.
+2021-03-05 22:25:58.074  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 22:25:58.075  INFO 21716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 22:25:58.075  INFO 21716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 22:25:58.100  INFO 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 22:25:58.100  INFO 21716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 445 ms
+2021-03-05 22:25:58.154  INFO 21716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 22:25:58.159  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-03-05 22:25:58.172  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-03-05 22:25:58.172  INFO 21716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 22:25:58.268  INFO 21716 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 22:25:58.268  INFO 21716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:25:58.280  INFO 21716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 22:25:58.420  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:25:58.423  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:25:58.423  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:25:58.473  WARN 21716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 22:25:58.495  INFO 21716 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:25:58.524  INFO 21716 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43abe9c7, org.springframework.security.web.context.SecurityContextPersistenceFilter@629b2e9b, org.springframework.security.web.header.HeaderWriterFilter@79620f4d, org.springframework.security.web.authentication.logout.LogoutFilter@32b7e229, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44a10efa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35caa0f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cbbc96b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@186be704, org.springframework.security.web.session.SessionManagementFilter@50e0bdb1, org.springframework.security.web.access.ExceptionTranslationFilter@6aa7a434, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f07f1b8]
+2021-03-05 22:25:58.553  INFO 21716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-03-05 22:25:58.622  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-05 22:25:58.622  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2021-03-05 22:25:58.622  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44c0b9d1]]
+2021-03-05 22:25:58.623  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2021-03-05 22:25:58.626  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 0.996 seconds (JVM running for 1700.799)
+2021-03-05 22:25:58.628  INFO 21716 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-03-05 22:26:00.703  INFO 21716 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 22:26:00.704  INFO 21716 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 22:26:00.706  INFO 21716 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-05 22:26:08.222  INFO 21716 --- [clientInboundChannel-7] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 22:26:20.923  INFO 21716 --- [Thread-22] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2021-03-05 22:26:20.924  INFO 21716 --- [Thread-22] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44c0b9d1]]
+2021-03-05 22:26:20.924  INFO 21716 --- [Thread-22] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2021-03-05 22:26:20.978  INFO 21716 --- [Thread-22] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:26:20.979  INFO 21716 --- [Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:26:20.980  INFO 21716 --- [Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:26:20.980  INFO 21716 --- [Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:26:20.981  INFO 21716 --- [Thread-22] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:26:20.982  INFO 21716 --- [Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-03-05 22:26:20.989  INFO 21716 --- [Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-03-05 22:26:21.172  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21716 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 22:26:21.173  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 22:26:21.357  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:26:21.357  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:26:21.359  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-03-05 22:26:21.386  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:26:21.386  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 22:26:21.417  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 22:26:21.446  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2021-03-05 22:26:21.448  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:26:21.449  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:26:21.476  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:26:21.476  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:26:21.476  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:26:21.476  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:26:21.498  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 Redis repository interfaces.
+2021-03-05 22:26:21.586  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 22:26:21.586  INFO 21716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 22:26:21.586  INFO 21716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 22:26:21.614  INFO 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 22:26:21.614  INFO 21716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 439 ms
+2021-03-05 22:26:21.634  WARN 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [7B939073718C1622610E54D090FB166B]
+2021-03-05 22:26:21.674  INFO 21716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 22:26:21.680  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-03-05 22:26:21.693  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-03-05 22:26:21.694  INFO 21716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 22:26:21.777  INFO 21716 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 22:26:21.778  INFO 21716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:26:21.788  INFO 21716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 22:26:21.885  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:26:21.888  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:26:21.889  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:26:21.940  WARN 21716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 22:26:21.961  INFO 21716 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:26:21.991  INFO 21716 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39e8d0ed, org.springframework.security.web.context.SecurityContextPersistenceFilter@5bd751f7, org.springframework.security.web.header.HeaderWriterFilter@1881562d, org.springframework.security.web.authentication.logout.LogoutFilter@59580913, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@34508dda, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35280f58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@278a07ee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@bf87291, org.springframework.security.web.session.SessionManagementFilter@28b6e856, org.springframework.security.web.access.ExceptionTranslationFilter@64f14c11, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@433d9dac]
+2021-03-05 22:26:22.017  INFO 21716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-03-05 22:26:22.084  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-05 22:26:22.084  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2021-03-05 22:26:22.084  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2ef96614]]
+2021-03-05 22:26:22.085  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2021-03-05 22:26:22.088  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 0.938 seconds (JVM running for 1724.26)
+2021-03-05 22:26:22.089  INFO 21716 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-03-05 22:26:30.946  INFO 21716 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 22:26:30.948  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 22:26:30.952  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-03-05 22:26:30.986  INFO 21716 --- [clientInboundChannel-7] c.s.domain.chat.pubsub.RedisPublisher    : aa6fc46b-4f14-49ba-ac73-de3ab1d31498
+2021-03-05 22:27:21.975  INFO 21716 --- [MessageBroker-5] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 9, active threads = 0, queued tasks = 0, completed tasks = 9], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 13]
+2021-03-05 22:40:13.542  INFO 21716 --- [Thread-28] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2021-03-05 22:40:13.543  INFO 21716 --- [Thread-28] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2ef96614]]
+2021-03-05 22:40:13.543  INFO 21716 --- [Thread-28] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2021-03-05 22:40:13.583  INFO 21716 --- [Thread-28] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:40:13.584  INFO 21716 --- [Thread-28] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:40:13.584  INFO 21716 --- [Thread-28] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:40:13.585  INFO 21716 --- [Thread-28] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:40:13.585  INFO 21716 --- [Thread-28] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:40:13.586  INFO 21716 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-03-05 22:40:13.590  INFO 21716 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-03-05 22:40:13.780  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Starting WebApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 21716 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-WEB)
+2021-03-05 22:40:13.780  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : The following profiles are active: real
+2021-03-05 22:40:13.983  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:40:13.983  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:40:13.985  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2021-03-05 22:40:14.012  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:40:14.013  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 22:40:14.044  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.matching.MatchingRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-03-05 22:40:14.078  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 4 JPA repository interfaces.
+2021-03-05 22:40:14.082  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-05 22:40:14.082  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-05 22:40:14.106  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.board.BoardRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:40:14.107  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.member.MemberRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:40:14.107  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.MemberTeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:40:14.107  INFO 21716 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.studyhelper.domain.team.TeamRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-05 22:40:14.129  INFO 21716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 1 Redis repository interfaces.
+2021-03-05 22:40:14.223  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-05 22:40:14.224  INFO 21716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 22:40:14.224  INFO 21716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-05 22:40:14.245  INFO 21716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 22:40:14.245  INFO 21716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 463 ms
+2021-03-05 22:40:14.297  INFO 21716 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 22:40:14.302  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-03-05 22:40:14.317  INFO 21716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-03-05 22:40:14.318  INFO 21716 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-03-05 22:40:14.436  INFO 21716 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 22:40:14.436  INFO 21716 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 22:40:14.448  INFO 21716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 22:40:14.551  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2021-03-05 22:40:14.554  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2021-03-05 22:40:14.555  INFO 21716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2021-03-05 22:40:14.602  WARN 21716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 22:40:14.623  INFO 21716 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2021-03-05 22:40:14.651  INFO 21716 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1024285e, org.springframework.security.web.context.SecurityContextPersistenceFilter@443bdd56, org.springframework.security.web.header.HeaderWriterFilter@63cdee44, org.springframework.security.web.authentication.logout.LogoutFilter@67b07f90, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@17120ba4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@673e8237, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b0def5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5630d0ad, org.springframework.security.web.session.SessionManagementFilter@2857d6e1, org.springframework.security.web.access.ExceptionTranslationFilter@71ea5987, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8743c32]
+2021-03-05 22:40:14.678  INFO 21716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-03-05 22:40:14.746  INFO 21716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-05 22:40:14.746  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2021-03-05 22:40:14.746  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6596ba6b]]
+2021-03-05 22:40:14.746  INFO 21716 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2021-03-05 22:40:14.749  INFO 21716 --- [restartedMain] com.studyhelper.WebApplication           : Started WebApplication in 0.991 seconds (JVM running for 2556.922)
+2021-03-05 22:40:14.751  INFO 21716 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-03-05 22:40:24.187  INFO 21716 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 22:40:24.188  INFO 21716 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
