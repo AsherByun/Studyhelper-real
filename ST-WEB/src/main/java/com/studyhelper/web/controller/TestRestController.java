@@ -8,8 +8,10 @@ import java.util.Set;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.studyhelper.domain.board.BoardRepository;
 import com.studyhelper.domain.entity.Board;
 import com.studyhelper.domain.entity.Matching;
 import com.studyhelper.domain.entity.Member;
@@ -31,7 +33,18 @@ public class TestRestController {
 	private final MatchingRepository matchingRepository;
 	private final MemberRepository memberRepository;
 	private final MemberService memberService;
+	private final BoardRepository boardRepository;
+	
+	@GetMapping("/board/test")
+	public Board getBoardTest(@RequestParam("seq") long seq) {
+		Board board = boardRepository.findBoardByIdFetchTeam(seq);
 
+//		Board board2 = boardRepository.findById(seq).get();
+//		System.out.println(board2.getContent());
+		
+		return null;
+	}
+	
 	@GetMapping("/matching/all")
 	public List<Matching> getMatchingAll() {
 		return matchingRepository.findAll();

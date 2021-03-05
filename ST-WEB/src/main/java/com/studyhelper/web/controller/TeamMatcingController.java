@@ -32,7 +32,7 @@ public class TeamMatcingController {
 		Member member = securityUser.getMember();
 		matchingService.saveMatching(member, matching);
 		
-		return "userpage";
+		return "redirect:/userpage";
 	}
 	
 }

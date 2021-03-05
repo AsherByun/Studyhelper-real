@@ -32,7 +32,7 @@ public class Team {
 	private String teamName;
 	private String chatRoomId;
 
-	@OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
 	@OneToMany(mappedBy = "team", fetch = FetchType.LAZY)

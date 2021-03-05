@@ -48,7 +48,7 @@ public class Member {
 	@Column(columnDefinition = "boolean default false")
 	private boolean isFirstAccess;
 
-	@OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
 	private Set<MemberTeam> memberTeams = new HashSet<MemberTeam>();
 
 	@OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
