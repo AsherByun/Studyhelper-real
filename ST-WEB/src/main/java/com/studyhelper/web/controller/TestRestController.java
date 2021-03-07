@@ -39,9 +39,6 @@ public class TestRestController {
 	public Board getBoardTest(@RequestParam("seq") long seq) {
 		Board board = boardRepository.findBoardByIdFetchTeam(seq);
 
-//		Board board2 = boardRepository.findById(seq).get();
-//		System.out.println(board2.getContent());
-		
 		return null;
 	}
 	

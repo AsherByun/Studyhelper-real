@@ -45,8 +45,8 @@ public class MatchingScheduler {
 				Team newTeam = team.get();
 				ChatRoom chatRoom = chatRoomRepository.createChatRoom(newTeam.getTeamName());
 				newTeam.setChatRoomId(chatRoom.getRoomId());
-				
-				log.info("매칭이 완료됐습니다 "+team.get().getTeamName());
+				log.info("매칭 성공 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 성공");
+				log.info("팀 생성 완료 "+team.get().getTeamName());
 			}
 		}
 	}

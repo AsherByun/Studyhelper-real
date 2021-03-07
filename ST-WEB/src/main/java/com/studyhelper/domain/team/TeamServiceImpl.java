@@ -20,13 +20,13 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class TeamServiceImpl implements TeamService{
 	private final MemberRepository memberRepository;
-	private final TeamRepository teamRepositoy;
+	private final TeamRepository teamRepository;
 	
 	@Transactional
 	@Override
 	public List<Member> findMembersSameTeams(Team team) {
 		List<Member> members = new ArrayList<Member>();
-		team = teamRepositoy.findById(team.getSeq()).get();
+		team = teamRepository.findById(team.getSeq()).get();
 		
 		for(MemberTeam memberTeam:team.getMemberTeams()) {
 			Member member = memberTeam.getMember();
@@ -42,6 +42,13 @@ public class TeamServiceImpl implements TeamService{
 		team.setChatRoomId(chatRoom.getRoomId());
 		
 		return team;
+	}
+	
+	@Transactional
+	@Override
+	public Team findTeam(Team team) {
+
+		return teamRepository.findById(team.getSeq()).get();
 	}
 
 }
