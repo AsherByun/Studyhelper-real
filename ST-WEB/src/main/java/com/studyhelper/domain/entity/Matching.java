@@ -21,5 +21,4 @@ public class Matching {
 	private Subject subject;
 	private String memberId;
 	private String requestMatchingDate;
-
 }
