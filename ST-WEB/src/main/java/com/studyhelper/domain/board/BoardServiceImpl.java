@@ -45,5 +45,12 @@ public class BoardServiceImpl implements BoardService {
 		
 		return team.getBoards();
 	}
+	
+	@Transactional
+	@Override
+	public Board getBoardWithTeam(long seq) {
+
+		return boardRepository.findBoardByIdFetchTeam(seq);
+	}
 
 }

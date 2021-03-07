@@ -25,22 +25,23 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class DeleteJobScheduler {
 	private final MatchingRepository matchingRepository;
-	
-	@Scheduled(fixedDelay = 86400000) //하루에 한번 실행
+	//로그사용하기 위해서 expire 사용안함
+	@Scheduled(fixedDelay = 86400000) // 하루에 한번 실행
 	public void runDeleteJob() {
 		log.info("매칭 삭제 시작!!");
-		
+
 		List<Matching> matchings = matchingRepository.findAll();
-		
-		for(Matching matching:matchings) {
+
+		for (Matching matching : matchings) {
 			LocalDate localDate = LocalDate.parse(matching.getRequestMatchingDate(), DateTimeFormatter.ISO_DATE);
 			LocalDate leastDay = LocalDate.now();
 			leastDay = leastDay.minusDays(3);
-			
+
 			if (localDate.isBefore(leastDay)) {
+				log.info("매칭 삭제 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 삭제");
 				matchingRepository.delete(matching);
 			}
 		}
-		
+
 	}
 }

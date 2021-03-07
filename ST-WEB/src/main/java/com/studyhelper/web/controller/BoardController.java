@@ -26,12 +26,11 @@ import com.studyhelper.member.security.SecurityUser;
 @Slf4j
 public class BoardController {
 	private final BoardService boardService;
-	private final BoardRepository boardRepository;
 	private final TeamRepository teamRepository;
 	
 	@GetMapping("/board/getBoard")
 	public String getBoard(Board board,Model model) {
-		board = boardRepository.findById(board.getSeq()).get();
+		board = boardService.getBoardWithTeam(board.getSeq());
 		
 		model.addAttribute("board", board);
 		model.addAttribute("team",board.getTeam());

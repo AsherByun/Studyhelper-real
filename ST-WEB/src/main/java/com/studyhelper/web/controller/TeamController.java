@@ -25,7 +25,6 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 public class TeamController {
-	private final RedisPublisher redisPublisher;
 	private final ChatRoomRepository chatRoomRepository;
 	private final MemberService memberSerivce;
 	private final TeamService teamService;
@@ -53,7 +52,7 @@ public class TeamController {
 	@GetMapping("/team/main")
 	public String teamMain(Team team, Model model,@AuthenticationPrincipal SecurityUser securityUser) {
 		List<Member> teamMembers = teamService.findMembersSameTeams(team);
-		Team targetTeam = teamRepository.findById(team.getSeq()).get();
+		Team targetTeam = teamService.findTeam(team);
 		Member member = securityUser.getMember();
 		
 		if (!memberSerivce.isInThisTeam(team, member)) {

@@ -46,10 +46,11 @@ public class MemberServiceImpl implements MemberService {
 		return memberRepository.save(member);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	@Override
 	public List<Team> findMemberTeamsById(Member member) {
 		List<Team> teams = new ArrayList<Team>();
+		member = memberRepository.findById(member.getId()).get();
 		
 		for (MemberTeam memberTeam : member.getMemberTeams()) {
 			Team team = memberTeam.getTeam();

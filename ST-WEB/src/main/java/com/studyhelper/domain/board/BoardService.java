@@ -9,4 +9,5 @@ import com.studyhelper.domain.entity.Team;
 public interface BoardService {
 	Board saveBoard(Board board,Member member,Team team);
 	List<Board> getBoardsByTeam(Team team);
+	Board getBoardWithTeam(long seq);
 }
