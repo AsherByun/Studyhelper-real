@@ -1,3 +1,0 @@
-2021-03-03 15:49:50.164  INFO 17688 --- [restartedMain] com.studyhelper.batch.BatchApplication   : Starting BatchApplication using Java 14.0.2 on DESKTOP-802U2A9 with PID 17688 (C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH\target\classes started by Owner in C:\Users\Owner\eclipse-workspace\StudyHelper-real\ST-BATCH)
-2021-03-03 15:49:50.174  INFO 17688 --- [restartedMain] com.studyhelper.batch.BatchApplication   : The following profiles are active: batch
-2021-03-03 15:49:50.230  INFO 17688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable

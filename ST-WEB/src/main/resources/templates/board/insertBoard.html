@@ -8,7 +8,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <body th:align="center">
 <h1>게시글 등록</h1>
-<form th:action="@{/board/insertBoard(seq=${teamSeq})}" method="post">
+<form th:action="@{/board/format(seq=${teamSeq})}" method="post">
 <table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">				
 	<tr>
 		<td bgcolor="orange" th:text="제목" width="80"></td>
@@ -30,7 +30,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 	</tr>
 </table>
 </form>	
-<a th:href="@{/board/boardLists(seq=${teamSeq})}">글목록</a>
+<a th:href="@{/boards(seq=${teamSeq})}">글목록</a>
 
 
 <br><br><br><br><br>

@@ -7,7 +7,7 @@
 
 <body th:align="center">
 	<div th:each="team : ${teams}" th:align="center" >
-		<a th:href="@{/team/main(seq=${team.seq})}" th:text="${team.teamName} + '팀 으로 이동하기'"></a>
+		<a th:href="@{/team(seq=${team.seq})}" th:text="${team.teamName} + '팀 으로 이동하기'"></a>
 	</div>
 	
 	<br><br><br><br><br>
