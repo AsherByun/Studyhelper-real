@@ -4,8 +4,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.studyhelper.exception.board.BoardException;
-import com.studyhelper.exception.login.LoginException;
+import com.studyhelper.domain.board.exception.BoardException;
+import com.studyhelper.domain.member.exception.LoginException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

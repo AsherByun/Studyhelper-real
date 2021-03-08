@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.studyhelper.interceptor.FirstAccessInterceptor;
+import com.studyhelper.domain.member.interceptor.FirstAccessInterceptor;
 
 @Configuration
 public class MvcConfiguration implements WebMvcConfigurer {
