@@ -25,14 +25,14 @@
 		</tr>
 
 		<tr th:each="board: ${boardList}">
-			<td><a th:href="@{/board/getBoard(seq=${board.seq})}"
+			<td><a th:href="@{/board(seq=${board.seq})}"
 				th:text="${board.title}"></a></td>
 			<td th:text="${board.member.id}" th:align="center">
 		</tr>
 
 	</table>
 	<br>
-	<a th:href="@{/board/insertBoard(seq=${team.seq})}">게시글 등록</a>
+	<a th:href="@{/board/format(seq=${team.seq})}">게시글 등록</a>
 	<br><br>
 	<a th:href="@{/team/main(seq=${team.seq})}">팀 페이지로~~</a>
 	

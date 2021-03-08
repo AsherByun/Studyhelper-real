@@ -21,13 +21,15 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
 	private final MemberService memberService;
 	
+	//유저 메일페이지로 이동
 	@GetMapping("/userpage/mail")
 	public String mailpage() {
 		
 		return "mailpage";
 	}
 	
-	@GetMapping("/team/teamList")
+	//해당 회원이 속한 팀리스트를 보여주는 페이지
+	@GetMapping("/teams")
 	public String teamList(Model model,@AuthenticationPrincipal SecurityUser securityUser) {
 		Member member = securityUser.getMember();
 		List<Team> teams = memberService.findMemberTeamsById(member);

@@ -28,7 +28,8 @@ public class BoardController {
 	private final BoardService boardService;
 	private final TeamRepository teamRepository;
 
-	@GetMapping("/board/getBoard")
+	// 게시판 상세보기
+	@GetMapping("/board")
 	public String getBoard(Board board, Model model) {
 		board = boardService.getBoardWithTeam(board.getSeq());
 
@@ -38,24 +39,27 @@ public class BoardController {
 		return "board/getBoard";
 	}
 
-	@GetMapping("/board/boardLists")
+	// 해당 팀 게시판 전부 가져오기
+	@GetMapping("/boards")
 	public String getBoardLists(Team team, Model model) {
 		List<Board> boardList = boardService.getBoardsByTeam(team);
-		
+
 		model.addAttribute("team", team);
 		model.addAttribute("boardList", boardList);
 
 		return "board/getBoardList";
 	}
 
-	@GetMapping("/board/insertBoard")
+	// 게시판 생성 화면
+	@GetMapping("/board/format")
 	public String insertBoardGet(Model model, Team team) {
 		model.addAttribute("teamSeq", team.getSeq());
 
 		return "board/insertBoard";
 	}
 
-	@PostMapping("/board/insertBoard")
+	// 게시판 생성
+	@PostMapping("/board/format")
 	public String insertBoardPost(Model model, Team team, Board board,
 			@AuthenticationPrincipal SecurityUser securityUser) {
 		if (board.getContent().equals("") || board.getTitle().equals("")) {

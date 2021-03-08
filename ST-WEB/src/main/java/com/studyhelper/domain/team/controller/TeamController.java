@@ -30,6 +30,7 @@ public class TeamController {
 	private final TeamService teamService;
 	private final TeamRepository teamRepository;
 
+	// 팀 채팅방으로 이동
 	@GetMapping("/team/chatting")
 	public String teamChatting(Team team, Model model) {
 		team = teamRepository.findById(team.getSeq()).get();
@@ -38,27 +39,29 @@ public class TeamController {
 			ChatRoom chatRoom = chatRoomRepository.createChatRoom(team.getSeq().toString());
 			team = teamService.saveTeamChatId(team, chatRoom);
 		}
-		return "redirect:/chat/room/enter/"+team.getChatRoomId();
+		return "redirect:/chat/room/enter/" + team.getChatRoomId();
 	}
 
+	// 채팅방 입장시 정보를 제공
 	@GetMapping("/chat/info")
 	@ResponseBody
 	public String getUserInfos(@AuthenticationPrincipal SecurityUser securityUser) {
 		Member member = securityUser.getMember();
-		
+
 		return member.getId();
 	}
 
-	@GetMapping("/team/main")
-	public String teamMain(Team team, Model model,@AuthenticationPrincipal SecurityUser securityUser) {
+	// 팀메인페이지로 이동
+	@GetMapping("/team")
+	public String teamMain(Team team, Model model, @AuthenticationPrincipal SecurityUser securityUser) {
 		List<Member> teamMembers = teamService.findMembersSameTeams(team);
 		Team targetTeam = teamService.findTeam(team);
 		Member member = securityUser.getMember();
-		
+
 		if (!memberSerivce.isInThisTeam(team, member)) {
 			return "userpage";
 		}
-		
+
 		model.addAttribute("team", targetTeam);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";

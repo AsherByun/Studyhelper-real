@@ -21,7 +21,8 @@ public class LoginController {
 
 	// 로그인화면 출력
 	@GetMapping("/login")
-	public void login(Model model) {}
+	public void login() {
+	}
 
 	// 로그아웃 버튼 클릭시 처리 컨트롤러
 	@GetMapping("/logout")

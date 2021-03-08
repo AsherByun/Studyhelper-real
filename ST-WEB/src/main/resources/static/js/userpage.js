@@ -7,5 +7,5 @@ document.getElementById("goMatchingBtn").addEventListener("click", function() {
 })
 
 document.getElementById("goTeam").addEventListener("click", function() {
-	location.href = "/team/teamList";
+	location.href = "/teams";
 })
