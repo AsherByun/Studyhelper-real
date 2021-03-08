@@ -24,11 +24,13 @@ import com.studyhelper.domain.team.repo.MemberTeamRepository;
 import com.studyhelper.domain.team.repo.TeamRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 /*
  * 매칭을 도와주는 클래스 -> trie와 비슷한 구조 -> 옵션이 많아지면 ㄹㅇ 트라이로 구현
  * 같은 매칭일 경우 처리 ->
  */
 @Configuration
+@Slf4j
 @RequiredArgsConstructor
 public class MatchTrie {
 	public static final String BASE_TEAM_NAME = "BASE";
@@ -79,13 +81,19 @@ public class MatchTrie {
 			Team team = new Team();
 			team.setTeamName(BASE_TEAM_NAME);
 			teamRepository.save(team);
+			
+			//싱글스레드라 stringbuilder사용
+			StringBuilder teamMemberForLog = new StringBuilder("매칭 성공 --> 매칭 정보: ");
 			for (Matching matching : matchs[regionNum][subjectNum][sizeNum]) {
 				Optional<Member> member = memberRepository.findById(matching.getMemberId());
 				//회원 탈퇴시 매칭정보도 삭제해줘야함
 				
+				teamMemberForLog.append(member.get().getId()+" ");
+				
 				MemberTeam memberTeam = memberService.matchingTeamByMembers(member.get(), team);
 				matchingRepository.delete(matching);
 			}
+			log.info(teamMemberForLog.toString()+" 님들의 매칭이 성공했습니다! 팀 SEQ: "+team.getSeq());
 			matchs[regionNum][subjectNum][sizeNum] = new ArrayList<Matching>();
 			return Optional.ofNullable(team);
 		}

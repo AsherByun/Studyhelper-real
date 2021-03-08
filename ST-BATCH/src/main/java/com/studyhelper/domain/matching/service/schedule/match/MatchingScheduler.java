@@ -33,7 +33,7 @@ public class MatchingScheduler {
 		List<Matching> matchings = matchingRepository.findAll();
 
 		// 매칭 뒤에서부터 시작
-		for (int i=matchings.size()-1;i>=0;i--) {
+		for (int i = matchings.size() - 1; i >= 0; i--) {
 			Matching matching = matchings.get(i);
 			Optional<Team> team = matchTrie.pushMatching(matching);
 			if (team.isPresent()) {
@@ -41,17 +41,7 @@ public class MatchingScheduler {
 				Team newTeam = team.get();
 				ChatRoom chatRoom = chatRoomRepository.createChatRoom(newTeam.getTeamName());
 				newTeam.setChatRoomId(chatRoom.getRoomId());
-				log.info("매칭 성공 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 성공");
-				log.info("팀 생성 완료 " + team.get().getTeamName());
 			}
 		}
 	}
-
-//	@Scheduled(fixedDelay = 10000)
-//	public void runMatching() {
-//		List<Member> list = memberRepo.findAll();
-//		for(Member member:list) {
-//			log.info(member.getId()+" "+member.getNickName());
-//		}
-//	}
 }

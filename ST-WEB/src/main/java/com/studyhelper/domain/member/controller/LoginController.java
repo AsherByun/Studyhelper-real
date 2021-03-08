@@ -13,9 +13,11 @@ import com.studyhelper.domain.member.service.MemberService;
 import com.studyhelper.domain.team.entity.Team;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequiredArgsConstructor
+@Slf4j
 public class LoginController {
 	private final MemberService memberService;
 
@@ -33,7 +35,8 @@ public class LoginController {
 	public String userpage(Model model, @AuthenticationPrincipal SecurityUser securityUser) {
 		Member member = securityUser.getMember();
 		List<Team> teams = memberService.findMemberTeamsById(member);
-
+		log.info("회원 로그인 --> 회원 아이디: "+member.getId());
+		
 		memberService.changeRole(member);
 
 		model.addAttribute("teams", teams);

@@ -22,7 +22,6 @@ public class BoardServiceImpl implements BoardService {
 	private final BoardRepository boardRepository;
 	private final TeamRepository teamRepository;
 	private final MemberRepository memberRepository;
-	private final int NO_BOARDS = 0;
 
 	@Transactional
 	@Override
@@ -37,6 +36,7 @@ public class BoardServiceImpl implements BoardService {
 		member.getBoards().add(board);
 
 		boardRepository.save(board);
+		log.info("게시판 생성 -->  회원 아이디: " + member.getId() + " 팀 SEQ: " + team.getSeq());
 
 		return board;
 	}
@@ -45,14 +45,14 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<Board> getBoardsByTeam(Team team) {
 		Team targetTeam = teamRepository.findTeamByFetchBoard(team.getSeq());
-		
+
 		if (targetTeam == null) {
 			return null;
 		}
-		
+
 		return targetTeam.getBoards();
 	}
-	
+
 	@Transactional
 	@Override
 	public Board getBoardWithTeam(long seq) {

@@ -1,5 +1,6 @@
 package com.studyhelper.domain.member.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -22,17 +23,15 @@ import com.studyhelper.domain.team.repo.MemberTeamRepository;
 import com.studyhelper.domain.team.repo.TeamRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class MemberServiceImpl implements MemberService {
-	@Autowired
-	private PasswordEncoder encoder;
-
-	public final MemberRepository memberRepository;
-	public final MemberTeamRepository memberTeamRepository;
-	public final TeamRepository teamRepository;
-	public final MatchingRepository matchRepository;
+	private final PasswordEncoder encoder;
+	private LocalDate LOCALDATE;
+	private final MemberRepository memberRepository;
 
 	@Transactional
 	@Override
@@ -40,10 +39,14 @@ public class MemberServiceImpl implements MemberService {
 
 		return memberRepository.isSameIdOrNickName(member.getNickName(), member.getId()) == 1;
 	}
+
 	@Transactional
 	@Override
 	public Member saveMember(Member member) {
 		member.setPassword(encoder.encode(member.getPassword()));
+
+		log.info("회원가입 --> 회원아이디: " + member.getId() + " 회원이름: " + member.getId() + " 가입 날짜: " + LOCALDATE.now());
+
 		return memberRepository.save(member);
 	}
 
@@ -52,7 +55,7 @@ public class MemberServiceImpl implements MemberService {
 	public List<Team> findMemberTeamsById(Member member) {
 		List<Team> teams = new ArrayList<Team>();
 		member = memberRepository.findById(member.getId()).get();
-		
+
 		for (MemberTeam memberTeam : member.getMemberTeams()) {
 			Team team = memberTeam.getTeam();
 			teams.add(team);
@@ -60,29 +63,31 @@ public class MemberServiceImpl implements MemberService {
 
 		return teams;
 	}
-	
+
 	@Transactional
 	@Override
 	public boolean isInThisTeam(Team team, Member member) {
 		List<Team> teams = findMemberTeamsById(member);
-		
-		for(Team t:teams) {
+
+		for (Team t : teams) {
 			if (t.getSeq().equals(team.getSeq())) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
+
 	@Transactional
 	@Override
 	public void changeRole(Member member) {
 		List<Team> teams = findMemberTeamsById(member);
 		member = memberRepository.findById(member.getId()).get();
-		
-		if (teams.size()>0) {
+
+		if (teams.size() > 0) {
 			member.setRole(Role.ROLE_HAVEGROUP);
-		}else {
+			log.info("회원 권환 변경 --> 회원 아이디: " + member.getId() + " 일반 -> havingGroup");
+		} else {
 			member.setRole(Role.ROLE_MEMBER);
 		}
 	}
