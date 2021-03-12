@@ -16,9 +16,11 @@ import com.studyhelper.domain.member.security.SecurityUser;
 import com.studyhelper.domain.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequiredArgsConstructor
+@Slf4j
 public class TeamMatcingController {
 	private final MatchingService matchingService;
 

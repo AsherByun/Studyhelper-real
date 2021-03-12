@@ -72,6 +72,7 @@ public class MatchTrie {
 		//이미 같은 매칭을 신청한게 있는지 확인함
 		for(Matching matching:matchs[regionNum][subjectNum][sizeNum]) {
 			if (matching.getMemberId().equals(match.getMemberId())) {
+				matchingRepository.delete(match);
 				return Optional.ofNullable(null);
 			}
 		}

@@ -35,6 +35,7 @@ public class MatchingScheduler {
 		// 매칭 뒤에서부터 시작
 		for (int i = matchings.size() - 1; i >= 0; i--) {
 			Matching matching = matchings.get(i);
+			log.info("매칭 정보 --> "+matching.getRequestMatchingDate());
 			Optional<Team> team = matchTrie.pushMatching(matching);
 			if (team.isPresent()) {
 				// 팀이 생성됐다면 채팅방을 맵핑해줘야함

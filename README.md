@@ -83,7 +83,7 @@ Spring boot Security 사용
 -----------------------------
 ## 채팅 구현 with Redis and Websocket
 1. spring webSocket 사용
-2. Redis pub/sub 사용
+2. Redis pub/sub 사용 -> 서버 재실행시 채팅방 정보를 저장 + 여러 서버에서 같은 채팅방을 볼 수 있도록
 -----------------------------
 ## JPA
 1. MYSQL (8.0.2)
@@ -111,7 +111,15 @@ Redis ERD (matchings + CHAT_ROOMS)
 
 #### 데이터베이스
 1. JPA N+1 문제 발생 ()
-2. 영속성 컨텍스트 연장부분 ()
+2. 영속성 컨텍스트 연장부분
+    - osiv~~
+3. 동시성 문제 해결전략
 #### Spring boot
 1. rds key와같이 중요한 정보 저장 ()
+2. logging 작업
+3. Rest api
+4. 패키징
+5. 테스팅
 #### CI/CD + AWS ec2
+
+
