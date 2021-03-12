@@ -16,6 +16,7 @@ import com.studyhelper.domain.matching.entity.Matching;
 import com.studyhelper.domain.matching.repo.MatchingRepository;
 import com.studyhelper.domain.member.entity.Member;
 import com.studyhelper.domain.member.entity.enums.Role;
+import com.studyhelper.domain.member.exception.SameIdOrNickNameException;
 import com.studyhelper.domain.member.repo.MemberRepository;
 import com.studyhelper.domain.team.entity.MemberTeam;
 import com.studyhelper.domain.team.entity.Team;
@@ -42,9 +43,13 @@ public class MemberServiceImpl implements MemberService {
 
 	@Transactional
 	@Override
-	public Member saveMember(Member member) {
+	public Member saveMember(Member member) throws SameIdOrNickNameException {
 		member.setPassword(encoder.encode(member.getPassword()));
 
+		if (checkIdAndNickName(member)) {
+			throw new SameIdOrNickNameException("이미있는 아이디 또는 닉네임입니다.");
+		}
+		
 		log.info("회원가입 --> 회원아이디: " + member.getId() + " 회원이름: " + member.getId() + " 가입 날짜: " + LOCALDATE.now());
 
 		return memberRepository.save(member);

@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class SignUpController {
 	public final MemberService memberService;
-	
+
 	@GetMapping("/signup")
 	public String signup() {
 		return "signup";
@@ -30,10 +30,11 @@ public class SignUpController {
 	public String makeId(Member member) {
 		member.setRole(Role.ROLE_MEMBER);
 
-		if (memberService.checkIdAndNickName(member)) {
-			throw new SameIdOrNickNameException("이미 있는 아이디입니다");
+		try {
+			memberService.saveMember(member);
+		} catch (SameIdOrNickNameException e) {
+			throw new SameIdOrNickNameException("이미 있는 아이디입니다 --> id: " + member.getId());
 		}
-		memberService.saveMember(member);
 
 		return "redirect:login";
 	}
