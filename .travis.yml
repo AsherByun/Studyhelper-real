@@ -18,7 +18,8 @@ cache:
   directories:
     - $HOME/.m2
     - $HOME/.mvnw
-script: "./mvnw clean package"
+script:  "./mvnw clean package"
+ 
 
 before_deploy:
  - zip -r studyhelper_ec2 *
@@ -29,13 +30,14 @@ deploy:
  - provider: s3
    access_key_id: $AWS_ACCESS_KEY
    secret_access_key: $AWS_SECRET_KEY
-   
    bucket: studyhelper-ec2
    region: ap-northeast-2
    skip_cleanup: true
    acl: private
    local_dir: deploy
    wait_until_deployed : true
+   on:
+     all_branches: true
 
  - provider: codedeploy
    access_key_id: $AWS_ACCESS_KEY 
@@ -47,6 +49,8 @@ deploy:
    deployment_group: studyhelper-ec2-group 
    region: ap-northeast-2
    wait-until-deployed: true
+   on:
+     all_branches: true
 
 notifications:
  email:
