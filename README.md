@@ -123,3 +123,8 @@ Redis ERD (matchings + CHAT_ROOMS)
 #### CI/CD + AWS ec2
 
 
+## 테스트 정리
+1. Junit5 사용
+2. Mockmvc 사용 -> 가상 서블릿
+3. Spring Security 적용시 권한이 필요한 페이지 테스트 -> @withUserDetail 어노테이션 사용
+4. 
