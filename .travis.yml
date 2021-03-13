@@ -18,7 +18,9 @@ cache:
   directories:
     - $HOME/.m2
     - $HOME/.mvnw
-script: "./mvnw clean package"
+script: 
+ - "./mvnw clean package"
+ - echo "skipping tests"
 
 before_deploy:
  - zip -r studyhelper_ec2 *
