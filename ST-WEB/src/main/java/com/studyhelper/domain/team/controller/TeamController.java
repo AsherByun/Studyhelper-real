@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.studyhelper.domain.chat.dao.ChatRoomRepository;
 import com.studyhelper.domain.chat.dto.ChatRoom;
-import com.studyhelper.domain.chat.pubsub.RedisPublisher;
 import com.studyhelper.domain.member.entity.Member;
 import com.studyhelper.domain.member.security.SecurityUser;
 import com.studyhelper.domain.member.service.MemberService;
@@ -42,15 +41,6 @@ public class TeamController {
 		return "redirect:/chat/room/enter/" + team.getChatRoomId();
 	}
 
-	// 채팅방 입장시 정보를 제공
-	@GetMapping("/chat/info")
-	@ResponseBody
-	public String getUserInfos(@AuthenticationPrincipal SecurityUser securityUser) {
-		Member member = securityUser.getMember();
-
-		return member.getId();
-	}
-
 	// 팀메인페이지로 이동
 	@GetMapping("/team")
 	public String teamMain(Team team, Model model, @AuthenticationPrincipal SecurityUser securityUser) {
@@ -61,7 +51,9 @@ public class TeamController {
 		if (!memberSerivce.isInThisTeam(team, member)) {
 			return "userpage";
 		}
-
+		//시큐리티 맴버에 현재 들어가있는 팀을 저장해준다.
+		securityUser.setTeam(targetTeam);
+		
 		model.addAttribute("team", targetTeam);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";
