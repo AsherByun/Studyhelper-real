@@ -10,6 +10,8 @@
 	<div th:each="member : ${members}" th:align="center" >
 		<div th:text="${member.id}"></div>
 	</div>
+	<h3>팀이름 바꾸기</h3>
+	<a th:href="@{/team/info}" th:text="'팀이름 바꾸기'"></a>
 	
 	<h2>스터디 채팅으로 가기</h2>
 	<a th:href="@{/team/chatting(seq=${team.seq})}" th:text="${team.teamName} + '팀 채팅으로 가기'"></a>

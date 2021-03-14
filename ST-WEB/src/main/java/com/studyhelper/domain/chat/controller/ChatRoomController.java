@@ -9,9 +9,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.studyhelper.domain.chat.dao.ChatRoomRepository;
 import com.studyhelper.domain.chat.dto.ChatRoom;
+import com.studyhelper.domain.chat.service.ChatService;
+import com.studyhelper.domain.member.entity.Member;
+import com.studyhelper.domain.member.security.SecurityUser;
+import com.studyhelper.domain.team.entity.Team;
 
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -25,6 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ChatRoomController {
 
 	private final ChatRoomRepository chatRoomRepository;
+	private final ChatService chatService;
 
 	@GetMapping("/room")
 	public String rooms(Model model) {
@@ -34,7 +41,11 @@ public class ChatRoomController {
 	@GetMapping("/rooms")
 	@ResponseBody
 	public List<ChatRoom> room() {
-		return chatRoomRepository.findAllRoom();
+		List<ChatRoom> chatRooms = chatRoomRepository.findAllRoom();
+		for (ChatRoom chatRoom : chatRooms) {
+			chatRoom.setUserCount(chatRoomRepository.getUserCount(chatRoom.getRoomId()));
+		}
+		return chatRooms;
 	}
 
 	@PostMapping("/room")
@@ -47,6 +58,17 @@ public class ChatRoomController {
 	public String roomDetail(Model model, @PathVariable String roomId) {
 		model.addAttribute("roomId", roomId);
 		return "/chat/roomdetail";
+	}
+
+	// 채팅방 입장시 정보를 제공
+	@GetMapping("/info")
+	@ResponseBody
+	public Map<String, String> getUserInfos(@AuthenticationPrincipal SecurityUser securityUser) {
+		Member member = securityUser.getMember();
+		Team team = securityUser.getTeam();
+		
+		
+		return chatService.getRoomInfo(member.getId(), team.getTeamName());
 	}
 
 	@GetMapping("/room/{roomId}")

@@ -13,4 +13,6 @@ public interface TeamService{
 	Team saveTeamChatId(Team team,ChatRoom chatRoom);
 	//팀 seq로 팀을 뽑아오기
    	Team findTeam(Team team);
+   	//팀이름 변경
+   	void changeTeamName(Team team,String changeTeamName);
 }

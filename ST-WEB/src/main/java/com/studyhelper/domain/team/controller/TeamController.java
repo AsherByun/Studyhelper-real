@@ -6,11 +6,12 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.studyhelper.domain.chat.dao.ChatRoomRepository;
 import com.studyhelper.domain.chat.dto.ChatRoom;
-import com.studyhelper.domain.chat.pubsub.RedisPublisher;
 import com.studyhelper.domain.member.entity.Member;
 import com.studyhelper.domain.member.security.SecurityUser;
 import com.studyhelper.domain.member.service.MemberService;
@@ -32,7 +33,8 @@ public class TeamController {
 
 	// 팀 채팅방으로 이동
 	@GetMapping("/team/chatting")
-	public String teamChatting(Team team, Model model) {
+	public String teamChatting(@AuthenticationPrincipal SecurityUser securityUser, Model model) {
+		Team team = securityUser.getTeam();
 		team = teamRepository.findById(team.getSeq()).get();
 
 		if (team.getChatRoomId() == null) {
@@ -42,28 +44,43 @@ public class TeamController {
 		return "redirect:/chat/room/enter/" + team.getChatRoomId();
 	}
 
-	// 채팅방 입장시 정보를 제공
-	@GetMapping("/chat/info")
-	@ResponseBody
-	public String getUserInfos(@AuthenticationPrincipal SecurityUser securityUser) {
-		Member member = securityUser.getMember();
-
-		return member.getId();
-	}
-
 	// 팀메인페이지로 이동
 	@GetMapping("/team")
-	public String teamMain(Team team, Model model, @AuthenticationPrincipal SecurityUser securityUser) {
-		List<Member> teamMembers = teamService.findMembersSameTeams(team);
-		Team targetTeam = teamService.findTeam(team);
-		Member member = securityUser.getMember();
-
-		if (!memberSerivce.isInThisTeam(team, member)) {
+	public String teamMain(@RequestParam(value = "seq", required = false, defaultValue = "-1") long teamSeq,
+			Model model, @AuthenticationPrincipal SecurityUser securityUser) {
+		
+		Team team;
+		
+		if (teamSeq == -1 && securityUser.getTeam() == null) {
+			return "userpage";
+		} else if (teamSeq == -1) {
+			team = securityUser.getTeam();
+		}else {
+			team = teamRepository.findById(teamSeq).get();
+		}
+		
+		if (!memberSerivce.isInThisTeam(team, securityUser.getMember())) {
 			return "userpage";
 		}
+		// 시큐리티 맴버에 현재 들어가있는 팀을 저장해준다.
+		securityUser.setTeam(team);
 
-		model.addAttribute("team", targetTeam);
+		List<Member> teamMembers = teamService.findMembersSameTeams(team);
+		model.addAttribute("team", team);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";
+	}
+	@GetMapping("/team/info")
+	public String moveTeamInfo(@AuthenticationPrincipal SecurityUser securityUser,Model model) {
+		model.addAttribute("teamName", securityUser.getTeam().getTeamName());
+		
+		return "teamInfoChange";
+	}
+	
+	@PostMapping("/team/info")
+	public String changeTeamName(@AuthenticationPrincipal SecurityUser securityUser,String changeTeamName) {
+		teamService.changeTeamName(securityUser.getTeam(), changeTeamName);
+		
+		return "redirect:/team";
 	}
 }

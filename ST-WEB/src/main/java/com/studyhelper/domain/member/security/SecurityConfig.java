@@ -8,18 +8,21 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.studyhelper.domain.member.entity.enums.Role;
+import com.studyhelper.domain.member.security.jwt.JwtAuthenticationFilter;
+import com.studyhelper.domain.member.security.jwt.JwtTokenProvider;
+
+import lombok.RequiredArgsConstructor;
 
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
+@RequiredArgsConstructor
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
+	private final JwtTokenProvider jwtTokenProvider;
 	private final MemberDetailService memberDetailService;
-	
-	public SecurityConfig(MemberDetailService memberDetailService) {
-		this.memberDetailService = memberDetailService;
-	}
-	
+
 	@Override
 	protected void configure(HttpSecurity security) throws Exception {
 		//모든 사용자 권한 허가
@@ -32,15 +35,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		security.formLogin().loginPage("/login").defaultSuccessUrl("/userpage",true);
 		//ajax통신시 corps
 		security.csrf().disable();
+		security.headers().frameOptions().sameOrigin();
 		//권한이 없을때 보내주는 동작
 		security.exceptionHandling().accessDeniedPage("/accessDenied");
 		//로그아웃시 로그인페이지로 다시 보냄
 		security.logout().invalidateHttpSession(true).logoutSuccessUrl("/login");
-		
 		security.userDetailsService(memberDetailService);
+		security.addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), 
+				UsernamePasswordAuthenticationFilter.class);
 	}
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-	} 
+	}
 }
