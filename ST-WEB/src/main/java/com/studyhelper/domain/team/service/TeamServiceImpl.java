@@ -1,6 +1,8 @@
 package com.studyhelper.domain.team.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -33,6 +35,12 @@ public class TeamServiceImpl implements TeamService{
 			Member member = memberTeam.getMember();
 			members.add(member);
 		}
+		Collections.sort(members, new Comparator<Member>() {
+			@Override
+			public int compare(Member o1, Member o2) {
+				return o1.getId().compareTo(o2.getId());
+			}
+		});;
 		
 		return members;
 	}

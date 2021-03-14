@@ -1,11 +1,14 @@
 package com.studyhelper.domain.team.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.studyhelper.domain.chat.dao.ChatRoomRepository;
@@ -43,18 +46,27 @@ public class TeamController {
 
 	// 팀메인페이지로 이동
 	@GetMapping("/team")
-	public String teamMain(Team team, Model model, @AuthenticationPrincipal SecurityUser securityUser) {
-		List<Member> teamMembers = teamService.findMembersSameTeams(team);
-		Team targetTeam = teamService.findTeam(team);
-		Member member = securityUser.getMember();
-
-		if (!memberSerivce.isInThisTeam(team, member)) {
+	public String teamMain(@RequestParam(value = "seq", required = false, defaultValue = "-1") long teamSeq,
+			Model model, @AuthenticationPrincipal SecurityUser securityUser) {
+		
+		Team team;
+		
+		if (teamSeq == -1 && securityUser.getTeam() == null) {
+			return "userpage";
+		} else if (teamSeq == -1) {
+			team = securityUser.getTeam();
+		}else {
+			team = teamRepository.findById(teamSeq).get();
+		}
+		
+		if (!memberSerivce.isInThisTeam(team, securityUser.getMember())) {
 			return "userpage";
 		}
-		//시큐리티 맴버에 현재 들어가있는 팀을 저장해준다.
-		securityUser.setTeam(targetTeam);
-		
-		model.addAttribute("team", targetTeam);
+		// 시큐리티 맴버에 현재 들어가있는 팀을 저장해준다.
+		securityUser.setTeam(team);
+
+		List<Member> teamMembers = teamService.findMembersSameTeams(team);
+		model.addAttribute("team", team);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";
 	}
