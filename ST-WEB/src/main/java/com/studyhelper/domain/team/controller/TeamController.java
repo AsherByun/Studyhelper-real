@@ -34,7 +34,8 @@ public class TeamController {
 
 	// 팀 채팅방으로 이동
 	@GetMapping("/team/chatting")
-	public String teamChatting(Team team, Model model) {
+	public String teamChatting(@AuthenticationPrincipal SecurityUser securityUser, Model model) {
+		Team team = securityUser.getTeam();
 		team = teamRepository.findById(team.getSeq()).get();
 
 		if (team.getChatRoomId() == null) {
