@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<title>팀이름 바꾸기</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+	<h1>게시글 등록</h1>
+	<form th:action="@{/team/info}" method="post">
+		<table th:align="center" border="1" th:cellpadding="0"
+			th:cellspacing="0">
+			<tr>
+				<td bgcolor="orange" th:text="'현재이름 :'+${teamName}" width="300"></td>
+				<td><input name="changeTeamName" type="text" size="50"
+					placeholder="바꿀 팀 이름을 입력하시오"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit"
+					value="팀이름 바꾸기"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

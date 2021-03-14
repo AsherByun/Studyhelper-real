@@ -68,7 +68,8 @@ Spring boot Security 사용
 (JWT 토큰 사용 예정)  
 
 1. 회원(Member)를 User 클래스를 상속받은 SecurityUser에 감싸서 사용함  
-2. 비밀번호 PasswordEncoder를 사용하여 encoding 하여 사용    
+2. 비밀번호 PasswordEncoder를 사용하여 encoding 하여 사용
+3. SecurityUser안에 회원(member) 와 최근 접근한 팀의 정보(Team)를 넣어놓고 세션이 유지되는 동안에 각 컨트롤러에서 사용 
 
 -----------------------------
 

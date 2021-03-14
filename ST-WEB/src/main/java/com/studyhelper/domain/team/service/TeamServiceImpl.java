@@ -59,5 +59,13 @@ public class TeamServiceImpl implements TeamService{
 
 		return teamRepository.findById(team.getSeq()).get();
 	}
+	
+	@Transactional
+	@Override
+	public void changeTeamName(Team team, String changeTeamName) {
+		team = teamRepository.findById(team.getSeq()).get();
+		
+		team.setTeamName(changeTeamName);
+	}
 
 }

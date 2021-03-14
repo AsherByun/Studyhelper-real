@@ -1,15 +1,14 @@
 package com.studyhelper.domain.team.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.studyhelper.domain.chat.dao.ChatRoomRepository;
 import com.studyhelper.domain.chat.dto.ChatRoom;
@@ -70,5 +69,18 @@ public class TeamController {
 		model.addAttribute("team", team);
 		model.addAttribute("members", teamMembers);
 		return "teamMainPage";
+	}
+	@GetMapping("/team/info")
+	public String moveTeamInfo(@AuthenticationPrincipal SecurityUser securityUser,Model model) {
+		model.addAttribute("teamName", securityUser.getTeam().getTeamName());
+		
+		return "teamInfoChange";
+	}
+	
+	@PostMapping("/team/info")
+	public String changeTeamName(@AuthenticationPrincipal SecurityUser securityUser,String changeTeamName) {
+		teamService.changeTeamName(securityUser.getTeam(), changeTeamName);
+		
+		return "redirect:/team";
 	}
 }
