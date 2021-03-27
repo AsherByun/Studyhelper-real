@@ -2,6 +2,8 @@ package com.studyhelper.domain.team.controller;
 
 import java.util.List;
 
+import javax.persistence.OptimisticLockException;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,13 +37,9 @@ public class TeamController {
 	@GetMapping("/team/chatting")
 	public String teamChatting(@AuthenticationPrincipal SecurityUser securityUser, Model model) {
 		Team team = securityUser.getTeam();
-		team = teamRepository.findById(team.getSeq()).get();
-
-		if (team.getChatRoomId() == null) {
-			ChatRoom chatRoom = chatRoomRepository.createChatRoom(team.getSeq().toString());
-			team = teamService.saveTeamChatId(team, chatRoom);
-		}
-		return "redirect:/chat/room/enter/" + team.getChatRoomId();
+		String chatRoomId = teamService.findTeamChattingRoomId(team);
+		
+		return "redirect:/chat/room/enter/" + chatRoomId;
 	}
 
 	// 팀메인페이지로 이동
@@ -79,7 +77,11 @@ public class TeamController {
 	
 	@PostMapping("/team/info")
 	public String changeTeamName(@AuthenticationPrincipal SecurityUser securityUser,String changeTeamName) {
-		teamService.changeTeamName(securityUser.getTeam(), changeTeamName);
+		try {
+			teamService.changeTeamName(securityUser.getTeam(), changeTeamName);
+		} catch (OptimisticLockException e) {
+			log.info("팀 이름 교체 중 충돌 발생!!");
+		}
 		
 		return "redirect:/team";
 	}

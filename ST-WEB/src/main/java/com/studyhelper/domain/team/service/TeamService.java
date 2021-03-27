@@ -15,4 +15,6 @@ public interface TeamService{
    	Team findTeam(Team team);
    	//팀이름 변경
    	void changeTeamName(Team team,String changeTeamName);
+   	//팀 채팅 방아이디 가져오거나 없으면 생성 후 가져오기
+   	String findTeamChattingRoomId(Team team);
 }

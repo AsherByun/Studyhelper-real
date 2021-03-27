@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.studyhelper.domain.chat.dao.ChatRoomRepository;
 import com.studyhelper.domain.chat.dto.ChatRoom;
 import com.studyhelper.domain.member.entity.Member;
 import com.studyhelper.domain.member.repo.MemberRepository;
@@ -24,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TeamServiceImpl implements TeamService{
 	private final MemberRepository memberRepository;
 	private final TeamRepository teamRepository;
+	private final ChatRoomRepository chatRoomRepository;
 	
 	@Transactional
 	@Override
@@ -66,6 +68,19 @@ public class TeamServiceImpl implements TeamService{
 		team = teamRepository.findById(team.getSeq()).get();
 		
 		team.setTeamName(changeTeamName);
+	}
+	
+	@Transactional
+	@Override
+	public String findTeamChattingRoomId(Team team) {
+		team = teamRepository.findById(team.getSeq()).get();
+		
+		if (team.getChatRoomId() == null) {
+			ChatRoom chatRoom = chatRoomRepository.createChatRoom(team.getSeq().toString());
+			team = this.saveTeamChatId(team, chatRoom);
+		}
+		
+		return team.getChatRoomId();
 	}
 
 }
