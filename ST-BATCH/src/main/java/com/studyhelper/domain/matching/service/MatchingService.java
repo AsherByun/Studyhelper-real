@@ -8,4 +8,5 @@ import com.studyhelper.domain.team.entity.Team;
 public interface MatchingService {
 	void insertMatching(Matching matching);
 	void mappingChatRoom(Team team);
+	void deleteMatching(Matching matching);
 }

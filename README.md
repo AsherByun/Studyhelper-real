@@ -12,6 +12,7 @@
 - Mysql (JPA)
 - Redis (single + pubsub)
 - java 1.8 Maven
+- Kafka
 ### 프론트
 - Html, Css, Javascript, Thymeleaf, freemarker
 - Vue
@@ -19,13 +20,14 @@
 - CI/CD : Github + Travis Ci
 - Docker
 ### 환경
-- 확장성을 위한 멀티모듈 사용 -> web , batch
+- 확장성을 위한 멀티모듈 사용 -> web , batch -> MSA 아키텍쳐
 - local -> Window 10 ,eclipse
 - deploy -> Aws ec2 ubuntu 18
 - Nginx(예정)
 
 ![전체흐름이미지](https://user-images.githubusercontent.com/47214171/109663535-90935500-7baf-11eb-9171-99efd6632d39.png)
 
+![캡처](https://user-images.githubusercontent.com/47214171/112754024-37cfa480-9015-11eb-9602-9b97fb65f9b4.JPG)
 
 
 ## API
@@ -134,3 +136,12 @@ Redis ERD (matchings + CHAT_ROOMS)
 1. Junit5 사용
 2. Mockmvc 사용 -> 가상 서블릿
 3. Spring Security 적용시 권한이 필요한 페이지 테스트 -> @withUserDetail 어노테이션 사용
+
+
+
+
+## 스토리 라인
+1. 매칭
+   1. 모놀리틱 구조로 웹페이지에서 매칭을 요청시 그 즉시 매칭알고리즘이 실행되어 매칭하는 방식
+   2. MSA 아키텍쳐를 위해 WEB Domain과 Batch Domain을 나눈후 매칭 요청시 Kafka를 이용하여 매칭정보를 web->batch로 메시징 후 받으면 매칭 알고리즘 실행
+   3. 매칭은 kafka를 통한 비동기식 매칭, 매칭 정보 삭제는 Batch를 사용하여 일정 시간 이후 3일이지난 매칭 정보는 삭제
