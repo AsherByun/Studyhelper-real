@@ -3,6 +3,7 @@ package com.studyhelper.domain.matching.service.schedule.delete;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -39,16 +40,21 @@ public class DeleteJobScheduler {
 			for (int j = 0; j < SUBJECT_LENGTH; j++) {
 				for (int k = 0; k < MAX_SIZE; k++) {
 					HashSet<Matching> matchings = matchTrie.matchs[i][j][k];
+					HashSet<Matching> removeMatchs = new HashSet<Matching>();
 					for (Matching matching : matchings) {
 						LocalDate localDate = LocalDate.parse(matching.getRequestMatchingDate(),
 								DateTimeFormatter.ISO_DATE);
 						LocalDate leastDay = LocalDate.now();
-						leastDay = leastDay.minusDays(3);
+						leastDay = leastDay.plusDays(3);
 
 						if (localDate.isBefore(leastDay)) {
 							log.info("매칭 삭제 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 삭제");
+							removeMatchs.add(matching);
 							matchingRepository.delete(matching);
 						}
+					}
+					for(Matching matching:removeMatchs) {
+						matchTrie.matchs[i][j][k].remove(matching);
 					}
 				}
 			}
