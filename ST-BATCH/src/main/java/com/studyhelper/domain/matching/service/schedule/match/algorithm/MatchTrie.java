@@ -65,6 +65,8 @@ public class MatchTrie {
 	}
 	//매칭을 넣어주고 size가 맞으면 팀을 생성
 	public Optional<Team> pushMatching(Matching match) {
+		log.info("매칭 알고리즘 시작!!!");
+		
 		int subjectNum = convert.converting(match.getSubject().toString());
 		int regionNum = convert.converting(match.getRegion().toString());
 		int sizeNum = match.getSize();
@@ -83,8 +85,8 @@ public class MatchTrie {
 			team.setTeamName(BASE_TEAM_NAME);
 			teamRepository.save(team);
 			
-			//싱글스레드라 stringbuilder사용
-			StringBuilder teamMemberForLog = new StringBuilder("매칭 성공 --> 매칭 정보: ");
+			//비동기 멀티스레딩 buffer사용
+			StringBuffer teamMemberForLog = new StringBuffer("매칭 성공 --> 매칭 정보: ");
 			for (Matching matching : matchs[regionNum][subjectNum][sizeNum]) {
 				Optional<Member> member = memberRepository.findById(matching.getMemberId());
 				//회원 탈퇴시 매칭정보도 삭제해줘야함
