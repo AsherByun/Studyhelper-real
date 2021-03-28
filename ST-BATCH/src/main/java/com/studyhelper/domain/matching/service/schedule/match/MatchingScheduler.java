@@ -42,10 +42,6 @@ public class MatchingScheduler {
 			Matching matching = matchings.get(i);
 			
 			Optional<Team> team = matchTrie.pushMatching(matching);
-			if (team.isPresent()) {
-				// 팀이 생성됐다면 채팅방을 맵핑해줘야함
-				matchingService.mappingChatRoom(team.get());
-			}
 		}
 	}
 }

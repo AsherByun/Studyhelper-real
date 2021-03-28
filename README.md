@@ -76,11 +76,12 @@ Spring boot Security 사용
 ## 배치 + 스케줄링
 1. chunk 배치 사용
 2. spring job scheduler 사용하여 scheduling
-
+3. 매칭 신청 후 3일의 시간이 지난 매칭에 대해서 삭제작업 수행
 -----------------------------
 ## 스터디 매칭 알고리즘
 1. 트라이 알고리즘 사용
 2. (현재는 arraylist 배열사용 -> 트라이로 바꿀예정 + 우선순위 사용예정)
+3. 매칭 신청시 WEB 도메인 -> Batch 도매인으로 매칭 정보를 전송 -> 매칭 정보를 전송받으면 매칭알고리즘 실행
 -----------------------------
 ## 채팅 구현 with Redis and Websocket
 1. spring webSocket 사용
@@ -116,12 +117,16 @@ Redis ERD (matchings + CHAT_ROOMS)
     - osiv~~
 3. 동시성 문제 해결전략
     - 게시판의 경우 동시 수정이 가능하다 -> 낙관적인락 (@Version)으로 동시성을 높여준다
+4. Redis
+
 #### Spring boot
 1. rds key와같이 중요한 정보 저장 ()
 2. logging 작업
 3. Rest api
 4. 패키징
 5. 테스팅
+#### 메시지 큐 (Kafka)
+
 #### CI/CD + AWS ec2
 
 
@@ -129,4 +134,3 @@ Redis ERD (matchings + CHAT_ROOMS)
 1. Junit5 사용
 2. Mockmvc 사용 -> 가상 서블릿
 3. Spring Security 적용시 권한이 필요한 페이지 테스트 -> @withUserDetail 어노테이션 사용
-4. 

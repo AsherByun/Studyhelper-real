@@ -35,10 +35,6 @@ public class Team {
 	@GeneratedValue
 	private Long seq;
 	
-	//팀 이름을 동시에 바꿀수 있기 때문에 낙관적 락사용
-	@Version
-	private Long version;
-	
 	private String teamName;
 	private String chatRoomId;
 

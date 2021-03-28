@@ -29,9 +29,5 @@ public class KafkaMatchingConsumer {
 		log.info("새로운 매칭 도착"+matching.getMemberId());
 		
 		Optional<Team> team = matchTrie.pushMatching(matching);
-		if (team.isPresent()) {
-			// 팀이 생성됐다면 채팅방을 맵핑해줘야함
-			matchingService.mappingChatRoom(team.get());
-		}
 	}
 }
