@@ -24,9 +24,9 @@ public class MatchingScheduler {
 	private final MatchTrie matchTrie;
 	private final ChatRoomRepository chatRoomRepository;
 
-	@Scheduled(fixedDelay = 60000) // 60초에 한번씩 실행
+	// 서버 시작시 한번 실행 --> redis에 올리는 작업, matchs 초기화
 	public void runMatching() {
-		log.info("매칭 시작!!!!");
+		log.info("매칭서버 처음시작 ---> 매칭 및 리스트에 저장하기");
 
 		matchTrie.initSetting();
 		// 전체 매칭 리스트 불러오기

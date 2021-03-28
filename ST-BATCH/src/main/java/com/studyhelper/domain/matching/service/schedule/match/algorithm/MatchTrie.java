@@ -2,6 +2,7 @@ package com.studyhelper.domain.matching.service.schedule.match.algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -44,12 +45,12 @@ public class MatchTrie {
 	private final TeamRepository teamRepository;
 	private final MemberService memberService;
 
-	public List<Matching>[][][] matchs;
+	public static HashSet<Matching>[][][] matchs;
 	public ConvertHashMap convert;
 	
 	public void initSetting() {
 		convert = new ConvertHashMap();
-		matchs = new ArrayList[REGION_LENGTH][SUBJECT_LENGTH][MAX_SIZE];
+		matchs = new HashSet[REGION_LENGTH][SUBJECT_LENGTH][MAX_SIZE];
 		setMatchs();
 	}
 	//매칭들을 모아놓을 리스트 초기화
@@ -57,7 +58,7 @@ public class MatchTrie {
 		for (int i = 0; i < REGION_LENGTH; i++) {
 			for (int j = 0; j < SUBJECT_LENGTH; j++) {
 				for (int k = 0; k < MAX_SIZE; k++) {
-					matchs[i][j][k] = new ArrayList<Matching>();
+					matchs[i][j][k] = new HashSet<Matching>();
 				}
 			}
 		}
@@ -70,12 +71,11 @@ public class MatchTrie {
 		
 		//중복되는 아이디가 있으면 무시한다 + 삭제
 		//이미 같은 매칭을 신청한게 있는지 확인함
-		for(Matching matching:matchs[regionNum][subjectNum][sizeNum]) {
-			if (matching.getMemberId().equals(match.getMemberId())) {
-				matchingRepository.delete(match);
-				return Optional.ofNullable(null);
-			}
+		if (matchs[regionNum][subjectNum][sizeNum].contains(match)) {
+			matchingRepository.delete(match);
+			return Optional.ofNullable(null);
 		}
+		
 		//아니면 매칭 추가
 		matchs[regionNum][subjectNum][sizeNum].add(match);
 		if (matchs[regionNum][subjectNum][sizeNum].size() == sizeNum) {
@@ -95,7 +95,7 @@ public class MatchTrie {
 				matchingRepository.delete(matching);
 			}
 			log.info(teamMemberForLog.toString()+" 님들의 매칭이 성공했습니다! 팀 SEQ: "+team.getSeq());
-			matchs[regionNum][subjectNum][sizeNum] = new ArrayList<Matching>();
+			matchs[regionNum][subjectNum][sizeNum] = new HashSet<Matching>();
 			return Optional.ofNullable(team);
 		}
 		return Optional.ofNullable(null);
