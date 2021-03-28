@@ -12,6 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
+
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
 
 import com.studyhelper.domain.comment.entity.Comment;
 import com.studyhelper.domain.member.entity.Member;
@@ -31,7 +35,7 @@ public class Board {
 
 	private String title;
 	private String content;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "MEMBER_ID")
 	private Member member;

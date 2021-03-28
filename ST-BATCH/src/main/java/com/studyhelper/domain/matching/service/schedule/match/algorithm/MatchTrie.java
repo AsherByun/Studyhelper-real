@@ -2,6 +2,7 @@ package com.studyhelper.domain.matching.service.schedule.match.algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -44,12 +45,12 @@ public class MatchTrie {
 	private final TeamRepository teamRepository;
 	private final MemberService memberService;
 
-	public List<Matching>[][][] matchs;
+	public static HashSet<Matching>[][][] matchs;
 	public ConvertHashMap convert;
 	
 	public void initSetting() {
 		convert = new ConvertHashMap();
-		matchs = new ArrayList[REGION_LENGTH][SUBJECT_LENGTH][MAX_SIZE];
+		matchs = new HashSet[REGION_LENGTH][SUBJECT_LENGTH][MAX_SIZE];
 		setMatchs();
 	}
 	//매칭들을 모아놓을 리스트 초기화
@@ -57,25 +58,27 @@ public class MatchTrie {
 		for (int i = 0; i < REGION_LENGTH; i++) {
 			for (int j = 0; j < SUBJECT_LENGTH; j++) {
 				for (int k = 0; k < MAX_SIZE; k++) {
-					matchs[i][j][k] = new ArrayList<Matching>();
+					matchs[i][j][k] = new HashSet<Matching>();
 				}
 			}
 		}
 	}
 	//매칭을 넣어주고 size가 맞으면 팀을 생성
+	@Transactional
 	public Optional<Team> pushMatching(Matching match) {
+		log.info("매칭 알고리즘 시작!!!");
+		
 		int subjectNum = convert.converting(match.getSubject().toString());
 		int regionNum = convert.converting(match.getRegion().toString());
 		int sizeNum = match.getSize();
 		
 		//중복되는 아이디가 있으면 무시한다 + 삭제
 		//이미 같은 매칭을 신청한게 있는지 확인함
-		for(Matching matching:matchs[regionNum][subjectNum][sizeNum]) {
-			if (matching.getMemberId().equals(match.getMemberId())) {
-				matchingRepository.delete(match);
-				return Optional.ofNullable(null);
-			}
+		if (matchs[regionNum][subjectNum][sizeNum].contains(match)) {
+			matchingRepository.delete(match);
+			return Optional.ofNullable(null);
 		}
+		
 		//아니면 매칭 추가
 		matchs[regionNum][subjectNum][sizeNum].add(match);
 		if (matchs[regionNum][subjectNum][sizeNum].size() == sizeNum) {
@@ -83,8 +86,8 @@ public class MatchTrie {
 			team.setTeamName(BASE_TEAM_NAME);
 			teamRepository.save(team);
 			
-			//싱글스레드라 stringbuilder사용
-			StringBuilder teamMemberForLog = new StringBuilder("매칭 성공 --> 매칭 정보: ");
+			//비동기 멀티스레딩 buffer사용
+			StringBuffer teamMemberForLog = new StringBuffer("매칭 성공 --> 매칭 정보: ");
 			for (Matching matching : matchs[regionNum][subjectNum][sizeNum]) {
 				Optional<Member> member = memberRepository.findById(matching.getMemberId());
 				//회원 탈퇴시 매칭정보도 삭제해줘야함
@@ -95,7 +98,7 @@ public class MatchTrie {
 				matchingRepository.delete(matching);
 			}
 			log.info(teamMemberForLog.toString()+" 님들의 매칭이 성공했습니다! 팀 SEQ: "+team.getSeq());
-			matchs[regionNum][subjectNum][sizeNum] = new ArrayList<Matching>();
+			matchs[regionNum][subjectNum][sizeNum] = new HashSet<Matching>();
 			return Optional.ofNullable(team);
 		}
 		return Optional.ofNullable(null);

@@ -2,6 +2,8 @@ package com.studyhelper.domain.team.controller;
 
 import java.util.List;
 
+import javax.persistence.OptimisticLockException;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,18 +32,16 @@ public class TeamController {
 	private final MemberService memberSerivce;
 	private final TeamService teamService;
 	private final TeamRepository teamRepository;
+	
+	private final int NO_GET_TEAM_NOW = -1;
 
 	// 팀 채팅방으로 이동
 	@GetMapping("/team/chatting")
 	public String teamChatting(@AuthenticationPrincipal SecurityUser securityUser, Model model) {
 		Team team = securityUser.getTeam();
-		team = teamRepository.findById(team.getSeq()).get();
-
-		if (team.getChatRoomId() == null) {
-			ChatRoom chatRoom = chatRoomRepository.createChatRoom(team.getSeq().toString());
-			team = teamService.saveTeamChatId(team, chatRoom);
-		}
-		return "redirect:/chat/room/enter/" + team.getChatRoomId();
+		String chatRoomId = teamService.findTeamChattingRoomId(team);
+		
+		return "redirect:/chat/room/enter/" + chatRoomId;
 	}
 
 	// 팀메인페이지로 이동
@@ -50,12 +50,16 @@ public class TeamController {
 			Model model, @AuthenticationPrincipal SecurityUser securityUser) {
 		
 		Team team;
-		
-		if (teamSeq == -1 && securityUser.getTeam() == null) {
+		//팀이 선택된적도, 현재 로그인한 회원이 팀을 갖지않는다면 유저페이지로
+		if (teamSeq == NO_GET_TEAM_NOW && securityUser.getTeam() == null) {
 			return "userpage";
-		} else if (teamSeq == -1) {
+		} 
+		//원하는 팀이 없다면 최근에 선택된 팀을 가져온다
+		else if (teamSeq == NO_GET_TEAM_NOW) {
 			team = securityUser.getTeam();
-		}else {
+		}
+		//원하는 팀이 있다면 그 팀을 가져와서 로그인 상태에 넣어준다.
+		else {
 			team = teamRepository.findById(teamSeq).get();
 		}
 		
@@ -79,8 +83,12 @@ public class TeamController {
 	
 	@PostMapping("/team/info")
 	public String changeTeamName(@AuthenticationPrincipal SecurityUser securityUser,String changeTeamName) {
-		teamService.changeTeamName(securityUser.getTeam(), changeTeamName);
-		
+		try {
+			teamService.changeTeamName(securityUser.getTeam(), changeTeamName);
+		} catch (OptimisticLockException e) {
+			log.info("팀 이름 교체 중 충돌 발생!!");
+		}
+
 		return "redirect:/team";
 	}
 }

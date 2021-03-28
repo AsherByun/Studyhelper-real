@@ -13,8 +13,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
 
 import com.studyhelper.domain.board.entity.Board;
 
@@ -26,11 +29,12 @@ import lombok.ToString;
 @Table(name = "Team")
 @Getter
 @Setter
+@OptimisticLocking(type = OptimisticLockType.VERSION)
 public class Team {
 	@Id
 	@GeneratedValue
 	private Long seq;
-
+	
 	private String teamName;
 	private String chatRoomId;
 

@@ -32,7 +32,7 @@ public class TeamMatcingController {
 	@PostMapping("/matching/request")
 	public String postMatching(@AuthenticationPrincipal SecurityUser securityUser, Matching matching) {
 		Member member = securityUser.getMember();
-		matchingService.saveMatching(member, matching);
+		matchingService.saveAndSendMatching(member, matching);
 		
 		return "redirect:/userpage";
 	}
