@@ -15,13 +15,13 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class MatchingServiceImpl implements MatchingService{
-	private final MatchingRepository matchRepository;
+	private final MatchingRepository matchingRepository;
 	private final ChatRoomRepository chatRoomRepository;
 	
 	@Transactional
 	@Override
 	public void insertMatching(Matching matching) {
-		matchRepository.save(matching);
+		matchingRepository.save(matching);
 	}
 
 	@Transactional
@@ -29,6 +29,13 @@ public class MatchingServiceImpl implements MatchingService{
 	public void mappingChatRoom(Team team) {
 		ChatRoom chatRoom = chatRoomRepository.createChatRoom(team.getTeamName());
 		team.setChatRoomId(chatRoom.getRoomId());
+	}
+
+	@Transactional
+	@Override
+	public void deleteMatching(Matching matching) {
+		
+		
 	}
 
 }
