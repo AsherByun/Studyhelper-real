@@ -29,8 +29,8 @@
 
 
 ## API
-![api1](https://user-images.githubusercontent.com/47214171/109776848-62148900-7c46-11eb-92fb-663766de91d1.JPG)
-![api2](https://user-images.githubusercontent.com/47214171/109776853-6345b600-7c46-11eb-823e-8e21f1059d19.JPG)
+Swagger 구현 -> /swagger-ui.html
+![asd](https://user-images.githubusercontent.com/47214171/112744511-bc053600-8fdb-11eb-84be-be75b086b5b9.JPG)
 <br>
 ## 동작
 
@@ -115,6 +115,7 @@ Redis ERD (matchings + CHAT_ROOMS)
 2. 영속성 컨텍스트 연장부분
     - osiv~~
 3. 동시성 문제 해결전략
+    - 게시판의 경우 동시 수정이 가능하다 -> 낙관적인락 (@Version)으로 동시성을 높여준다
 #### Spring boot
 1. rds key와같이 중요한 정보 저장 ()
 2. logging 작업
