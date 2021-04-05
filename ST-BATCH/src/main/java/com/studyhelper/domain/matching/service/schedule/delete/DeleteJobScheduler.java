@@ -3,8 +3,6 @@ package com.studyhelper.domain.matching.service.schedule.delete;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -14,7 +12,7 @@ import com.studyhelper.domain.matching.entity.enums.Region;
 import com.studyhelper.domain.matching.entity.enums.Subject;
 import com.studyhelper.domain.matching.repo.MatchingRepository;
 import com.studyhelper.domain.matching.service.MatchingService;
-import com.studyhelper.domain.matching.service.schedule.match.algorithm.MatchTrie;
+import com.studyhelper.domain.matching.service.schedule.match.algorithm.Matcher;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class DeleteJobScheduler {
 	private final MatchingRepository matchingRepository;
-	private final MatchingService matchingService;
-	private final MatchTrie matchTrie;
+	private final Matcher matchTrie;
 
 	private final int REGION_LENGTH = Region.values().length;
 	private final int SUBJECT_LENGTH = Subject.values().length;
