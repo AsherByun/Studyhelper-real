@@ -13,7 +13,7 @@ import com.studyhelper.domain.chat.dto.ChatRoom;
 import com.studyhelper.domain.matching.entity.Matching;
 import com.studyhelper.domain.matching.repo.MatchingRepository;
 import com.studyhelper.domain.matching.service.MatchingService;
-import com.studyhelper.domain.matching.service.schedule.match.algorithm.MatchTrie;
+import com.studyhelper.domain.matching.service.schedule.match.algorithm.Matcher;
 import com.studyhelper.domain.team.entity.Team;
 
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class MatchingScheduler {
 	private final MatchingRepository matchingRepository;
-	private final MatchTrie matchTrie;
+	private final Matcher matchTrie;
 	private final ChatRoomRepository chatRoomRepository;
 	private final MatchingService matchingService;
 
@@ -41,7 +41,7 @@ public class MatchingScheduler {
 		for (int i = matchings.size() - 1; i >= 0; i--) {
 			Matching matching = matchings.get(i);
 			
-			Optional<Team> team = matchTrie.pushMatching(matching);
+			matchTrie.pushMatching(matching);
 		}
 	}
 }
