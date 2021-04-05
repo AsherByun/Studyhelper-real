@@ -42,10 +42,11 @@ public class DeleteJobScheduler {
 					HashSet<Matching> matchings = matchTrie.matchs[i][j][k];
 					HashSet<Matching> removeMatchs = new HashSet<Matching>();
 					for (Matching matching : matchings) {
+						log.info("들어있는 매칭들"+matching.getMemberId()+" "+matching.getRegion().toString()+" "+matching.getSeq());
 						LocalDate localDate = LocalDate.parse(matching.getRequestMatchingDate(),
 								DateTimeFormatter.ISO_DATE);
 						LocalDate leastDay = LocalDate.now();
-						leastDay = leastDay.plusDays(3);
+						leastDay = leastDay.minusDays(3);
 
 						if (localDate.isBefore(leastDay)) {
 							log.info("매칭 삭제 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 삭제");

@@ -120,6 +120,8 @@ Redis ERD (matchings + CHAT_ROOMS)
 3. 동시성 문제 해결전략
     - 게시판의 경우 동시 수정이 가능하다 -> 낙관적인락 (@Version)으로 동시성을 높여준다
 4. Redis
+    - redis findby 뒤에 나올려면 @indexed어노테이션을 붙여줘야한다
+    - 
 
 #### Spring boot
 1. rds key와같이 중요한 정보 저장 ()
@@ -146,3 +148,5 @@ Redis ERD (matchings + CHAT_ROOMS)
    2. MSA 아키텍쳐를 위해 WEB Domain과 Batch Domain을 나눈후 매칭 요청시 Kafka를 이용하여 매칭정보를 web->batch로 메시징 후 받으면 매칭 알고리즘 실행
    3. 매칭은 kafka를 통한 비동기식 매칭, 매칭 정보 삭제는 Batch를 사용하여 일정 시간 이후 3일이지난 매칭 정보는 삭제
    4. Kafka를 통해서 매칭 정보를 받아올 때마다 매칭알고리즘을 실행시켜 매칭을 진행했음 -> 동기화 문제가 발생가능 -> synchronize를 사용하게되면 동시성이 많이 떨어질거라고 예상
+2. 같은 매칭 정보가 들어올 때 핸들링
+   1. Matching 정보들에 모두 인덱스를 넣어서 한번에 서칭 후 비교 vs 해당 아이디가 매칭요청한 정보를 모두 가져온 후 비교 => 시간을 줄이는것이 더 좋을거라고 생각 -> indexed 추가

@@ -1,13 +1,17 @@
 package com.studyhelper.domain.matching.service.schedule.match;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import com.studyhelper.domain.chat.dto.ChatRoom;
 import com.studyhelper.domain.matching.entity.Matching;
+import com.studyhelper.domain.matching.repo.MatchingRepository;
 import com.studyhelper.domain.matching.service.MatchingService;
 import com.studyhelper.domain.matching.service.schedule.match.algorithm.MatchTrie;
 import com.studyhelper.domain.team.entity.Team;
@@ -23,6 +27,7 @@ public class KafkaMatchingConsumer {
 	private static final String GROUP_ID = "batch1";
 	private final MatchTrie matchTrie;
 	private final MatchingService matchingService;
+	private final MatchingRepository matchingRepository;
 	
 	@KafkaListener(topics = TOPIC,groupId = GROUP_ID,containerFactory = "matchListener")
 	public void consume(Matching matching) throws IOException{

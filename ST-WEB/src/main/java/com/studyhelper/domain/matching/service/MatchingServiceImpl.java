@@ -27,10 +27,6 @@ public class MatchingServiceImpl implements MatchingService {
 		matching.setMemberId(member.getId());
 		matching.setRequestMatchingDate(LocalDate.now().toString());
 
-		log.info("매칭요청 -->  " + "요청아이디: " + member.getId() + " 지역: " + matching.getRegion() + " 주제: "
-				+ matching.getSubject() + " 인원: " + matching.getSize());
-		matchingRepository.save(matching);
-		
 		//매칭하는 도메인에 전송
 		produceMatcing.sendMatching(matching);
 	}
