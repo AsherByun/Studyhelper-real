@@ -32,7 +32,7 @@ public class DeleteJobScheduler {
 	private final int MAX_SIZE = 6;
 
 	// 로그사용하기 위해서 expire 사용안함
-	@Scheduled(fixedDelay = 86400000) // 하루에 한번 실행
+	@Scheduled(fixedDelay = 60000) // 하루에 한번 실행
 	public void runDeleteJob() {
 		log.info("매칭 삭제 시작!!");
 
