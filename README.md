@@ -132,6 +132,11 @@ Redis ERD (matchings + CHAT_ROOMS)
 #### 메시지 큐 (Kafka)
 
 #### CI/CD + AWS ec2
+#### 아키텍쳐
+1. SOA 아키택쳐
+   - 외부에서 매칭에 접근하지 못하도록
+   - 확장성을 위해 만듬
+   - 반응성을 위해 사용
 
 
 ## 테스트 정리
