@@ -66,6 +66,7 @@ public class Matcher {
 		}
 	}
 	//매칭을 넣어주고 size가 맞으면 팀을 생성
+	@Async
 	@Transactional
 	public void pushMatching(Matching matching) {
 		log.info("매칭 알고리즘 시작!!!");
