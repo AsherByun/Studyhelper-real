@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 
+import org.hibernate.annotations.Synchronize;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -32,31 +33,32 @@ public class DeleteJobScheduler {
 	@Scheduled(fixedDelay = 60000) // 하루에 한번 실행
 	public void runDeleteJob() {
 		log.info("매칭 삭제 시작!!");
+		synchronized (this) {
+			for (int i = 0; i < REGION_LENGTH; i++) {
+				for (int j = 0; j < SUBJECT_LENGTH; j++) {
+					for (int k = 0; k < MAX_SIZE; k++) {
+						HashSet<Matching> matchings = matchTrie.matchs[i][j][k];
+						HashSet<Matching> removeMatchs = new HashSet<Matching>();
+						for (Matching matching : matchings) {
+							log.info("들어있는 매칭들" + matching.getMemberId() + " " + matching.getRegion().toString() + " "
+									+ matching.getSeq());
+							LocalDate localDate = LocalDate.parse(matching.getRequestMatchingDate(),
+									DateTimeFormatter.ISO_DATE);
+							LocalDate leastDay = LocalDate.now();
+							leastDay = leastDay.minusDays(3);
 
-		for (int i = 0; i < REGION_LENGTH; i++) {
-			for (int j = 0; j < SUBJECT_LENGTH; j++) {
-				for (int k = 0; k < MAX_SIZE; k++) {
-					HashSet<Matching> matchings = matchTrie.matchs[i][j][k];
-					HashSet<Matching> removeMatchs = new HashSet<Matching>();
-					for (Matching matching : matchings) {
-						log.info("들어있는 매칭들"+matching.getMemberId()+" "+matching.getRegion().toString()+" "+matching.getSeq());
-						LocalDate localDate = LocalDate.parse(matching.getRequestMatchingDate(),
-								DateTimeFormatter.ISO_DATE);
-						LocalDate leastDay = LocalDate.now();
-						leastDay = leastDay.minusDays(3);
-
-						if (localDate.isBefore(leastDay)) {
-							log.info("매칭 삭제 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 삭제");
-							removeMatchs.add(matching);
-							matchingRepository.delete(matching);
+							if (localDate.isBefore(leastDay)) {
+								log.info("매칭 삭제 --> 매칭 정보: " + matching.getMemberId() + "의 매칭 삭제");
+								removeMatchs.add(matching);
+								matchingRepository.delete(matching);
+							}
 						}
-					}
-					for(Matching matching:removeMatchs) {
-						matchTrie.matchs[i][j][k].remove(matching);
+						for (Matching matching : removeMatchs) {
+							matchTrie.matchs[i][j][k].remove(matching);
+						}
 					}
 				}
 			}
 		}
-
 	}
 }
