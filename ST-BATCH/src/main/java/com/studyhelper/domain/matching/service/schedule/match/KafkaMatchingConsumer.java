@@ -31,6 +31,7 @@ public class KafkaMatchingConsumer {
 	public void consume(Matching matching) throws IOException{
 		log.info("새로운 매칭 도착"+matching.getMemberId());
 		
+		//비동기적-논블러킹으로 실행
 		matchTrie.pushMatching(matching);
 	}
 }
