@@ -147,7 +147,7 @@ Redis ERD (matchings + CHAT_ROOMS)
 
 
 
-## 스토리 라인
+## 과정
 1. 매칭
    1. 모놀리틱 구조로 웹페이지에서 매칭을 요청시 그 즉시 매칭알고리즘이 실행되어 매칭하는 방식
    2. MSA 아키텍쳐를 위해 WEB Domain과 Batch Domain을 나눈후 매칭 요청시 Kafka를 이용하여 매칭정보를 web->batch로 메시징 후 받으면 매칭 알고리즘 실행
